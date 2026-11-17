@@ -1,0 +1,152 @@
+[
+  {
+    "id": "[1]",
+    "reference": "S. Dash, D. K. Dash, R. K. Tripathy and R. B. Pachori. Time-frequency domain machine learning for detection of epilepsy using wearable EEG sensor signals recorded during physical activities. Biomedical Signal Processing and Control 100, 107041, 2025.",
+    "url": "https://doi.org/10.1016/j.bspc.2024.107041"
+  },
+  {
+    "id": "[2]",
+    "reference": "J. Bowles, S. Ahmed and M. Schuld. Better than classical? The subtle art of benchmarking quantum machine learning models. arXiv:2403.07059, 2024 preprint.",
+    "url": "https://arxiv.org/abs/2403.07059"
+  },
+  {
+    "id": "[3]",
+    "reference": "M. Schuld, A. Bocharov, K. M. Svore and N. Wiebe. Circuit-centric quantum classifiers. Physical Review A 101, 032308, 2020.",
+    "url": "https://doi.org/10.1103/PhysRevA.101.032308"
+  },
+  {
+    "id": "[4]",
+    "reference": "H.-Y. Huang et al. Power of data in quantum machine learning. Nature Communications 12, 2631, 2021.",
+    "url": "https://doi.org/10.1038/s41467-021-22539-9"
+  },
+  {
+    "id": "[5]",
+    "reference": "M. C. Caro et al. Generalization in quantum machine learning from few training data. Nature Communications 13, 4919, 2022.",
+    "url": "https://doi.org/10.1038/s41467-022-32550-3"
+  },
+  {
+    "id": "[6]",
+    "reference": "M. Schuld, R. Sweke and J. J. Meyer. Effect of data encoding on the expressive power of variational quantum-machine-learning models. Physical Review A 103, 032430, 2021.",
+    "url": "https://doi.org/10.1103/PhysRevA.103.032430"
+  },
+  {
+    "id": "[7]",
+    "reference": "A. Perez-Salinas, A. Cervera-Lierta, E. Gil-Fuster and J. I. Latorre. Data re-uploading for a universal quantum classifier. Quantum 4, 226, 2020.",
+    "url": "https://doi.org/10.22331/q-2020-02-06-226"
+  },
+  {
+    "id": "[8]",
+    "reference": "J. R. McClean, S. Boixo, V. N. Smelyanskiy, R. Babbush and H. Neven. Barren plateaus in quantum neural network training landscapes. Nature Communications 9, 4812, 2018.",
+    "url": "https://doi.org/10.1038/s41467-018-07090-4"
+  },
+  {
+    "id": "[9]",
+    "reference": "R. Sharma and R. B. Pachori. Classification of epileptic seizures in EEG signals based on phase space representation of intrinsic mode functions. Expert Systems with Applications 42, 1106-1117, 2015.",
+    "url": "Local supplied PDF: EEG_Seizure_Classification_Phase_Space_IMFs_2015.pdf"
+  },
+  {
+    "id": "[10]",
+    "reference": "R. Sharma, R. B. Pachori and U. R. Acharya. Application of entropy measures on intrinsic mode functions for the automated identification of focal electroencephalogram signals. Entropy 17, 669-691, 2015.",
+    "url": "https://doi.org/10.3390/e17020669"
+  },
+  {
+    "id": "[11]",
+    "reference": "A. Bhattacharyya, R. B. Pachori, A. Upadhyay and U. R. Acharya. Tunable-Q wavelet transform based multiscale entropy measure for automated classification of epileptic EEG signals. Applied Sciences 7, 385, 2017.",
+    "url": "https://doi.org/10.3390/app7040385"
+  },
+  {
+    "id": "[12]",
+    "reference": "A. Bhattacharyya and R. B. Pachori. A multivariate approach for patient-specific EEG seizure detection using empirical wavelet transform. IEEE Transactions on Biomedical Engineering 64, 2003-2015, 2017.",
+    "url": "Local supplied PDF: Patient_Specific_EEG_Seizure_Detection_Multivariate_EWT_2017.pdf"
+  },
+  {
+    "id": "[13]",
+    "reference": "S. Zia and A. Nawaz Khan. Activities of daily livings using a portable EEG headset. IEEE DataPort dataset, 2021.",
+    "url": "https://doi.org/10.21227/mtwx-p951"
+  },
+  {
+    "id": "[14]",
+    "reference": "P. Gajbhiye, N. Mingchinda, W. Chen, S. C. Mukhopadhyay, T. Wilaiprasitporn and R. K. Tripathy. Wavelet domain optimized Savitzky-Golay filter for the removal of motion artifacts from EEG recordings. IEEE Transactions on Instrumentation and Measurement 70, 4002111, 2021.",
+    "url": "https://doi.org/10.1109/TIM.2020.3041099"
+  },
+  {
+    "id": "[15]",
+    "reference": "R. G. Stockwell, L. Mansinha and R. P. Lowe. Localization of the complex spectrum: the S transform. IEEE Transactions on Signal Processing 44, 998-1001, 1996.",
+    "url": "https://doi.org/10.1109/78.492555"
+  },
+  {
+    "id": "[16]",
+    "reference": "A. Savitzky and M. J. E. Golay. Smoothing and differentiation of data by simplified least squares procedures. Analytical Chemistry 36, 1627-1639, 1964.",
+    "url": "https://doi.org/10.1021/ac60214a047"
+  },
+  {
+    "id": "[17]",
+    "reference": "L. Breiman. Random forests. Machine Learning 45, 5-32, 2001.",
+    "url": "https://doi.org/10.1023/A:1010933404324"
+  },
+  {
+    "id": "[18]",
+    "reference": "C. Cortes and V. Vapnik. Support-vector networks. Machine Learning 20, 273-297, 1995.",
+    "url": "https://doi.org/10.1007/BF00994018"
+  },
+  {
+    "id": "[19]",
+    "reference": "A. Kraskov, H. Stogbauer and P. Grassberger. Estimating mutual information. Physical Review E 69, 066138, 2004.",
+    "url": "https://doi.org/10.1103/PhysRevE.69.066138"
+  },
+  {
+    "id": "[20]",
+    "reference": "A. Vaswani et al. Attention is all you need. Advances in Neural Information Processing Systems 30, 2017.",
+    "url": "https://arxiv.org/abs/1706.03762"
+  },
+  {
+    "id": "[21]",
+    "reference": "S. Hochreiter and J. Schmidhuber. Long short-term memory. Neural Computation 9, 1735-1780, 1997.",
+    "url": "https://doi.org/10.1162/neco.1997.9.8.1735"
+  },
+  {
+    "id": "[22]",
+    "reference": "M. Schuster and K. K. Paliwal. Bidirectional recurrent neural networks. IEEE Transactions on Signal Processing 45, 2673-2681, 1997.",
+    "url": "https://doi.org/10.1109/78.650093"
+  },
+  {
+    "id": "[23]",
+    "reference": "J. L. Ba, J. R. Kiros and G. E. Hinton. Layer normalization. arXiv:1607.06450, 2016.",
+    "url": "https://arxiv.org/abs/1607.06450"
+  },
+  {
+    "id": "[24]",
+    "reference": "I. Loshchilov and F. Hutter. Decoupled weight decay regularization. International Conference on Learning Representations, 2019.",
+    "url": "https://arxiv.org/abs/1711.05101"
+  },
+  {
+    "id": "[25]",
+    "reference": "D. P. Kingma and J. Ba. Adam: A method for stochastic optimization. International Conference on Learning Representations, 2015.",
+    "url": "https://arxiv.org/abs/1412.6980"
+  },
+  {
+    "id": "[26]",
+    "reference": "N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever and R. Salakhutdinov. Dropout: A simple way to prevent neural networks from overfitting. Journal of Machine Learning Research 15, 1929-1958, 2014.",
+    "url": "https://jmlr.org/papers/v15/srivastava14a.html"
+  },
+  {
+    "id": "[27]",
+    "reference": "F. Pedregosa et al. Scikit-learn: Machine learning in Python. Journal of Machine Learning Research 12, 2825-2830, 2011.",
+    "url": "https://jmlr.org/papers/v12/pedregosa11a.html"
+  },
+  {
+    "id": "[28]",
+    "reference": "A. Paszke et al. PyTorch: An imperative style, high-performance deep learning library. Advances in Neural Information Processing Systems 32, 2019.",
+    "url": "https://arxiv.org/abs/1912.01703"
+  },
+  {
+    "id": "[29]",
+    "reference": "V. Bergholm et al. PennyLane: Automatic differentiation of hybrid quantum-classical computations. arXiv:1811.04968, 2018, revised 2022.",
+    "url": "https://arxiv.org/abs/1811.04968"
+  },
+  {
+    "id": "[30]",
+    "reference": "H. Zhang, M. Cisse, Y. N. Dauphin and D. Lopez-Paz. mixup: Beyond empirical risk minimization. International Conference on Learning Representations, 2018.",
+    "url": "https://arxiv.org/abs/1710.09412"
+  }
+]

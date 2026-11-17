@@ -6,64 +6,39 @@
 
 <!-- PDF page 1 -->
 
-## Hybrid Quantum Classical EEG Classification
+## Abstract
 
-A critical study of saved experimental results and the role of variational quantum classifiers
+Hybrid Quantum Classical Classification of Wearable EEG Recordings
 
-MINI PROJECT REPORT DRAFT
-Prepared for academic review | 17 November 2026
+Wearable electroencephalogram classification is challenged by motion contamination, nonstationary activity and small labelled datasets. This study analyses a hybrid pipeline combining wavelet domain filtering, the Gaussian window Stockwell transform, temporal encoders and a six qubit variational quantum classifier. The research question is whether the quantum decision head adds predictive value beyond classical heads receiving the same learned representation.
 
-This report examines a wearable EEG classification pipeline combining wavelet based artefact filtering, a Gaussian window Stockwell transform, temporal neural encoders and a six qubit variational quantum classifier. It analyses the experimental files already present in the project repository. No model was trained, fine tuned or evaluated on newly generated predictions during report preparation.
+The saved dataset audit contains 90 recordings, with 60 healthy and 30 epilepsy labelled files. Four non overlapping five second windows are obtained from each recording. Random forest, support vector machine and mutual information baselines use 450 handcrafted features. Transformer and bidirectional LSTM encoders instead map temporal GWST tokens to six dimensional embeddings, followed by linear, MLP, RBF SVM or VQC heads. The main complete enhanced experiment uses three seeds and five recording grouped folds. This report analyses existing artifacts; no additional training was performed.
 
-The principal conclusion is that the saved quantum models demonstrate feasible integration and useful discrimination, but do not establish quantum advantage. Strong classical controls usually achieve higher point estimates. The strongest defence is therefore a controlled investigation of the quantum component, including unfavourable comparisons, rather than a claim that quantum classification must outperform classical learning.
+Transformer VQC achieves 81.11% recording accuracy, 78.61% balanced accuracy and 0.8919 ROC AUC. Transformer MLP achieves 83.70%, 81.39% and 0.9022. The paired balanced accuracy difference is minus 2.78 percentage points, with a saved 95% interval from minus 6.82 to plus 1.80 points. Removing CNOT gates improves the Transformer circuit point estimate. A separate waveform augmentation archive improves Bi LSTM VQC balanced accuracy from 77.50% to 82.50% against its own baseline.
 
-The evidence also requires a qualification beyond model accuracy. Three healthy recordings have identical signal hashes and cross split boundaries. The existing results remain descriptive outputs of the recorded protocol; they are not a clean estimate of performance on independent patients or independent signal content.
+The reference paper reports 90.74% RF accuracy under a different frame based protocol; direct ranking against the present recording grouped result is not justified. Duplicate signal contents crossing partitions, unavailable participant identifiers and class dependent activity coverage further restrict interpretation. The contribution is a controlled comparison and critical analysis of a simulated quantum head, rather than demonstrated quantum advantage or clinical validation.
 
-The report contains the methodology, numerical results, uncertainty analysis, augmentation audit, literature based interpretation and a viva defence. Names, institution details and supervisor declarations have deliberately not been invented. These may be added to a college cover sheet before submission.
+Keywords: wearable EEG; epilepsy classification; Stockwell transform; Transformer; bidirectional LSTM; variational quantum classifier; matched baselines.
 
 
 <!-- PDF page 2 -->
 
-## Abstract
+## 1 Introduction
 
-Wearable EEG classification is difficult because recordings are short, activities alter signal characteristics and a dry electrode is vulnerable to movement related contamination. A hybrid quantum classical architecture provides a way to test whether a parameterised quantum decision head contributes beyond a classical representation. The present work critically reviews saved outputs from such a pipeline, without conducting additional training.
+Electroencephalography provides a noninvasive record of electrical activity associated with neural processes. Wearable acquisition can extend recording beyond a conventional clinical session, but fewer electrodes, movement and changes in physical activity complicate interpretation. The classification task considered here distinguishes healthy from epilepsy labelled recordings in a public activities of daily living archive [1,13]. It does not establish that every positive window contains an annotated seizure.
 
-The archived dataset audit identifies 90 recordings comprising 60 healthy and 30 epilepsy labelled files sampled at 512 Hz. Five second segmentation produces 360 non overlapping windows. A wavelet domain filtering procedure precedes the Gaussian window Stockwell transform. Handcrafted features provide classical baselines, while Transformer and bidirectional LSTM encoders produce six dimensional embeddings for matched linear, multilayer perceptron, RBF SVM and variational quantum heads. The selected complete enhanced experiment uses three seeds and five recording grouped outer folds [P1].
+Time frequency analysis is suitable for signals whose spectral characteristics vary over time. Dash and colleagues [1] use Gaussian window Stockwell features with classical and deep learning models for wearable EEG. Their work supplies the base signal processing framework for this project. The present architecture retains a handcrafted branch while adding temporal token encoders and an explicit comparison between classical and variational quantum heads.
 
-Transformer plus VQC achieves 81.11% recording accuracy, 78.61% balanced accuracy and 0.8919 ROC AUC. Transformer plus MLP achieves 83.70%, 81.39% and 0.9022 respectively. The paired balanced accuracy difference for VQC minus MLP is minus 2.78 percentage points, with an archived 95% interval spanning minus 6.82 to plus 1.80 points. This interval does not establish equivalence. Removal of CNOT gates improves the Transformer VQC point estimate to 81.11% balanced accuracy, weakening any claim that entanglement explains the performance.
+The motivation for the quantum component is experimental. A parameterised circuit defines a different family of nonlinear input to output functions, but there is no general reason to expect it to outperform well tuned classical models on a small classical dataset [2,4]. A useful investigation must therefore compare against strong controls and isolate what the circuit contributes. High dimensional quantum states alone do not demonstrate useful feature separation, lower complexity or practical speedup.
 
-A separate waveform augmentation archive improves Bi LSTM VQC balanced accuracy from 77.50% to 82.50% within that experiment [P2]. A quick MixUp comparison produces identical metric files and cannot demonstrate an augmentation benefit [P3]. Duplicate signal content crossing partitions, unavailable participant identifiers, class dependent activity coverage and small sample size limit all generalisation claims.
+Two temporal encoders are considered. A Transformer uses attention to combine information across tokens, while a bidirectional LSTM processes the sequence in both directions. Both produce six dimensional embeddings. Matched heads consume the same representation, allowing the study to ask whether the classifier family improves prediction after encoding. Fine tuned variants are analysed separately because the encoder can adapt to its chosen head.
 
-The defensible contribution is a transparent benchmark showing where a compact simulated quantum head succeeds, where classical models remain stronger and which design hypotheses require future tests. Neither hardware noise, computational speedup nor clinical readiness is demonstrated. Keywords: wearable EEG; Stockwell transform; VQC; matched baselines; balanced accuracy; reproducibility.
+The report follows a research paper structure: literature survey, methodology, results and discussion, comparison with the base paper, and conclusion. The results section includes the saved repository plots and additional visual summaries calculated from the stored metrics. Numerical claims retain their experiment identity and do not pool unrelated runs.
 
 
 <!-- PDF page 3 -->
 
-## Contents and Reading Guide
-
-Pages 4 to 7 establish the research question, related work and evidence provenance. Pages 8 to 17 explain the dataset, signal processing, neural and quantum architecture, evaluation protocol and statistical interpretation. Pages 18 to 29 analyse the saved results. Pages 30 to 36 develop the quantum defence, limitations and conclusions. Pages 37 and 38 contain references; pages 39 and 40 provide an evidence register and submission guidance.
-
-All numerical percentages describe this repository unless explicitly labelled as a published result. Percentage point differences are absolute differences between percentages. ROC AUC, MCC and probabilities retain their unitless scales. The term epilepsy labelled recording refers to the archive class, not a verified seizure event within every window.
-
-The report uses numbered literature citations [1] to [12] and project evidence identifiers [P1] to [P6]. The source register resolves project identifiers to repository paths. Tables are transcribed or calculated from saved CSV values. Charts redraw saved values and do not contain new model predictions.
-
-Readers preparing an oral defence should begin with pages 18, 19, 21, 27, 28, 31 and 33. Those pages contain the main result, a fair Transformer comparison, the entanglement ablation, the augmentation distinction and concise answers to likely objections.
-
-
-| Topic | Pages |
-| --- | --- |
-| Problem and related work | 4-7 |
-| Dataset and signal processing | 8-12 |
-| Architecture and protocol | 13-17 |
-| Results and sensitivity analyses | 18-29 |
-| Quantum interpretation and defence | 30-33 |
-| Limitations and conclusions | 34-36 |
-| References and evidence register | 37-40 |
-
-
-<!-- PDF page 4 -->
-
-## Research Problem and Study Objectives
+## 1.1 Research Objectives and Contribution
 
 The implemented task is binary classification of healthy versus epilepsy labelled wearable EEG recordings obtained during activities of daily living. Its output is a recording label formed by aggregating window probabilities. It does not estimate seizure onset time, predict a future seizure or diagnose an individual patient independently of the dataset labels. These distinctions matter because an impressive recording accuracy cannot be converted into an event detection sensitivity or false alarms per hour.
 
@@ -71,71 +46,133 @@ The research question is whether a six qubit variational quantum head adds usefu
 
 The project separates these questions through several controls. RF and SVM baselines use 450 handcrafted features. Transformer and Bi LSTM encoders are tested independently. Frozen embeddings allow linear, MLP, RBF SVM and VQC heads to consume the same six coordinates. An otherwise similar circuit without CNOT gates checks whether the entangling structure improves the result. End to end fine tuning is reported separately because it also changes the representation.
 
-Success must be defined before choosing a preferred result. Integration success means a trainable circuit can participate in the pipeline. Predictive benefit means an improvement on a prespecified metric under a fair comparison. Quantum advantage requires substantially more evidence about classical alternatives and computational resources. The saved files support the first outcome and an informative comparison for the second, but do not establish the third [P1].
+Success must be defined before choosing a preferred result. Integration success means a trainable circuit can participate in the pipeline. Predictive benefit means an improvement on a prespecified metric under a fair comparison. Quantum advantage requires substantially more evidence about classical alternatives and computational resources. The saved files support the first outcome and an informative comparison for the second, but do not establish the third.
 
 This report treats lower quantum accuracy as a finding to explain and delimit. It does not redefine success after seeing the outcome or assume that an emerging method deserves deployment simply because it is quantum.
+
+The contribution is evaluated through recording balanced accuracy, class specific errors, paired uncertainty, entanglement ablation and resource accounting. The practical goal is to establish what the implemented circuit achieves under a transparent protocol and where its benefit remains unproven.
+
+
+<!-- PDF page 4 -->
+
+## 2 Literature Survey of Wearable EEG
+
+2.1 Dash et al 2025 as the base paper [1]
+
+Dash and colleagues analyse epilepsy using wearable sensor EEG recorded during physical activities. Their processing chain includes wavelet domain motion artefact suppression, GWST analysis, L1 norm and Shannon entropy features, and machine learning or deep learning classifiers. The paper reports 90.74% RF accuracy in a hold out experiment and 74.44% average multilayer LSTM accuracy for a ten fold cross validation setting. These values belong to different protocols and must not be merged into one baseline score.
+
+The direct relevance is the shared single channel wearable context, five second time frequency analysis and 450 feature construction. The current work extends that structure with temporal encoders and quantum heads. A limitation for exact reproduction is that the archived data and the paper describe different frame and duration totals. The present repository has 360 complete five second windows; the paper reports 540 frames in its wearable analysis. This discrepancy motivates the separate protocol comparison in Section 5.
+
+2.2 Sharma and Pachori 2015 [9]
+
+This study reconstructs phase space representations of intrinsic mode functions extracted from EEG. It uses measures such as confidence ellipse area and the distribution of distances in a reconstructed space, followed by least squares SVM classification of seizure and seizure free signals. The central idea is that nonlinear temporal structure can be represented by a small set of discriminative descriptors.
+
+Its relevance is methodological: handcrafted summaries can encode information beyond a single power spectrum and should remain serious controls when evaluating a learned model. Its task and acquisition conditions differ from wearable healthy versus epilepsy recording classification. Consequently, its reported predictive performance is not transferred to the current dataset. The current project uses GWST magnitude features rather than EMD phase space features, and does not claim to reproduce this earlier study.
 
 
 <!-- PDF page 5 -->
 
-## Wearable EEG and the Classical Research Context
+## 2.3 Wavelet and Patient Specific EEG Studies
 
-The direct methodological reference is Dash and colleagues [1], which studies wearable EEG recorded during physical activities. Its pipeline applies time frequency processing, extracts L1 norm and Shannon entropy features and evaluates classical and deep models. The supplied paper reports 90.74% RF accuracy in its hold out protocol. That published number is contextual evidence; it is not a measurement generated by this project and is not directly comparable with recording grouped cross validation here.
+Bhattacharyya et al 2017 on tunable Q wavelets [11]
 
-Earlier supplied EEG studies motivate analysis of nonstationary and nonlinear structure. Sharma and Pachori [9] extract phase space features from intrinsic mode functions, while Sharma, Pachori and Acharya [10] examine entropy measures for focal EEG identification. Bhattacharyya and colleagues [11] use tunable Q wavelet decomposition with multiscale entropy. These works support the general choice to analyse frequency structure and complexity, but their labels and recording conditions differ from the wearable classification task.
+Bhattacharyya, Pachori, Upadhyay and Acharya develop a multiscale entropy approach based on the tunable Q wavelet transform. Decomposition into subbands allows entropy to characterise EEG complexity at different scales. The work studies classification of normal, seizure free and seizure signals and motivates the use of frequency resolved complexity measures in EEG analysis.
 
-Bhattacharyya and Pachori [12] examine patient specific multivariate seizure detection using empirical wavelets. This is a different problem from classifying single channel wearable recordings. Its multichannel, event oriented setting prevents using its reported accuracy as a target that the present method must match. Differences in label definition, subject access, channel count and validation unit are at least as important as the classifier name.
+For this project, the relevant connection is the combination of a time frequency representation and entropy. The current feature vector computes entropy at GWST frequency rows, whereas the earlier method aggregates entropy over tunable Q wavelet subbands. They are related approaches, not the same transform or feature definition. The earlier study supports a signal processing rationale but cannot supply an expected accuracy for wearable activity recordings.
 
-Two other supplied resources address pediatric sleep and EEG air writing. They were inspected for scope but are not used as epilepsy performance baselines. A sleep corpus cannot validate seizure classification, and improvement in air writing recognition does not demonstrate an epilepsy benefit. The two local copies of the Dash paper represent one reference, not two independent studies.
+Bhattacharyya and Pachori 2017 on empirical wavelets [12]
 
-The resulting literature position is specific: this project extends a wearable time frequency pipeline with learned temporal embeddings and controlled quantum heads. It does not claim a first use of EEG machine learning, a reproduction of every published protocol or a general superiority over unrelated biomedical classifiers.
+This paper explores multivariate empirical wavelet decomposition for patient specific seizure detection. It derives joint amplitude and frequency information from automatically selected EEG channels and computes features within short moving windows. The supplied paper evaluates 177 hours of CHB MIT recordings and reports high cross validated detection performance in that multichannel setting.
 
-The reference publication reports 540 five second frames and 45 minutes for its wearable analysis, while the archived 90 files yield 360 non overlapping frames and approximately 30 minutes. These counts cannot be reconciled from the supplied archive alone. Overlap, a different source subset or another counting convention may explain the difference, but none is verified. Recording grouping is not explicit in the published frame based protocol. This is a reason to avoid a direct 90.74% versus 80.37% RF leaderboard comparison, not proof of leakage in the published study.
+The study illustrates the importance of matching analysis to the intended detection unit. It uses patient specific multichannel information and a seizure event context, while the present model uses one wearable channel and recording class labels. Missing participant identifiers in the wearable archive prevent the same patient specific or patient independent interpretation. Its strong results therefore cannot be used as a numerical target without reproducing the task, channels and validation structure.
+
+Together, these two papers support comparing classical time frequency descriptors with learned representations. They also show why a literature survey should discuss datasets and validation alongside classifier names: a percentage from another task is not a fair ranking of architectures.
 
 
 <!-- PDF page 6 -->
 
-## What Quantum Literature Can Actually Defend
+## 2.4 Quantum Classifiers and Encoding
 
-Bowles, Ahmed and Schuld [2] benchmark quantum models against classical controls and report that conventional classifiers often perform better. Their study also finds cases where removing entanglement preserves or improves performance. It supplies a directly relevant precedent for reporting unfavourable quantum comparisons as useful evidence about model design. It does not prove that this EEG model is optimal or that its observed gap is harmless.
+Schuld et al 2020 on circuit centric classifiers [3]
 
-Schuld and colleagues [3] present a circuit centric classifier and discuss compact parameterisation under their architecture. Their amplitude encoding setup differs from the angle encoded EEG head. The appropriate lesson is to measure resources alongside prediction quality. A parameter efficiency claim must be established for the actual model and matched baseline; it cannot be borrowed from a different circuit.
+Schuld, Bocharov, Svore and Wiebe propose a low depth variational classifier using amplitude encoded inputs, trainable circuit gates and a measurement based output. Their study reports useful benchmark performance with compact parameterisation and discusses robustness and optimisation. Its relevance is the design of a trainable quantum decision function integrated with classical optimisation.
 
-Huang and colleagues [4] show that available data can make classical methods competitive and that useful quantum separation depends on problem structure. Their work discourages the assumption that a difficult to simulate feature map automatically supplies a learning advantage. Caro and colleagues [5] provide generalisation bounds related to trainable gates and sample size under stated assumptions. Such bounds motivate compact models but do not certify this small dataset or the complete hybrid encoder.
+The wearable model differs in both encoding and resource balance. It uses six angle encoded embedding coordinates, input calibration and a classical readout. Its head has 55 parameters, compared with 49 for the matched MLP and seven for linear. Thus the earlier paper motivates measuring parameter count, but does not establish a parameter saving here. Resource claims must follow the actual architecture rather than the broader quantum model category.
 
-Encoding and trainability offer further context. Schuld, Sweke and Meyer [6] connect accessible function spectra to encoding choices. Perez Salinas and colleagues [7] study repeated data encoding. McClean and colleagues [8] identify barren plateaus for classes of parameterised circuits. These papers suggest hypotheses to investigate; they do not diagnose the cause of this experiment's lower accuracy.
+Schuld Sweke and Meyer 2021 on encoding expressivity [6]
 
-The literature therefore supports a disciplined defence: the quantum head is a testable inductive bias, classical superiority is plausible and a transparent negative or mixed result has scientific value. The report keeps this argument separate from unsupported promises about future hardware.
+This work relates the input dependence of variational quantum models to a Fourier representation and shows that the encoding gates determine accessible frequencies. Repeating suitable encoding operations can enrich that function spectrum. It makes input encoding an explicit design choice rather than a neutral preprocessing step.
+
+The implication for this project is that more variational rotations do not automatically yield the input dependence required by an EEG decision boundary. The implemented circuit encodes the calibrated embedding once. A different encoding or repeated upload is a future hypothesis, not a demonstrated remedy for the observed gap. Perez Salinas et al [7] supply a related repeated encoding construction, while McClean et al [8] establish trainability risks for classes of circuits. Neither result diagnoses the present model's optimisation solely from its accuracy.
+
+These studies justify testing circuit architecture under controls. They do not justify attributing lower ideal simulator accuracy to physical hardware noise or promising that additional qubits must improve performance.
 
 
 <!-- PDF page 7 -->
 
-## Evidence Selection and Experiment Provenance
+## 2.5 Quantum Benchmarking and Generalisation
 
-Several experiment folders exist and should not be pooled as though they were independent replications. The main detailed analysis uses experiment_20261116_143634 because it includes a complete final report, configuration, recording metrics, paired comparisons and activity and noise results [P1]. It is an enhanced configuration with seeds 0, 1 and 2 and five outer folds. This choice is based on completeness and analytical scope, not on selecting the highest quantum score.
+Bowles Ahmed and Schuld 2024 [2]
 
-The earlier full run, experiment_20261116_095358, is retained as an architecture sensitivity check [P4]. Smoke and quick runs are development evidence. They use smaller budgets and should not carry the headline accuracy. A later archive, experiment_20261116_202913, contains 38 model rows covering baseline and waveform augmented models, plus augmentation audit files [P2]. Its final report is absent. Its metrics are still usable as saved secondary evidence, but the archive is not described as fully documented.
+This benchmarking study systematically compares quantum learning models with classical alternatives and reports that conventional classifiers often perform better. It also investigates removing entanglement and finds cases with preserved or improved performance. The relevant contribution is a methodology for asking what a quantum component actually adds, rather than treating a positive score as sufficient evidence of advantage.
 
-The quick augmentation study under outputs_gwst_vqc_ablation uses a different setup and one seed [P3]. Its intended MixUp intervention is assessed independently from waveform augmentation. Mixing these studies would combine different scripts, hyperparameters and computational budgets and would obscure the actual treatment.
+The present work follows that question through matched linear, MLP and RBF SVM heads and no CNOT controls. The observed classical wins and improved no CNOT point estimates are therefore legitimate design findings. The benchmarking paper does not validate the wearable labels, correct duplicate content leakage or demonstrate equivalence between the local models.
 
-All findings in this report come from reading existing artifacts or calculating summaries from them. Hash comparisons, duplicate partition checks, plotting and document generation do not retrain any model. The dataset itself was not present for independent reconstruction of raw waveforms. The archived manifest and reports establish what the previous run recorded, with the limitations described throughout this report.
+Caro et al 2022 [5]
 
-The repository revision inspected is 75b5971. The saved run environments use Python 3.10 and PennyLane 0.42.3. The newly installed workspace environment is different and was not used to generate the experimental scores. Its successful startup checks are not a reproduction of the historical results.
+Caro and colleagues analyse generalisation of variational quantum models trained from limited data. Their bounds connect generalisation behaviour to trainable gates and sample size, under stated assumptions. This provides a theoretical motivation for controlling circuit complexity and measuring how much capacity is actually trained.
 
+The bound is not a certificate for the complete EEG pipeline. The classical encoder contains thousands of parameters, observations are repeated across seeds and identical signals cross partitions. A theorem about a model family cannot replace validation of the independent sampling unit. Huang et al [4] further motivate checking whether classical methods can exploit the available data before claiming a quantum learning separation.
 
-| Evidence | Role |
-| --- | --- |
-| P1 Enhanced complete run | Primary detailed analysis |
-| P2 Waveform augmentation archive | Secondary within run comparison |
-| P3 Quick MixUp pair | Intervention validity audit |
-| P4 Earlier full run | Architecture sensitivity |
+Eight principal papers are surveyed in Sections 2.1 to 2.5: the wearable base paper, the phase space EEG study, the tunable Q entropy study, the multivariate empirical wavelet study, the circuit centric classifier, the encoding expressivity study, the quantum benchmark and the few data generalisation study. Supporting references supply the algorithms and software used in the methodology. The resulting research gap is a controlled assessment of a small simulated VQC on learned wearable EEG embeddings, with explicit disclosure of unfavourable results and data limitations.
 
 
 <!-- PDF page 8 -->
 
-## Dataset Inventory and Activity Imbalance
+## 2.6 Literature Synthesis and Research Gap
 
-The archived audit contains 90 wearable EEG files: 60 healthy and 30 epilepsy labelled recordings. Every file has 10,241 numeric samples rather than the documented 10,240. At 512 Hz the nominal duration is approximately 20 seconds. Filtering all samples and retaining complete five second windows yields four windows per file, 360 windows in total and one unused sample per file [P1].
+The eight principal studies address complementary parts of the research problem. Four EEG papers motivate time frequency analysis, nonlinear features and attention to validation context. Four quantum papers motivate controlled head comparisons, encoding analysis and restrained generalisation claims. Their contributions should be connected through the task they solve rather than arranged as an accuracy leaderboard.
+
+The base paper is the closest application reference because it shares the wearable activity setting. The other EEG studies provide signal processing alternatives under different labels and channels. The quantum studies supply architecture and benchmarking principles rather than direct evidence on this wearable archive. No numerical result from those studies is substituted for a local measurement.
+
+The resulting research gap is whether a compact simulated circuit contributes after a learned EEG representation when strong classical controls receive identical inputs. The present design tests that question using two encoders, several matched heads, a no CNOT ablation and separate fine tuning. Its contribution is the controlled comparison and its limitations, including negative findings, rather than a presumption of quantum superiority.
+
+The broader bibliography contains 30 references. The additional sources document the dataset, filtering, foundational classifiers, sequence architectures, optimisation, regularisation and software. They support reproducibility and methodological explanation; they are not 30 independent validations of the proposed system.
+
+
+| Principal study | Contribution | Connection to this study |
+| --- | --- | --- |
+| Dash et al [1] | Wearable GWST classification | Direct base pipeline |
+| Sharma and Pachori [9] | IMF phase space features | Nonlinear classical control rationale |
+| Bhattacharyya et al [11] | Wavelet multiscale entropy | Frequency resolved complexity |
+| Bhattacharyya and Pachori [12] | Multivariate patient specific EEG | Task and validation distinctions |
+| Schuld et al [3] | Circuit centric learning | Trainable quantum head |
+| Schuld et al [6] | Encoding expressivity | Encoding design constraints |
+| Bowles et al [2] | Quantum benchmarks | Strong baselines and ablations |
+| Caro et al [5] | Generalisation analysis | Complexity and sample limitations |
+
+
+<!-- PDF page 9 -->
+
+## 3 Methodology and Processing Architecture
+
+The architecture has a common signal processing front end and two families of classification branches. A recording audit first identifies labels, activities, lengths and signal hashes. WOSG filtering is applied before complete five second segmentation. GWST magnitudes then support either handcrafted frequency summaries or temporal token learning.
+
+The handcrafted branch forms 450 L1 and entropy values for RF, SVM and MI selected RF. The temporal branch creates 64 tokens, projects 225 frequency values to 32 coordinates and processes them with a Transformer or Bi LSTM. Attention pooling and a bounded bottleneck produce six values for matched classical or quantum heads. The diagram gives the full route; the following pages explain the parameters of each component.
+
+The saved diagram is schematic. Where older diagram text conflicts with enhanced configuration, the enhanced settings prevail: dropout is 0.2 and the VQC uses three variational layers with trainable input calibration. The circuit is simulated rather than executed on quantum hardware.
+
+
+![Figure 1. Complete processing architecture redrawn from the enhanced configuration. Both encoders share head types but learn separate representations.](../../report_work/revision_figures/pipeline.png)
+
+Figure 1. Complete processing architecture redrawn from the enhanced configuration. Both encoders share head types but learn separate representations.
+
+
+<!-- PDF page 10 -->
+
+## 3.1 Dataset Description and Class Coverage
+
+The archived audit contains 90 wearable EEG files: 60 healthy and 30 epilepsy labelled recordings. Every file has 10,241 numeric samples rather than the documented 10,240. At 512 Hz the nominal duration is approximately 20 seconds. Filtering all samples and retaining complete five second windows yields four windows per file, 360 windows in total and one unused sample per file.
 
 The class distribution gives a majority classifier 66.67% accuracy while its balanced accuracy is 50%. This simple reference explains why accuracy alone is inadequate. A model can improve its total accuracy by favouring the healthy class and still miss many epilepsy labelled recordings. Sensitivity, specificity and balanced accuracy therefore accompany all primary claims.
 
@@ -144,6 +181,8 @@ Activity coverage is also asymmetric. Cooking, jumping, standing and watching te
 Participant identifiers are unavailable. Recording counters in file names are not subject identifiers. Consequently the number of unique people, the presence of repeated individuals across partitions and the effective number of independent participants cannot be determined. Ninety recordings must never be described as ninety patients.
 
 The audit also flags quantisation and possible clipping. These observations indicate signal quality constraints but do not by themselves establish a hardware failure or its effect on a specific classifier. The report uses the manifest as an inventory of the archived experiment, rather than as a substitute for a clinically curated dataset.
+
+The source is the public activities of daily livings dataset attributed to Zia and Khan [13]. No raw dataset was acquired for this revision. The inventory is taken from the saved manifest, rather than inferred from the names of the model outputs.
 
 
 | Quantity | Saved value |
@@ -157,209 +196,161 @@ The audit also flags quantisation and possible clipping. These observations indi
 | Participant identifiers | Unavailable |
 
 
-<!-- PDF page 9 -->
-
-## Duplicate Signals and Independence of the Splits
-
-A read only audit of dataset_manifest.csv groups recordings by the archived SHA1 signal hash. H_00_idle_sitting1, H_00_idle_sitting2 and H_00_idle_sitting3 share the same hash. The manifest therefore identifies one group of three identical signal contents. With all other hashes distinct, 90 files represent 88 distinct hashed signal sequences. This is not a count of distinct people [P1, P5].
-
-Joining these identifiers to fold_assignments.csv reveals cross partition placement in 14 of the 15 seed and fold combinations. In nine combinations, the duplicate group includes both training and test recordings. Some combinations also place a duplicate in validation. This confirms that grouping only by file or recording identifier did not prevent all identical content leakage.
-
-The consequence is precise. Windows from a single recording identifier are kept together, but identical waveforms under different identifiers can still occur on opposite sides of a split. All models share this limitation; it does not prove that one classifier received a unique advantage. It does make independence claims and uncertainty estimates more optimistic than a strictly content independent evaluation would justify.
-
-The report retains the saved scores because retraining was explicitly excluded. It does not relabel them as corrected results or subtract an assumed amount of inflation. Removing duplicate test rows after training would not remove contamination from fitting or validation and would not produce a clean retraining free estimate.
-
-A future correction should combine identical hashes into a common group before any splitting, or remove duplicate contents according to a documented rule. Subject identifiers would still be needed for patient independent evaluation. This limitation should be disclosed during the viva before an examiner discovers it; acknowledging a verified boundary is a stronger defence than claiming the protocol is entirely leakage free.
-
-
-| Check | Finding |
-| --- | --- |
-| Identical hash group | Three healthy idle sitting files |
-| Distinct hashed contents | 88 |
-| Cross partition combinations | 14 of 15 |
-| Train and test overlap combinations | 9 of 15 |
-| Numerical correction attempted | None |
-
-
-<!-- PDF page 10 -->
-
-## Wavelet Domain Artefact Filtering
-
-The filtering implementation follows the broad WOSG structure described in the project methodology and motivated by the reference paper. A discrete wavelet transform separates the recording into approximation and detail bands. Savitzky Golay smoothing estimates a low frequency artefact contribution in the approximation band. Subtracting that estimate and reconstructing the signal leaves the detail bands unchanged [1, P1].
-
-The project uses the db4 wavelet, seven levels and symmetric boundary handling. At 512 Hz the level seven approximation primarily covers the lowest frequencies. Candidate SG windows and polynomial orders are selected per recording using an unsupervised proxy objective involving residual low frequency power and preservation of in band correlation. This is a project implementation choice. It is not a verified reconstruction of every parameter in the original WOSG study.
-
-The archived methodology reports a median raw to filtered low frequency power ratio of approximately 61.4. This suggests substantial suppression of the targeted component, but a large ratio does not prove that all removed content was artefact. Low frequency neural information can also be affected. A filter should be judged jointly by signal preservation, task relevance and validation performance.
-
-Filtering the entire recording before non overlapping segmentation avoids an artificial boundary at each five second window. It also means the current preprocessing is offline. Samples later in a recording can influence a reconstructed earlier sample, so a real time application would require a causal design or an explicitly measured buffering delay.
-
-The distinction between signal based parameter adaptation and label based model selection is important. The per recording filter search does not use class labels. Nonetheless, its exact choices, boundary effects and assumptions should be documented, especially when comparing with a published baseline. Replacing it silently with a different filter would alter the experimental question.
-
-
 <!-- PDF page 11 -->
 
-## Gaussian Window Stockwell Representation
+## 3.2 Preprocessing and Motion Artefact Suppression
 
-The Gaussian window Stockwell transform supplies a localised time frequency representation rather than a single spectrum for a complete recording. For this implementation, each five second window contains 2,560 samples. The transform evaluates 225 frequencies from 0.5 to 50 Hz, producing a frequency by time matrix from which both summary features and temporal tokens are derived [P1].
+The WOSG front end follows wavelet decomposition, SG smoothing of the approximation band, artefact subtraction and inverse reconstruction [1,14,16]. The implementation uses db4, seven levels and symmetric boundaries. SG window length and polynomial order are chosen per recording by a label free proxy objective balancing low frequency suppression against in band preservation.
 
-The transform uses frequency dependent Gaussian localisation. Lower frequencies receive broader time support while higher frequencies are more localised. This design is relevant for EEG because oscillatory content can vary within a recording. It does not guarantee separation of healthy and epilepsy classes; its usefulness is an empirical question addressed through downstream models.
+These choices are implementation assumptions. They should not be presented as an exact recovery of every unpublished parameter in the reference method. The saved audit reports substantial low frequency attenuation, but suppression alone does not prove preservation of all informative neural content. Filtering is applied to the complete recording and is therefore an offline operation.
 
-Five seconds at 512 Hz gives a DFT spacing of 0.2 Hz. The chosen 225 voices do not all fall on that grid. The archived implementation evaluates fractional frequency shifts through a shifted DFT rather than silently snapping all voices to bins. Its saved self test compares integer frequency cases against a direct definition and reports a maximum absolute discrepancy of approximately 1.58 times 10 to the power minus 15. A synthetic 10 Hz sinusoid is localised near 10.00 Hz.
+The repository examples below show the raw and filtered signal in both classes. Their amplitudes and visible transients are descriptive examples; they do not establish a diagnostic pattern shared by all recordings.
 
-These numerical checks support internal consistency of the transform routine. They do not validate the clinical labels, prove artefact removal or establish equivalence with every implementation choice in the reference publication. Numerical correctness and clinical validity answer different questions.
 
-The shared transform also helps experimental control: handcrafted and learned branches begin with the same filtered signal representation. A strong learned result therefore reflects the combination of representation and classifier, while a head comparison on frozen embeddings isolates a narrower question about the decision function. This hierarchy should remain visible in the report's conclusions.
+![Figure 2. Saved raw and WOSG filtered examples for healthy and epilepsy labelled recordings. Source: complete enhanced experiment.](../../outputs/experiment_20261116_143634/plots/raw_vs_filtered.png)
 
-In continuous notation, S(tau,f) = integral x(t) g(t-tau,f) exp(-j 2 pi f t) dt, where g(u,f) = |f| exp(-f squared u squared / 2) / sqrt(2 pi). The Gaussian width changes with frequency. The discrete implementation evaluates the corresponding shifted spectrum with its Gaussian frequency kernel. The reported branch uses the magnitude |S|, so it does not retain the complete phase information in the classifier input.
+Figure 2. Saved raw and WOSG filtered examples for healthy and epilepsy labelled recordings. Source: complete enhanced experiment.
 
 
 <!-- PDF page 12 -->
 
-## Handcrafted Features and Classical Baselines
+## 3.3 Gaussian Window Stockwell Transform
 
-For each of the 225 frequency rows, the handcrafted branch computes an L1 magnitude summary and Shannon entropy of a normalised histogram. Concatenation yields a 450 dimensional feature vector. Entropy uses ten equal width bins as the project's interpretation of the reference description. The implementation defines the zero probability contribution as zero [P1].
+The Stockwell representation localises frequency content over time using a frequency dependent Gaussian window [15]. Each complete EEG window contains 2,560 samples. The implementation evaluates 225 voices from 0.5 to 50 Hz, yielding a frequency by time matrix. Lower frequencies have broader temporal support than higher frequencies.
 
-E1 fits a random forest, E2 an SVM and E3 mutual information selected features followed by a random forest. Feature selection and scaling are fitted within the training partition. Validation loss chooses hyperparameters from the saved grids. This matters because choosing features with labels from the complete dataset would leak test information even if the classifier itself were fitted only on training rows.
+In continuous form, S(tau,f) is the integral of x(t) g(t-tau,f) exp(-j 2 pi f t), with g(u,f) = |f| exp(-f squared u squared / 2) / sqrt(2 pi). The project uses magnitude features and does not retain the complete transform phase. Fractional frequency shifts are handled explicitly rather than rounding every voice to a DFT bin.
 
-The enhanced run records 80.37% RF accuracy and 76.11% balanced accuracy. SVM accuracy is 82.22%, but sensitivity is only 58.89%, against specificity of 93.89%. Thus the higher SVM accuracy accompanies poorer recall of epilepsy labelled recordings. Mutual information plus RF yields 75.93% accuracy and 71.67% balanced accuracy, showing that feature reduction did not automatically improve this small dataset.
-
-These models are useful deployment oriented references because they avoid a trainable temporal encoder and quantum simulation. Their input dimension differs from the six dimensional neural embeddings, so comparisons against VQC describe complete pipelines rather than isolated head efficiency. Linear and MLP heads on the same frozen embeddings provide the more direct classifier control.
-
-The saved hyperparameter grids are finite and no claim of an exhaustive classical search is made. Conversely, quantum models should not be excused by assuming that only they suffer from tuning limitations. Both families operate under the recorded protocol and its shared data weaknesses.
-
-For frequency row f, L1(f) = sum over time of |S(f,t)|. Entropy is H(f) = -sum over bins b of p(b) log2 p(b), with zero probability contributions defined as zero. The feature vector concatenates these two 225 value sequences. These summaries discard temporal order; the token branch retains a coarse sequence and asks whether learning from that sequence is useful.
+The saved numerical check gives about 1.58 times 10 to the power minus 15 maximum discrepancy against a direct integer frequency definition. A 10 Hz synthetic sinusoid is localised near 10 Hz. These checks support transform consistency, not clinical classification validity.
 
 
-| Model | Accuracy % | Balanced % | Sensitivity % |
-| --- | --- | --- | --- |
-| E1 | 80.37 | 76.11 | 63.33 |
-| E2 | 82.22 | 76.39 | 58.89 |
-| E3 | 75.93 | 71.67 | 58.89 |
+![Figure 3. Saved healthy example with filtered waveform and GWST magnitude.](../../outputs/experiment_20261116_143634/plots/gwst_healthy.png)
+
+Figure 3. Saved healthy example with filtered waveform and GWST magnitude.
+
+
+![Figure 4. Saved epilepsy labelled example. Frequency structure is illustrative and is not an event annotation.](../../outputs/experiment_20261116_143634/plots/gwst_epilepsy.png)
+
+Figure 4. Saved epilepsy labelled example. Frequency structure is illustrative and is not an event annotation.
 
 
 <!-- PDF page 13 -->
 
-## Temporal Encoders and the Shared Bottleneck
+## 3.4 Handcrafted Features and Baseline Models
 
-The temporal branch converts GWST magnitudes to log(1 plus magnitude divided by a training derived scale). Mean pooling over 40 time samples produces 64 temporal tokens, each containing 225 frequency values. Standardisation uses training statistics. A linear projection maps each token to 32 coordinates before temporal encoding [P1].
+For each frequency row, L1(f) is the sum over time of the GWST magnitude. Shannon entropy is minus the sum of p(b) log2 p(b) over ten equal width histogram bins, with zero probability terms set to zero. Concatenating 225 L1 values and 225 entropy values gives a 450 dimensional vector [1]. Entropy measures also have an established role in the supplied focal EEG study [10], although its task and decomposition differ.
 
-The Transformer has two blocks, four attention heads and a feedforward width of 64. The enhanced configuration specifies dropout 0.2. A separate bidirectional LSTM has 16 hidden units in each direction. Temporal attention pooling summarises either encoder to 32 values. Layer normalisation, a linear projection and a tanh activation produce the shared six dimensional bottleneck.
+Random forest E1 uses an ensemble of decision trees [17]. Its validation grid spans tree counts 100, 300 and 500; minimum leaf sizes 1, 2, 3 and 5; and maximum depths unrestricted, 4, 6 and 10. The ensemble models nonlinear feature interactions without a temporal neural encoder.
 
-The archived parameter inventory gives 25,734 parameters for the Transformer encoder and 14,982 for the Bi LSTM encoder, including projection and embedding layers. These are substantial classical models relative to a seven parameter linear head or a 55 parameter quantum head. Describing the whole hybrid as a tiny quantum model would conceal where most learning capacity resides.
+SVM E2 uses scaled handcrafted inputs with linear or RBF kernels and C in 0.1, 1, 10 and 100 [18]. The kernel compares feature vectors rather than explicitly learning temporal token relationships. MI selected RF E3 first ranks or selects training features, with k in 10, 25, 50, 100, 150 and 225, and then fits RF. Information based estimation motivates the selector [19]; the software implementation is scikit learn [27].
 
-Encoder pretraining uses a classical MLP head. Frozen comparisons then reuse the same learned coordinates for all heads of a given encoder, fold and seed. This is a valuable fairness control because VQC does not receive more input features. It also introduces a limitation: the representation was optimised with a classical pretraining objective, not specifically for the quantum function family.
-
-That limitation is an explanatory hypothesis, not proof that quantum results would improve with another embedding. End to end fine tuning partly addresses adaptation, but it is a different experiment because each head can change the encoder. The report therefore keeps frozen head and fine tuned results separate.
+Scaling, selection and fitting use training data, with validation loss selecting the recorded configuration. These baselines differ from quantum heads in both representation and fitting. They compare complete pipelines. The matched six dimensional heads provide the more specific classifier control.
 
 
-| Stage | Output shape for one window |
-| --- | --- |
-| GWST magnitudes | 225 frequencies by 2560 samples |
-| Pooling and standardisation | 64 tokens by 225 features |
-| Token projection | 64 tokens by 32 features |
-| Attention pooled representation | 32 values |
-| Shared bottleneck | 6 bounded values |
+| Model | Input | Decision function |
+| --- | --- | --- |
+| E1 RF | 450 summaries | Tree ensemble |
+| E2 SVM | 450 scaled summaries | Linear or RBF margin |
+| E3 MI RF | Selected summaries | Feature selection then forest |
+| Temporal heads | 6 learned values | Matched head comparison |
 
 
 <!-- PDF page 14 -->
 
-## Six Qubit Variational Quantum Classifier
+## 3.5 Transformer Encoder Architecture
 
-The enhanced VQC operates on the six dimensional bottleneck. Its implemented forward pass first applies a trainable per coordinate scale and bias and another tanh calibration, then converts the calibrated values to rotation angles. Six RY encoding gates prepare an input dependent state from the all zero state. Three variational layers apply an RY and RZ rotation on every qubit, followed by a six edge circular CNOT pattern [P1].
+A GWST magnitude window is converted to log(1 plus magnitude divided by a0), where a0 is estimated from training windows. Mean pooling over 40 samples yields 64 tokens with 225 frequencies each. Per frequency standardisation uses training statistics. A 225 to 32 linear layer supplies the token width.
+
+The Transformer follows attention based sequence modelling [20], adapted to EEG tokens. Sinusoidal positions identify token order. Two pre normalised blocks each contain four head self attention, a residual connection and a feedforward map 32 to 64 to 32 with GELU. Dropout is 0.2 in the enhanced configuration [26]. Layer normalisation stabilises the token pathway [23].
+
+For each head, attention uses softmax(Q K transpose divided by sqrt(d_k)) V. This allows a token to combine information from other time positions. Final layer normalisation and learned temporal attention pooling yield 32 values. A second normalisation, linear 32 to 6 projection and tanh produce a six dimensional bounded embedding. The encoder has 25,734 parameters including projection and bottleneck.
+
+Encoder pretraining uses a classical MLP objective. Frozen head comparisons subsequently keep this embedding fixed. This ensures common inputs while leaving the possibility that the representation favours the pretraining head.
+
+
+![Figure 5. Enhanced Transformer architecture with explicit tensor sizes and residual block structure.](../../report_work/revision_figures/transformer.png)
+
+Figure 5. Enhanced Transformer architecture with explicit tensor sizes and residual block structure.
+
+
+<!-- PDF page 15 -->
+
+## 3.6 Bidirectional LSTM Encoder Architecture
+
+The Bi LSTM receives the same 64 by 225 standardised token representation and the same 225 to 32 input projection. LSTM gating maintains a state through the token sequence [21]. A bidirectional construction processes both temporal directions [22], so the representation can use context before and after a token within the stored window.
+
+The implementation has one recurrent layer with 16 hidden units per direction. The forward and backward outputs concatenate to 32 values at each of 64 time positions. Dropout 0.2 is applied after the recurrent output, followed by temporal attention pooling. LayerNorm, a 32 to 6 linear map and tanh create the shared bottleneck. The complete encoder has 14,982 parameters.
+
+In the recurrent cell, input, forget and output gates control updates to the memory state. The cell state combines retained previous memory with a gated candidate update; the hidden output uses the output gate and a bounded transformation of that state. This mechanism differs from Transformer self attention, which combines tokens directly rather than propagating a recurrent state.
+
+Both encoders are offline within a complete five second window. Bidirectionality does not support a zero look ahead streaming claim. The two encoders also learn different embeddings, so a cross encoder comparison includes representation differences as well as head behaviour.
+
+
+![Figure 6. Bi LSTM architecture. The two recurrent directions are concatenated before pooling and the six dimensional projection.](../../report_work/revision_figures/bilstm.png)
+
+Figure 6. Bi LSTM architecture. The two recurrent directions are concatenated before pooling and the six dimensional projection.
+
+
+<!-- PDF page 16 -->
+
+## 3.7 Variational Quantum Circuit Architecture
+
+The enhanced VQC operates on the six dimensional bottleneck. Its implemented forward pass first applies a trainable per coordinate scale and bias and another tanh calibration, then converts the calibrated values to rotation angles. Six RY encoding gates prepare an input dependent state from the all zero state. Three variational layers apply an RY and RZ rotation on every qubit, followed by a six edge circular CNOT pattern.
 
 The circuit measures six Pauli Z expectation values. A classical linear layer maps those expectations to one logit, from which the probability is obtained. PennyLane default.qubit performs statevector simulation with backpropagation. There is no physical quantum processor, explicit hardware noise channel or finite shot sampling in the saved configuration.
 
-Parameter accounting requires care. Three layers times six qubits times two rotations gives 36 variational rotation parameters. Input calibration contributes 12 and the final linear readout contributes seven. The archived total of 55 parameters is therefore consistent with the code. Some generated text labels still mention two layers or fixed input angles, and the inventory dictionary key contains 2layers. The saved configuration, actual tensor counts and current implementation support three layers with calibration. The prose labels should not override those artifacts.
+Parameter accounting requires care. Three layers times six qubits times two rotations gives 36 variational rotation parameters. Input calibration contributes 12 and the final linear readout contributes seven. The archived total of 55 parameters is therefore consistent with the code. The enhanced configuration and total parameter count support three layers with calibration; older two layer labels in generated artifacts are superseded here.
 
 Removing CNOT gates defines E12T and E12B. These retain quantum rotations and readout but eliminate the entangling structure. They test the effect of the circuit topology under the recorded setup; they do not establish a useful quantum resource advantage.
 
 A six qubit pure state has 64 complex amplitudes. This is small enough for classical simulation, and the Hilbert space size is not the number of independently accessible features or trainable parameters. Its existence alone does not prove a richer useful decision boundary than the classical controls.
 
-The measured feature is q_i(z) = expectation of Z_i in U(z,theta)|0...0>. The readout probability is sigmoid(w dot q(z) + b). The input z originates from a classical encoder, and both angle calibration and readout are classical trainable operations. This explicit separation prevents assigning all representational learning to the quantum state.
 
+![Figure 7. Corrected enhanced VQC sequence. Six qubits, three variational layers, calibrated angle input and six Pauli Z expectations. No CNOT controls omit the ring only.](../../report_work/revision_figures/vqc.png)
 
-| Component | Trainable parameters |
-| --- | --- |
-| Variational RY and RZ rotations | 36 |
-| Input scale and bias | 12 |
-| Linear readout | 7 |
-| Total VQC head | 55 |
-| Matched MLP head | 49 |
-| Matched linear head | 7 |
-
-
-<!-- PDF page 15 -->
-
-## Training and Validation Protocol
-
-The enhanced experiment uses five outer recording grouped folds repeated for seeds 0, 1 and 2. A validation partition is drawn within the outer training portion. Windows belonging to a recording identifier stay together across train, validation and test roles. Hyperparameter selection, early stopping, standardisation and threshold selection use training or validation recordings, not outer test labels [P1].
-
-For a typical fold with 18 test recordings, the remaining 72 recordings are divided again for training and validation. The exact assignments are saved rather than inferred from window indices. Class weighted learning addresses the 60 to 30 class imbalance. The selected configuration includes AdamW, early stopping, gradient clipping and finite learning rate grids.
-
-The maximum budgets are 120 encoder epochs, 160 head epochs and 120 fine tuning epochs, with separate patience values. A maximum is not the number of epochs actually run. Training_summary.csv records selected fit metadata, including elapsed seconds and best validation loss. These files should be used when describing computational effort instead of multiplying maximum epochs by every model.
-
-Frozen head training uses fixed embeddings after encoder pretraining. Fine tuned models update the representation under a selected head. Validation recording probabilities choose a decision threshold. Test recording probabilities are computed as the mean of their four window probabilities, then compared with that fixed threshold.
-
-Two qualifications are necessary. First, windows are correlated observations, so 360 windows do not provide 360 independent people. Second, grouping by recording identifier failed to group the identical hash contents described on page 9. The protocol prevents ordinary within recording window leakage, but it does not guarantee independent content or independent subjects. This distinction is retained even where generated project reports use stronger wording.
-
-
-<!-- PDF page 16 -->
-
-## Performance Measures and the Decision Threshold
-
-Accuracy is the proportion of correctly classified recordings. Sensitivity is the fraction of epilepsy labelled recordings classified as positive, while specificity is the fraction of healthy recordings classified as negative. Balanced accuracy is their arithmetic mean. In this dataset it gives each class equal influence even though healthy recordings are twice as numerous [P1].
-
-Precision asks how many predicted positive recordings are actually positive. F1 combines precision and sensitivity, while macro F1 averages class specific F1 scores. MCC summarises the four entries of the confusion matrix on a scale from minus one to plus one. No one metric is sufficient to describe all clinically relevant errors.
-
-ROC AUC evaluates score ranking across thresholds, not the chosen binary operating point. A reasonably high AUC can coexist with lower accuracy if probability calibration or a selected threshold produces an unfavourable error tradeoff. PR AUC is sensitive to prevalence and should be interpreted with the 30 of 90 positive class fraction in mind.
-
-The Transformer VQC illustrates this distinction. Its ROC AUC is 0.8919, close to the MLP value of 0.9022, while their balanced accuracies are 78.61% and 81.39%. The scores retain discrimination, but the saved operating point does not recover the best classical performance. This does not prove that another threshold will solve the problem; that threshold would need to be chosen without test label tuning.
-
-A hypothetical always healthy classifier obtains 66.67% accuracy, zero sensitivity and 50% balanced accuracy. This calculation is a reference based on class counts, not a newly trained model. It demonstrates why a defence built only around accuracy would miss the actual value and weakness of the saved predictions.
-
-Using true positive TP, true negative TN, false positive FP and false negative FN counts: accuracy = (TP+TN)/(TP+TN+FP+FN); sensitivity = TP/(TP+FN); specificity = TN/(TN+FP); balanced accuracy = (sensitivity+specificity)/2. Recording probabilities are the mean of four window probabilities. Each seed is scored on its held out recordings before the reported seed average is taken.
-
-
-| Metric | Question answered |
-| --- | --- |
-| Accuracy | How often is the recording label correct? |
-| Balanced accuracy | How well are both classes recognised? |
-| Sensitivity | How many positive recordings are detected? |
-| Specificity | How many healthy recordings are rejected? |
-| ROC AUC | How well do scores rank the classes? |
-| MCC | How strong is the binary association? |
+Figure 7. Corrected enhanced VQC sequence. Six qubits, three variational layers, calibrated angle input and six Pauli Z expectations. No CNOT controls omit the ring only.
 
 
 <!-- PDF page 17 -->
 
-## Uncertainty and Paired Statistical Comparisons
+## 3.8 Classical Heads Fine Tuning and Augmentation
 
-The primary recording_metrics.csv pools held out recordings within each seed and then summarises seed level metrics. Bootstrap intervals resample recordings while applying the same resample across models and seeds. The paired comparison table reports model A minus model B, which is more informative about their difference than comparing two separate confidence intervals [P1].
+The linear head computes one logit from six embedding values and has seven parameters. The MLP applies Linear 6 to 6, tanh and Linear 6 to 1, with 49 parameters. The RBF SVM uses the same embedding with C in 0.1, 1, 10 and 100 and gamma in scale, 0.01, 0.1, 1 and 10. The VQC has 55 parameters including 12 input calibration values and seven readout values. E4 to E7 use Transformer embeddings; E8 to E11 use Bi LSTM embeddings. E12T and E12B remove the CNOT ring.
 
-For Transformer VQC minus MLP, the balanced accuracy difference is minus 2.78 percentage points. The archived paired interval includes zero. This means the stored analysis does not resolve the direction with conventional confidence; it does not establish equal performance, noninferiority or clinical interchangeability. Equivalence would require a justified margin and a dedicated analysis established independently of the observed difference.
+Frozen fitting changes only the selected head. Fine tuned variants update encoder and head jointly. The saved optimiser is AdamW [24], an adaptive moment method with decoupled weight decay; Adam supplies the underlying moment adaptation [25]. Maximum budgets are 120 encoder, 160 head and 120 fine tuning epochs with early stopping. Models are implemented using PyTorch [28], scikit learn [27] and PennyLane [29]. No fits are repeated for this revision.
 
-The output also contains exact McNemar tests by seed. These use discordant correct and incorrect predictions and address a binary accuracy comparison. They do not directly test balanced accuracy differences. Several exploratory model comparisons are reported without multiplicity correction, so isolated nominal significance must be treated cautiously.
+The later archive also compares unaugmented and waveform augmented training. Positive class windows receive small amplitude, noise, drift and shift perturbations. The quick study instead intends MixUp [30], which forms convex combinations of inputs and labels. Source inspection shows no active MixUp application in the recorded base script, so those identical quick outputs do not establish augmentation efficacy. This differs from the waveform archive with logged generated samples and changed results.
 
-Fifteen seed and fold scores are not fifteen independent datasets. Folds share training observations and the same recordings recur across seeds. Seed repetition quantifies some optimisation and partition sensitivity; it does not create new patients. Fold standard deviation should not be described as a confidence interval or divided by the square root of fifteen without considering dependence.
-
-Finally, bootstrap resampling assumes an appropriate observational unit. Duplicate contents and unknown participant clustering challenge the recording independence assumption. The intervals in this report are the saved intervals under the archived method, not fully validated uncertainty bounds for a target patient population. Statistical transparency requires stating both the calculation and the assumptions it cannot verify.
-
-For scale, the saved individual balanced accuracy intervals are 71.95% to 85.65% for Transformer VQC and 73.89% to 88.17% for Transformer MLP. Their overlap is not a comparison test. The paired difference interval, minus 6.82 to plus 1.80 percentage points, is the relevant saved contrast.
+The circuit can be differentiated through the simulation, but nonzero gradient checks do not demonstrate a superior optimum. Neither head size nor successful optimisation is sufficient to establish a predictive or computational advantage.
 
 
-| Statement | Supported interpretation |
-| --- | --- |
-| Interval includes zero | Direction remains uncertain |
-| No significant difference | Not proof of equivalence |
-| Three seeds | Repeated use of the same dataset |
-| Recording bootstrap | Conditional on recording unit assumptions |
+| Model family | Training changes | Interpretation |
+| --- | --- | --- |
+| Frozen heads | Head only | Same representation control |
+| Fine tuned heads | Encoder and head | Adapted complete pipeline |
+| Waveform AUG models | Training signals | Within archive intervention |
+| Quick MixUp labels | No active path shown | Inconclusive intervention |
 
 
 <!-- PDF page 18 -->
 
-## Primary Recording Level Results
+## 3.9 Evaluation Protocol and Data Integrity
 
-Table 1 summarises frozen encoder heads and handcrafted baselines from the complete enhanced experiment. Values are pooled recording level metrics averaged over three seeds. Accuracy and balanced accuracy are percentages. The quantum rows are E7 and E11; E12T and E12B remove CNOT gates. Every neural head comparison is tied to its encoder family [P1].
+The main complete enhanced run uses three seeds and five outer recording grouped folds. Training data determine feature scales, encoder parameters and feature selection. Validation determines hyperparameters, early stopping and thresholds. Test windows are aggregated to a mean probability per recording, then classified using the fixed validation threshold. Three seed averages are summaries of repeated use of the same dataset, not independent new cohorts.
+
+Accuracy, balanced accuracy, sensitivity, specificity, macro F1, ROC AUC and MCC are reported. Balanced accuracy is the mean of sensitivity and specificity. The primary table pools held out recordings within each seed, then averages seed metrics. Paired bootstrap intervals resample the same recording indices across heads; fold variability is a separate summary. An interval containing zero is not proof of equivalence.
+
+A content audit identifies three healthy idle sitting files with the same signal hash. Their group crosses partitions in 14 of 15 seed and fold combinations and includes both train and test in nine. Thus recording ID grouping prevents ordinary within file window leakage, but not all identical content leakage. Ninety files represent 88 distinct hashed sequences, not 90 verified participants. Participant identifiers are unavailable.
+
+The shared activity subset has 77 files. Four other activities are healthy only, creating class correlated activity coverage. Shared activity metrics restrict the saved test predictions; they do not retrain a separate 77 file model. All results remain descriptive of the archived protocol, with these limitations applying equally to classical and quantum rows.
+
+Evidence paths are retained in the editable source and figure manifest. The complete enhanced run is outputs/experiment_20261116_143634; the separate waveform archive is outputs/experiment_20261116_202913. Quick MixUp runs reside under outputs_gwst_vqc_ablation. This separation is maintained in every comparison.
+
+
+<!-- PDF page 19 -->
+
+## 4 Results and Discussion
+
+Table 1 summarises frozen encoder heads and handcrafted baselines from the complete enhanced experiment. Values are pooled recording level metrics averaged over three seeds. Accuracy and balanced accuracy are percentages. The quantum rows are E7 and E11; E12T and E12B remove CNOT gates. Every neural head comparison is tied to its encoder family.
 
 Transformer linear and MLP heads share the highest frozen balanced accuracy point estimate at 81.39%. The MLP gives the highest frozen accuracy at 83.70%. Transformer VQC gives 81.11% accuracy and 78.61% balanced accuracy. These values demonstrate a functioning classifier, but the strongest classical controls remain ahead.
 
@@ -385,51 +376,53 @@ These results should be described as the archived performance of this protocol. 
 | E12B | 78.89 | 76.94 | 71.11 | 82.78 | 0.8996 |
 
 
-<!-- PDF page 19 -->
-
-## Transformer Heads and the Quantum Accuracy Gap
-
-The Transformer controls answer the most direct question in the report: what changes when the six dimensional representation is held fixed and only the decision head changes? MLP accuracy is 83.70% compared with 81.11% for VQC, a gap of 2.59 percentage points. Balanced accuracy differs by 2.78 points in favour of the MLP [P1].
-
-The RBF SVM provides a useful contrast. It reaches 81.85% accuracy and 78.06% balanced accuracy. VQC has slightly lower accuracy but slightly higher balanced accuracy, 78.61%. Its sensitivity is 71.11% rather than 66.67%, while specificity is 86.11% rather than 89.44%. This is a tradeoff, not universal quantum superiority.
-
-The ranking does not support claiming that a nonlinear quantum circuit is automatically preferable to a simple classifier. The seven parameter linear head obtains 83.33% accuracy and 81.39% balanced accuracy. Much of the class separation may already be available in the learned embedding, leaving little room for a more elaborate head.
-
-The primary defence should acknowledge the best matched baseline and then explain the research value of the controlled comparison. The circuit is competitive with one control on balanced accuracy and weaker than others. Its practical utility must also account for resource cost, stability and independent validation. No result here establishes a deployment advantage.
-
-
-Figure values: Linear: 81.39, MLP: 81.39, RBF SVM: 78.06, VQC: 78.61, No CNOT: 81.11
-
-
 <!-- PDF page 20 -->
 
-## Bi LSTM Heads and Class Specific Errors
+## 4.1 Handcrafted Model Results
 
-The Bi LSTM results show a larger gap between VQC and the simplest matched control. The linear head reaches 81.11% accuracy and 79.44% balanced accuracy, whereas VQC reaches 75.93% and 75.56%. The balanced accuracy difference is minus 3.89 percentage points for VQC relative to linear [P1].
+The following model panels report five recording metrics for every handcrafted baseline. All values are taken from the complete enhanced run and averaged across three seeds. The bars use a common zero to 100 percent scale; they are not new evaluations.
 
-The source of this gap is not a sensitivity collapse. Both models have sensitivity 74.44%. Specificity falls from 84.44% for linear to 76.67% for VQC. Thus more healthy recordings receive positive labels under the saved VQC operating points. This distinction matters during a viva: saying that the quantum model misses more epilepsy cases would misdescribe this particular comparison.
-
-The Bi LSTM RBF SVM obtains 80.37% accuracy, 78.33% balanced accuracy and 72.22% sensitivity. VQC sensitivity is slightly higher but its total and balanced accuracy remain lower. The no CNOT circuit improves balanced accuracy to 76.94%, still below the linear control.
-
-These findings indicate that quantum head behaviour depends on the encoder rather than being an intrinsic fixed property of the classifier. They also caution against using only the Transformer result to describe the whole study. A transparent report presents both families and identifies which component changes between them.
-
-The saved paired interval for VQC minus linear includes zero but extends further into negative values. This is uncertainty around a negative point estimate, not evidence that the two methods are equivalent. The small dataset cannot settle the expected gap on new participants.
+RF reaches 80.37% accuracy and 76.11% balanced accuracy. SVM has higher accuracy at 82.22%, but sensitivity is only 58.89%. MI selected RF is weaker on balanced accuracy at 71.67%. These differences show why a single accuracy ranking hides important class specific errors. They also establish a meaningful classical starting point before the learned embeddings are considered.
 
 
-| Bi LSTM head | Sensitivity % | Specificity % | Balanced % |
-| --- | --- | --- | --- |
-| Linear | 74.44 | 84.44 | 79.44 |
-| MLP | 71.11 | 83.89 | 77.50 |
-| RBF SVM | 72.22 | 84.44 | 78.33 |
-| VQC | 74.44 | 76.67 | 75.56 |
-| VQC without CNOT | 71.11 | 82.78 | 76.94 |
+![Figure 8. Individual model panels for E1 RF, E2 SVM and E3 MI selected RF. Metrics are accuracy, balanced accuracy, sensitivity, specificity and macro F1.](../../report_work/revision_figures/handcrafted_metrics.png)
+
+Figure 8. Individual model panels for E1 RF, E2 SVM and E3 MI selected RF. Metrics are accuracy, balanced accuracy, sensitivity, specificity and macro F1.
 
 
 <!-- PDF page 21 -->
 
-## Does Entanglement Help in the Saved Experiment
+## 4.2 Transformer Model Results
 
-The no CNOT ablation improves the Transformer balanced accuracy point estimate from 78.61% to 81.11%, a gain of 2.50 percentage points. Accuracy increases from 81.11% to 82.59%. For Bi LSTM, balanced accuracy increases from 75.56% to 76.94% and accuracy from 75.93% to 78.89% [P1].
+All Transformer head variants receive the same frozen six dimensional representation within each fold and seed. Linear and MLP balanced accuracy is 81.39%; VQC achieves 78.61%. The VQC accuracy gap relative to MLP is 2.59 percentage points, while its balanced accuracy is 0.56 points above RBF SVM.
+
+The strongest classical control must remain in the discussion. Comparing VQC only against a weaker baseline would exaggerate benefit. The no CNOT circuit improves the circuit point estimate, so the entangling ring is not the demonstrated source of the best performance.
+
+
+![Figure 9. Model specific panels for E4 linear, E5 MLP, E6 RBF SVM, E7 VQC and E12T no CNOT. Same axes and three seed recording metrics.](../../report_work/revision_figures/transformer_metrics.png)
+
+Figure 9. Model specific panels for E4 linear, E5 MLP, E6 RBF SVM, E7 VQC and E12T no CNOT. Same axes and three seed recording metrics.
+
+
+<!-- PDF page 22 -->
+
+## 4.3 Bi LSTM Model Results
+
+Bi LSTM VQC obtains 75.93% accuracy and 75.56% balanced accuracy. Its sensitivity equals the Bi LSTM linear head at 74.44%, but specificity falls from 84.44% to 76.67%. The lower quantum result in this comparison is therefore driven by more false positive healthy classifications rather than lower positive class recall.
+
+The Bi LSTM MLP and RBF SVM also exceed VQC on balanced accuracy. The no CNOT version improves the quantum point estimate but remains below linear. These findings show that the outcome depends on the encoder and should not be generalised from the Transformer branch alone.
+
+
+![Figure 10. Model specific panels for E8 linear, E9 MLP, E10 RBF SVM, E11 VQC and E12B no CNOT. Data: complete enhanced archive.](../../report_work/revision_figures/bilstm_metrics.png)
+
+Figure 10. Model specific panels for E8 linear, E9 MLP, E10 RBF SVM, E11 VQC and E12B no CNOT. Data: complete enhanced archive.
+
+
+<!-- PDF page 23 -->
+
+## 4.4 Entanglement Ablation
+
+The no CNOT ablation improves the Transformer balanced accuracy point estimate from 78.61% to 81.11%, a gain of 2.50 percentage points. Accuracy increases from 81.11% to 82.59%. For Bi LSTM, balanced accuracy increases from 75.56% to 76.94% and accuracy from 75.93% to 78.89%.
 
 The saved paired comparison for Transformer entangled VQC minus no CNOT spans zero. The Bi LSTM comparison does as well. Therefore the result supports a descriptive statement about point estimates, not a general law that entanglement harms EEG classification. It does clearly undermine a claim that the entangling ring is the demonstrated source of the method's success.
 
@@ -443,292 +436,250 @@ The most defensible conclusion is that entanglement is unnecessary for the best 
 Figure values: T VQC: 78.61, T no CNOT: 81.11, B VQC: 75.56, B no CNOT: 76.94
 
 
-<!-- PDF page 22 -->
-
-## End to End Fine Tuning
-
-Fine tuning changes the embedding and head jointly, so it is analysed separately from frozen comparisons. Transformer VQC accuracy rises from 81.11% in the frozen case to 82.96% after fine tuning. Balanced accuracy increases from 78.61% to 79.72%. ROC AUC reaches approximately 0.9030 [P1].
-
-The fine tuned Transformer MLP still has a higher balanced accuracy point estimate of 81.67% and accuracy of 84.44%. Transformer linear gives 80.83% balanced accuracy. The VQC improvement therefore does not close the complete gap to the strongest classical head under the recorded protocol.
-
-For Bi LSTM, fine tuned VQC balanced accuracy is 78.06%, equal to the fine tuned linear point estimate and below the fine tuned MLP at 79.17%. Frozen Bi LSTM VQC had 75.56% balanced accuracy. Adaptation helps that quantum branch in this experiment, but it also changes the conditions of comparison.
-
-These differences cannot be assigned exclusively to quantum learning. A trainable encoder can move its representation toward the selected head's preferred function family. Its additional optimisation opportunities are shared by the classical fine tuned controls, which must be retained when evaluating benefit.
-
-The paired intervals for fine tuned comparisons do not establish a VQC advantage. The appropriate interpretation is modest: end to end adaptation reduces some of the observed performance loss and confirms that gradients can support joint optimisation. It does not demonstrate better data efficiency, lower compute cost or superior generalisation on new participants. The saved gradient checks support differentiability, while the predictive scores address a separate question.
-
-
-| Fine tuned model | Accuracy % | Balanced % | AUC |
-| --- | --- | --- | --- |
-| FT-T-lin | 83.70 | 80.83 | 0.9033 |
-| FT-T-mlp | 84.44 | 81.67 | 0.8952 |
-| FT-T-vqc | 82.96 | 79.72 | 0.9030 |
-| FT-B-lin | 80.00 | 78.06 | 0.8974 |
-| FT-B-mlp | 79.63 | 79.17 | 0.8978 |
-| FT-B-vqc | 79.63 | 78.06 | 0.8978 |
-
-
-<!-- PDF page 23 -->
-
-## Sensitivity Across Archived Configurations
-
-The earlier full run gives Transformer VQC 77.41% accuracy and 76.11% balanced accuracy. The enhanced complete run gives 81.11% and 78.61%. Bi LSTM VQC balanced accuracy changes from 74.72% to 75.56% [P1, P4]. These shifts indicate sensitivity to architecture and training configuration on the same underlying dataset.
-
-The enhanced implementation includes a deeper circuit, input calibration and broader optimisation choices. Several changes occur together, so the improvement cannot be attributed to circuit depth alone. The earlier and enhanced runs are not a controlled single factor ablation. They also do not supply independent external test cohorts.
-
-The later waveform augmentation archive has its own unaugmented baseline. Its Transformer VQC balanced accuracy is 78.06%, not 78.61%, and its Bi LSTM VQC balanced accuracy is 77.50%, not 75.56% [P2]. An augmentation effect must therefore be calculated against that archive's own baseline. Subtracting the earlier complete run from an augmented model would combine treatment effects with run differences.
-
-These details are important for avoiding accidental best result selection. The report specifies which experiment supports each sentence and does not average all folders into a single headline. A folder with a later timestamp is not automatically more authoritative when its final report is missing.
-
-The observed variability also limits mechanistic explanations. A lower quantum result can reflect representation, optimiser, threshold and finite sample interactions. The saved artifacts identify performance changes but do not isolate their causal contribution. A rigorous defence describes these as plausible factors and points to the controls that would be needed to distinguish them.
-
-
-| Run | Transformer VQC balanced % | Bi LSTM VQC balanced % |
-| --- | --- | --- |
-| Earlier full | 76.11 | 74.72 |
-| Enhanced complete | 78.61 | 75.56 |
-| Later baseline | 78.06 | 77.50 |
-| Later waveform augmented | 79.44 | 82.50 |
-
-
 <!-- PDF page 24 -->
 
-## Activities Shared by Both Classes
+## 4.5 Fine Tuned Model Results
 
-The paired activity analysis excludes activities represented only in healthy recordings. It retains 77 files across desk work, idle sitting, jogging, laying, running, sitting, stairs and walking. This is a useful sensitivity analysis for class correlated activity coverage, but it is not a replacement for participant independent testing [P1].
+Fine tuning allows the representation to adapt to its head and is a separate experiment from frozen comparison. Transformer VQC reaches 82.96% accuracy and 79.72% balanced accuracy, improving over its frozen values. Transformer MLP still has a higher balanced accuracy point estimate of 81.67% and accuracy of 84.44%.
 
-Transformer VQC balanced accuracy falls from 78.61% on all recordings to approximately 77.40% in the paired activity subset. The Transformer MLP remains higher at about 80.11%. Bi LSTM VQC falls to approximately 73.04%, while its linear control is about 77.65%. The broader ranking therefore does not disappear when healthy only activities are removed.
-
-The restricted analysis helps distinguish two questions. The all activity estimate describes the archive as supplied. The paired subset reduces one obvious activity and class imbalance, but keeps the same unknown participant structure and duplicate idle sitting signals. It does not establish that every retained activity is equally represented or free from nuisance differences.
-
-The subset metrics come from restricting existing out of fold predictions. They do not retrain models using only the 77 files. Models may have learned from healthy only activities in their training partitions. The analysis therefore tests performance on a restricted test population under the original training procedure, not a fully redesigned balanced activity study.
-
-Per activity estimates also contain few observations. A perfect score on a healthy only activity is a specificity observation, not evidence that epilepsy cases from that activity would be detected. This distinction should remain visible whenever activity charts are used in the presentation.
+Bi LSTM VQC reaches 78.06% balanced accuracy, equal to the fine tuned linear point estimate and below MLP at 79.17%. These improvements support studying encoder and head compatibility, but do not establish a quantum advantage. The six panels below include every fine tuned model in the complete archive.
 
 
-| Population | Interpretation |
-| --- | --- |
-| All 90 files | Original archive distribution |
-| 77 shared activity files | Restricted test subset of saved predictions |
-| Healthy only activity | Cannot estimate within activity sensitivity |
-| All subsets | Unknown participant independence remains |
+![Figure 11. Individual panels for all six fine tuned models. Encoder adaptation is included, so these results should not be presented as isolated head effects.](../../report_work/revision_figures/finetuned_metrics.png)
+
+Figure 11. Individual panels for all six fine tuned models. Encoder adaptation is included, so these results should not be presented as isolated head effects.
 
 
 <!-- PDF page 25 -->
 
-## Transfer to an Unseen Activity
+## 4.6 Saved Global Model Comparison
 
-Leave one activity out evaluation trains on other eligible activities and tests on a held out activity. Validation is selected from the training activities. This is a more demanding shift than ordinary recording grouped cross validation, because the model must generalise beyond the activity conditions used for fitting [P1].
+The original repository figures summarise all 13 frozen or classical models and all six fine tuned models. The x axis is recording balanced accuracy, with archived 95% bootstrap whiskers. These are the complete enhanced experiment figures, included without changing their numerical content.
 
-The archived enhanced results vary sharply. Transformer VQC balanced accuracy is 90.00% for held out walking but approximately 38.89% for held out sitting and 45.56% for running. Bi LSTM VQC reaches 83.33% for jogging and about 33.33% for laying. These are descriptive means across seeds with tiny activity specific samples.
-
-This heterogeneity is stronger evidence of a deployment boundary than a single pooled accuracy. The model is not uniformly activity robust. A high walking result cannot compensate for poor generalisation under another condition if an intended application must operate reliably across both.
-
-No quantum superiority follows from isolated activity wins. Classical controls also fluctuate. The held out task changes class composition, sample size and nuisance structure; one activity may contain only a few epilepsy recordings. Accuracy increments can therefore be large when one prediction changes.
-
-The report recommends presenting the full range and the per activity counts beside any selected examples. These tests assess transfer across labelled activity categories in the same archive, not transfer across sensors, hospitals or new participants. Missing participant identifiers and duplicate content remain unresolved even in an activity held out design.
+Uncertainty overlaps across several heads. The paired Transformer VQC minus MLP difference is minus 2.78 percentage points with interval minus 6.82 to plus 1.80. That contrast does not establish superiority or equivalence. Duplicate content and unknown participant clustering also limit the independence assumptions behind the saved intervals.
 
 
-Figure values: Desk work: 67.46, Idle sitting: 66.67, Jogging: 75.00, Laying: 50.00, Running: 45.56, Sitting: 38.89, Stairs: 72.22, Walking: 90.00
+![Figure 12. Original saved frozen and classical comparison with recording bootstrap intervals.](../../outputs/experiment_20261116_143634/plots/model_comparison.png)
+
+Figure 12. Original saved frozen and classical comparison with recording bootstrap intervals.
+
+
+![Figure 13. Original saved comparison of the six fine tuned models. These are three seed summaries, not a separate dataset.](../../outputs/experiment_20261116_143634/plots/model_comparison_finetuned.png)
+
+Figure 13. Original saved comparison of the six fine tuned models. These are three seed summaries, not a separate dataset.
 
 
 <!-- PDF page 26 -->
 
-## Synthetic Corruption Robustness
+## 4.7 ROC Curves and Ranking Performance
 
-The saved noise study perturbs test recordings with Gaussian noise, low frequency drift, EMG like corruption and ocular like corruption at several signal to noise ratios. The models and preprocessing statistics remain fixed. This tests sensitivity to a controlled signal change rather than benefiting from refitting on a corrupted test set [P1].
+ROC curves compare score ranking over possible thresholds. The saved figure below uses seed zero pooled outer test recordings. It must not be mistaken for the three seed mean AUC in the primary table. Both panels include classical baselines and the matched heads of one encoder family.
 
-Synthetic EMG like and ocular like signals are proxies. They are not measured muscle or eye artefacts from an independent acquisition. The experiment therefore cannot establish tolerance to natural movement contamination or prove clinical robustness. Its value is a reproducible stress test with an explicit corruption generator and amplitude reference.
+The three seed Transformer VQC ROC AUC is 0.8919 compared with 0.9022 for MLP. Similar ranking quality can coexist with different binary accuracy because thresholds and calibration affect the operating point. Test labels must not be used to choose a more favourable threshold after observing these curves.
 
-An important technical point is that SNR is referenced to the raw signal in the saved configuration. Subsequent WOSG filtering can attenuate some injected components. The nominal input SNR is not necessarily the SNR of the transformed features. A small measured degradation may reflect filtering and the corruption spectrum, not intrinsic robustness of the quantum head.
 
-The chart reports average changes at the lowest tested SNR across the four corruption types for selected frozen heads. Averaging is a compact summary, not a claim that all corruptions have the same effect. Positive changes can occur through threshold effects or sampling variability and should not be interpreted as evidence that noise improves a medical system.
+![Figure 14. Original seed zero ROC curves for Transformer and Bi LSTM branches.](../../outputs/experiment_20261116_143634/plots/roc_curves.png)
 
-To defend a robustness claim, compare matched classical and quantum heads under the same corruption, use the clean operating threshold and report both sensitivity and specificity. The stored study is exploratory and shares the independence limitations of the clean evaluation. It supplies evidence about these defined perturbations, not a general reason to deploy the quantum branch.
+Figure 14. Original seed zero ROC curves for Transformer and Bi LSTM branches.
 
-At 5 dB, averaging the four corruption types at recording level gives Transformer VQC balanced accuracy of 66.88%, down 11.74 points from clean. Transformer MLP falls to 68.33%, down 13.06 points. Bi LSTM VQC reaches 66.18%, down 9.38 points. A smaller drop from a weaker clean starting point is not evidence of better absolute robustness. All three remain substantially below their clean performance.
+
+![Figure 15. Original seed zero recording probabilities for selected classical and quantum models. Scores are diagnostic displays, not three seed aggregate predictions.](../../outputs/experiment_20261116_143634/plots/recording_level_results.png)
+
+Figure 15. Original seed zero recording probabilities for selected classical and quantum models. Scores are diagnostic displays, not three seed aggregate predictions.
 
 
 <!-- PDF page 27 -->
 
-## Why the Quick MixUp Comparison Is Inconclusive
+## 4.8 Recording Confusion Matrices
 
-The quick comparison is labelled without augmentation at alpha zero and with MixUp at alpha 0.15. It uses one seed and five recording grouped folds. Its saved recording_metrics.csv, summary_metrics.csv, fold_metrics.csv, paired_model_comparisons.csv and activity metrics are byte identical between conditions [P3, P5].
+The recording confusion matrix grid provides an error count view for every frozen or handcrafted model. It is the saved seed zero result pooled over outer test folds. Each matrix contains 60 healthy and 30 epilepsy labelled test recordings. Rows are true labels and columns are predicted labels.
 
-Inspection of hybrid_quantum_eeg_epilepsy.py finds no MixUp application in its training routine. The augmentation driver records that base script as the pipeline used. The MixUp setting therefore has no demonstrated active effect in this code path. Different timings or a changed configuration label do not establish that synthetic mixtures reached the optimiser.
+Comparing the false positive and false negative cells reveals why total accuracy and balanced accuracy can favour different models. A classifier with high specificity may lose sensitivity under the class imbalance. The grid is not a new confusion matrix built by pooling three repetitions of each recording.
 
-The observed equality must not be presented as proof that augmentation is useless or that the model is insensitive to MixUp. It is evidence that this particular intervention comparison does not demonstrate an effective treatment. The stronger wording, supported by the visible code, is that the intended setting appears inactive in the archived pipeline.
-
-This issue differs from the later waveform augmentation study, which has generated sample counts and changed model outputs. The two experiments should be named separately throughout the report and presentation. Calling both simply augmentation would allow an invalid result to obscure a potentially informative one.
-
-No correction or rerun was attempted. The existing quick scores can still describe the quick baseline, but the difference between conditions should be withheld as evidence about MixUp efficacy. This is a substantive methodological finding from the result review and a useful example of why configuration files must be checked against executable behaviour.
+The scalar metrics in Table 1 are three seed means, so a count from one matrix need not equal the count implied by rounding a mean percentage. The distinction is retained to avoid treating repeated seeds as independent patients.
 
 
-| Artifact or check | Observed result |
-| --- | --- |
-| Recording metric file hashes | Identical |
-| Fold metric file hashes | Identical |
-| Activity metric file hashes | Identical |
-| Base script MixUp application | Not present |
-| Inference about MixUp benefit | Not supported by this comparison |
+![Figure 16. Original recording confusion matrices for all 13 frozen or handcrafted models at seed zero. The archive labels the pooled folds and validation selected threshold.](../../outputs/experiment_20261116_143634/plots/confusion_matrix.png)
+
+Figure 16. Original recording confusion matrices for all 13 frozen or handcrafted models at seed zero. The archive labels the pooled folds and validation selected threshold.
 
 
 <!-- PDF page 28 -->
 
-## Waveform Augmentation in the Later Archive
+## 4.9 Window Confusion Matrices
 
-The later archive contains baseline and AUG prefixed models generated with a distinct waveform augmentation procedure. Its configuration specifies moderate perturbations of epilepsy training windows, including amplitude changes, small Gaussian noise, slow drift and sample shifts. The generation audit records two additional synthetic windows per source positive training window; one example fold reports 72 source epilepsy windows and 144 generated windows [P2].
+The window confusion grid uses the same saved seed zero experiment at a different observational level. Each matrix covers 360 windows, with four windows belonging to each recording. These are correlated segments and cannot be counted as 360 independent participants.
 
-The most favourable quantum change is Bi LSTM VQC: balanced accuracy rises from 77.50% to 82.50%, sensitivity from 73.33% to 84.44%, and accuracy from 78.89% to 81.85%. Specificity changes from 81.67% to 80.56%. The gain is mainly a shift toward detecting more positive recordings, with a small specificity cost.
+Recording aggregation can improve the final decision by averaging imperfect window probabilities. Consequently, window and recording accuracy are related but are not interchangeable endpoints. The report treats recording balanced accuracy as primary and the window plots as diagnostics of how predictions vary within a recording.
 
-Transformer VQC shows a smaller balanced accuracy rise from 78.06% to 79.44%. Its sensitivity increases from 75.56% to 80.00%, while specificity falls from 80.56% to 78.89%. This demonstrates why augmentation should be interpreted through class specific errors rather than treated as an automatic accuracy improvement.
-
-The augmented Bi LSTM linear head gives 81.11% balanced accuracy, so augmented VQC has a 1.39 point higher estimate against that control within this archive. This is a promising descriptive comparison. The aggregate augmentation summary does not provide a dedicated paired confidence interval for each treatment effect, and the archive lacks its final narrative report. The result therefore does not establish superiority or erase the duplicate leakage issue.
-
-Because only the positive class is augmented, the treatment also changes the effective class exposure. Improved sensitivity could result from this reweighting as well as from useful waveform invariance. A later causal ablation would separate those effects; no new training was performed here.
+A stronger clinical evaluation would require a task definition with event annotations or patient outcomes. The current window labels inherit the recording class and are not independently verified seizure onset annotations.
 
 
-| Model and condition | Accuracy % | Balanced % | Sensitivity % |
-| --- | --- | --- | --- |
-| E7 | 78.89 | 78.06 | 75.56 |
-| AUG_E7 | 79.26 | 79.44 | 80.00 |
-| E11 | 78.89 | 77.50 | 73.33 |
-| AUG_E11 | 81.85 | 82.50 | 84.44 |
-| AUG_E8 | 81.48 | 81.11 | 80.00 |
+![Figure 17. Original seed zero window level confusion matrices for all 13 frozen or handcrafted models. These plots are secondary to recording level evaluation.](../../outputs/experiment_20261116_143634/plots/confusion_matrix_window.png)
+
+Figure 17. Original seed zero window level confusion matrices for all 13 frozen or handcrafted models. These plots are secondary to recording level evaluation.
 
 
 <!-- PDF page 29 -->
 
-## Resource Cost and Parameter Efficiency
+## 4.10 Encoder Training Curves
 
-A small quantum head is not automatically more parameter efficient than a matched classical head. The enhanced VQC has 55 parameters, the MLP has 49 and the linear head has seven. Adding the same 25,734 parameter Transformer encoder gives total sizes of 25,789, 25,783 and 25,741 respectively. The quantum branch is not smaller than these controls [P1, P5].
+The repository stores encoder pretraining loss curves and validation balanced accuracy traces. Each encoder figure summarises 15 runs from three seeds and five folds. These are historical curves: the revision did not restart training or extend any epoch budget.
 
-The source of the 55 parameters is 36 circuit rotations, 12 input calibration values and seven readout values. Reporting only the rotations would omit trainable classical components. Comparing those 36 values against the entire neural encoder would mix head and pipeline accounting.
+Training loss generally declines more consistently than validation loss. A separation between them is compatible with finite sample overfitting or model selection variability, but the plots alone do not identify the cause of the VQC gap. The curves describe encoder pretraining, not a separate per head training trajectory for every downstream classifier.
 
-The archived selected fit timing also favours classical heads. Mean selected head fit time is approximately 19.86 seconds for Transformer VQC versus 0.41 seconds for MLP and 0.32 seconds for linear. Bi LSTM VQC is about 18.91 seconds versus 0.38 seconds for its MLP. These are descriptive timings from stored training rows, not end to end latency benchmarks.
-
-The environment uses GPU acceleration for classical neural computation while the VQC statevector simulation executes on CPU. Timings include implementation and device effects and do not predict performance on future quantum hardware. They nevertheless provide no measured speedup in this project. They also exclude a complete accounting of search, feature extraction, data transfer and deployment inference.
-
-Published resource savings in a different quantum architecture [3] cannot supply a missing result here. A valid defence can say that the head is compact in absolute terms and compatible with a six qubit simulation. It should also admit that the simpler classical controls are cheaper and at least as persuasive for practical use under the current evidence.
+Early stopping selects a checkpoint from validation behaviour. A maximum epoch setting is not the number of epochs used for every fit. Per fit metadata in training_summary.csv should be consulted for an exact accounting.
 
 
-| Transformer head | Head parameters | Mean selected fit seconds |
-| --- | --- | --- |
-| Linear | 7 | 0.32 |
-| MLP | 49 | 0.41 |
-| VQC | 55 | 19.86 |
+![Figure 18. Saved Transformer encoder pretraining loss and validation balanced accuracy across 15 runs.](../../outputs/experiment_20261116_143634/plots/training_loss_transformer.png)
+
+Figure 18. Saved Transformer encoder pretraining loss and validation balanced accuracy across 15 runs.
+
+
+![Figure 19. Saved Bi LSTM encoder pretraining traces. Classical MLP pretraining precedes the frozen head comparisons.](../../outputs/experiment_20261116_143634/plots/training_loss_bilstm.png)
+
+Figure 19. Saved Bi LSTM encoder pretraining traces. Classical MLP pretraining precedes the frozen head comparisons.
 
 
 <!-- PDF page 30 -->
 
-## Plausible Reasons for Lower Quantum Accuracy
+## 4.11 Results by Physical Activity
 
-The saved evidence supports several hypotheses, but not a single proven mechanism. The first is representational mismatch. The encoder is pretrained with a classical MLP objective, then frozen. A six dimensional representation useful to that objective need not align with the function family available to a particular quantum encoding and readout. Fine tuning improves some VQC scores, consistent with adaptation helping, although it does not isolate the cause [P1].
+The original figure reports recording accuracy and balanced accuracy by activity or activity group. Per activity samples are small, and four activities are healthy only. Accuracy on those activities is a specificity observation rather than an estimate of epilepsy detection within that activity.
 
-The second is limited encoding structure. The implemented circuit encodes the input once, applies a fixed small variational topology and measures local Z expectations. Additional trainable gates do not necessarily supply the input dependence needed to fit the class boundary. This is a reason to inspect the actual encoding rather than infer expressive power from the number of amplitudes.
+Transformer VQC performs strongly on walking but has weaker point estimates for some stationary conditions. Neither a selected perfect activity score nor a group average demonstrates broad activity invariance. The shared activity subset is a useful sensitivity analysis, but it reuses saved predictions from the original trained models.
 
-Third, the sample size and model selection process can dominate small differences. Only 30 positive recordings are available, repeated across seeds. Validation selected thresholds and early stopping can change sensitivity and specificity. The negative point estimates should be reported, but their exact magnitude may not reproduce on a new population.
+The all activity and paired activity populations also differ in prevalence and composition. Comparisons should therefore show both the activity count limitation and the distinction between accuracy and balanced accuracy.
 
-Fourth, the circular CNOT structure may impose an unhelpful bias. The no CNOT point estimates are better in both enhanced branches. This observation suggests a topology question; it does not establish a universal disadvantage of entanglement.
 
-Two common excuses are not justified. Hardware noise cannot explain these scores because the circuit uses an ideal statevector simulator. A barren plateau diagnosis also requires gradient behaviour beyond the saved nonzero gradient checks. Lower accuracy by itself does not demonstrate vanishing gradients. Likewise, more qubits, deeper circuits or longer training cannot be promised to solve the gap without controlled evidence.
+![Figure 20. Original activity and activity group comparison from the complete enhanced run. Top: accuracy. Bottom: balanced accuracy. Healthy only activities do not support within activity sensitivity.](../../outputs/experiment_20261116_143634/plots/activity_comparison.png)
+
+Figure 20. Original activity and activity group comparison from the complete enhanced run. Top: accuracy. Bottom: balanced accuracy. Healthy only activities do not support within activity sensitivity.
 
 
 <!-- PDF page 31 -->
 
-## How to Use the VQC Papers in the Defence
+## 4.12 Transfer to an Unseen Activity
 
-The literature should be used to justify the question and delimit the interpretation, not to excuse every unfavourable outcome. Each reference below supplies one specific argument. The local evidence must then show whether that argument applies to this architecture and dataset.
+Leave one activity out evaluation holds out an eligible activity for testing and chooses validation recordings only from other activities. It asks a different question from random recording grouped folds: whether the model transfers to an activity condition absent during fitting.
 
-The central distinction is between an explanation and a demonstrated benefit. Encoding limitations can explain why a circuit may be a poor match. They cannot establish that an untested encoding would outperform MLP. A generalisation theorem can motivate research on compact models, but cannot validate duplicated clinical recordings. A favourable benchmark in another domain does not transfer its score to wearable EEG.
+Transformer VQC balanced accuracy varies from 90.00% for walking to about 38.89% for sitting and 45.56% for running. Bi LSTM VQC reaches 83.33% for jogging but about 33.33% for laying. These means are unstable because each held out activity has few observations.
 
-For the viva, name the relevant control immediately after discussing a paper. For resource claims, show the 55 versus 49 versus seven parameter table. For entanglement, show E7 versus E12T. For small sample uncertainty, show the paired interval and admit that participant independence is unavailable. This makes the defence testable against the actual results.
-
-The preferred position is that the project examines a credible modelling hypothesis and reports a mixed outcome. It avoids a stronger claim than its data support, while preserving a clear technical contribution in representation, matched comparison and result auditing.
+The plot therefore identifies a generalisation boundary, rather than uniform activity robustness. It also must not be confused with the base paper's activity specific leave one out validation, where the held out unit and training population differ.
 
 
-| Reference | Permitted argument | Required qualification |
-| --- | --- | --- |
-| Bowles et al [2] | Classical wins and ablations are informative | Not validation of this dataset |
-| Circuit centric model [3] | Measure compactness and resources | Our VQC is not smaller than MLP |
-| Huang et al [4] | Advantage is task dependent | No separation shown here |
-| Caro et al [5] | Complexity affects generalisation | No automatic small data guarantee |
-| Encoding study [6] | Input encoding constrains the model | No new encoding was tested |
-| Re uploading [7] | Repeated encoding is a design option | Current model encodes once |
-| McClean et al [8] | Trainability can be difficult | Barren plateaus not diagnosed |
+![Figure 21. Original leave one activity out comparison. Top: accuracy. Bottom: balanced accuracy across the eight activities shared by both classes.](../../outputs/experiment_20261116_143634/plots/activity_holdout_comparison.png)
+
+Figure 21. Original leave one activity out comparison. Top: accuracy. Bottom: balanced accuracy across the eight activities shared by both classes.
 
 
 <!-- PDF page 32 -->
 
-## A Defensible Discussion for the Report
+## 4.13 Noise Robustness Results
 
-The following discussion is suitable for adaptation into the submitted report because it states both the result and the limitation.
+The saved stress tests add Gaussian noise, drift, EMG like or ocular like corruption to test signals at fixed SNRs while keeping trained models and thresholds fixed. The SNR is referenced to raw signal power; filtering can change the effective corruption after preprocessing. Synthetic artefacts are proxies, not newly recorded movement artefacts.
 
-The quantum component was investigated as an alternative decision function on a controlled low dimensional EEG representation. In the complete enhanced experiment, Transformer VQC achieved 81.11% accuracy and 78.61% balanced accuracy, whereas the matched MLP achieved 83.70% and 81.39%. Thus, the present results do not show a predictive advantage over the strongest classical control. The small positive balanced accuracy difference against RBF SVM is specific to that comparator and accompanies lower overall accuracy.
+At 5 dB, averaging the four recording level corruption types gives Transformer VQC balanced accuracy of 66.88%, compared with 68.33% for MLP. VQC drops by 11.74 points from clean, while MLP drops by 13.06. A smaller drop from a lower clean starting point is not superior absolute performance.
 
-This outcome does not invalidate the architectural experiment. It establishes that replacing a classical head with this particular simulated circuit is feasible, but not sufficient to improve the best available result. The no CNOT comparison further shows that the entangling ring is not required for the strongest circuit point estimate in this run. The practical finding is therefore a boundary on the usefulness of this VQC design under the selected representation and evaluation budget.
+The original plots include the wider model set and multiple SNRs. They support a defined synthetic perturbation comparison; they do not establish clinical robustness or explain errors as quantum hardware noise.
 
-The paired uncertainty intervals leave the true difference unresolved within a broad range; they do not establish equivalence. Likewise, improved Bi LSTM VQC sensitivity in the separate waveform augmentation archive is encouraging but remains conditional on that experiment's treatment and shared dataset. It cannot be presented as a general quantum advantage.
 
-The evidence has limitations that affect both classical and quantum models. Identical signal contents cross partitions, activity coverage is class dependent and participant identifiers are unavailable. Accordingly, the scores describe the archived protocol and should not be represented as independent patient performance. A future study should correct content grouping and obtain subject identifiers before increasing model complexity. The present contribution is an honest, reproducible comparison and a documented basis for that next study [P1-P5].
+![Figure 22. Original recording balanced accuracy under four synthetic corruption types. SNR and corruption definitions are fixed by the archived configuration.](../../outputs/experiment_20261116_143634/plots/noise_robustness_balanced_accuracy.png)
+
+Figure 22. Original recording balanced accuracy under four synthetic corruption types. SNR and corruption definitions are fixed by the archived configuration.
+
+
+![Figure 23. Original mean change across synthetic conditions by model. This is a descriptive aggregate, not an independent robustness test cohort.](../../outputs/experiment_20261116_143634/plots/noise_model_comparison.png)
+
+Figure 23. Original mean change across synthetic conditions by model. This is a descriptive aggregate, not an independent robustness test cohort.
 
 
 <!-- PDF page 33 -->
 
-## Viva Questions and Suggested Answers
+## 4.14 Waveform Augmentation and MixUp Audit
 
-Why use a quantum model if accuracy is lower? The objective was to test whether a parameterised quantum head adds value to the same learned EEG representation. The answer is mixed and mostly negative against the strongest controls. Showing that boundary with matched comparisons is a valid research outcome, although it does not justify choosing the quantum model for deployment.
+The later archive compares its own baseline with training only waveform perturbations of positive class windows. Bi LSTM VQC balanced accuracy rises from 77.50% to 82.50%; sensitivity rises from 73.33% to 84.44% while specificity falls slightly. Transformer VQC improves more modestly from 78.06% to 79.44% balanced accuracy.
 
-Can you say the methods are equivalent because the difference is not significant? No. The paired interval includes zero and also allows meaningful losses. We did not define and test an equivalence margin. We can say that superiority is not established and that the dataset gives imprecise estimates.
+The figure covers all 19 base model identities and their AUG counterparts in that archive. It must not be subtracted from the earlier complete run because the later baseline differs. Only positive class training windows are augmented, so increased exposure to that class may contribute alongside waveform invariance.
 
-Is hardware noise responsible for the lower result? No. The saved quantum branch uses ideal statevector simulation with default.qubit. We cannot attribute a simulator result to physical gate errors that were not modelled.
+The separate quick MixUp pair has byte identical metric files and no demonstrated MixUp application in the base training path. It is not evidence that augmentation has no effect. This intervention validity issue remains distinct from the waveform result.
 
-Does the quantum model use fewer parameters? Not against our matched controls. Its head has 55 trainable parameters, versus 49 for MLP and seven for linear. Most parameters belong to the common classical encoder. Compactness is an architectural description here, not a measured resource advantage.
 
-What does removing CNOT gates tell you? The point estimates improve without the ring in both enhanced encoders. We therefore do not claim that entanglement caused the predictive performance. The paired uncertainty still prevents a universal conclusion about entanglement.
+![Figure 24. Within archive baseline versus waveform augmentation balanced accuracy for all 19 model identities. Source: experiment_20261116_202913. The final narrative report is absent in that archive.](../../report_work/revision_figures/augmentation_all.png)
 
-What is the strongest weakness in the evaluation? Recording identifiers keep each file's windows together, but three identical healthy signal contents cross partitions. Subject identifiers are also absent. We disclose these issues and do not claim independent patient generalisation.
-
-Maam, quantum side ki accuracy kam hai to defence kya hai? Humne quantum advantage claim nahi kiya. Same embeddings aur same splits par fair comparison kiya hai. VQC trainable hai aur useful discrimination deta hai, lekin best classical head abhi better hai. Hamara contribution controlled comparison, ablation aur limitations ko clearly establish karna hai.
+Figure 24. Within archive baseline versus waveform augmentation balanced accuracy for all 19 model identities. Source: experiment_20261116_202913. The final narrative report is absent in that archive.
 
 
 <!-- PDF page 34 -->
 
-## Threats to Validity and Clinical Interpretation
+## 4.15 Interpretation of the Quantum Results
 
-Internal validity is limited by identical signal content crossing train, validation and test roles. This is a concrete finding, not a hypothetical warning. Missing historical source snapshots also limit exact attribution of saved outputs to every current code line. Stale generated labels about circuit depth and dropout require preference for configuration and tensor evidence [P1, P5].
+The evidence does not demonstrate quantum superiority. In the main complete run, the strongest frozen classical head exceeds VQC. The no CNOT point estimates improve, and the seven parameter linear head is already strong on the learned representation. The most defensible conclusion is that the implemented quantum function family adds no established benefit over the strongest controls under this protocol.
 
-Construct validity concerns the target label. The archive identifies healthy and epilepsy labelled recordings, not verified onset and offset annotations for every window. Recording classification accuracy does not measure seizure event sensitivity, prediction horizon or false alarm burden over continuous use. Terms such as seizure detector should therefore be qualified in the report title, abstract and conclusions.
+Several mechanisms are plausible but unproven. The embedding was pretrained with an MLP objective, the circuit encodes the input once and the topology may not match the relevant decision boundary. Small validation sets and threshold choices also affect class specific errors. Ideal simulation excludes physical gate noise as a measured explanation. Nonzero saved gradient checks exclude a simple broken gradient path but do not diagnose or rule out all optimisation difficulties.
 
-External validity is limited by a small, single channel dataset with activity imbalance, unknown participant identity and possible saturation. The result cannot establish performance across patient ages, sensor placements, acquisition sessions or hospitals. High classification scores on a related multichannel dataset do not remove these constraints.
+Parameter and timing accounting also matters. VQC has 55 head parameters, versus 49 for MLP and seven for linear. Mean selected Transformer head fit times are approximately 19.86 seconds for VQC, 0.41 for MLP and 0.32 for linear. The common encoder has 25,734 parameters. These observations do not support a smaller or faster complete quantum pipeline.
 
-Statistical validity is limited by repeated use of the same 90 recordings across seeds, exploratory comparisons and confidence intervals based on a questionable independence unit. The saved bootstrap intervals describe the archived analysis; they should not be read as precise population guarantees. Small activity subsets make per activity rankings particularly unstable.
+The earlier full run, enhanced run and later augmentation baseline also differ numerically. They are sensitivity evidence, not independent cohorts or one factor causal ablations. Broadly overlapping paired intervals do not establish equivalence, and duplicated signals restrict the meaning of every saved confidence interval.
 
-Practical validity requires latency, energy, calibration, false alarms and robust operation outside the laboratory. These quantities are not established by the saved tables. The VQC runs in simulation and has no demonstrated hardware speedup. The report therefore presents a research prototype and benchmark analysis rather than a medical product or clinical decision aid.
-
-Acknowledging these limits does not diminish the technical work. It makes the conclusion proportionate to the evidence and identifies which additional information would materially strengthen a future study.
+Lower quantum accuracy can still yield a useful research result when the objective is to test a controlled hypothesis. The contribution is a documented benchmark, a negative entanglement finding and a clear boundary on claims. Literature on benchmarking, data dependent advantage and generalisation supports asking these questions [2,4,5], while the actual answer must come from the present controls and limitations.
 
 
 <!-- PDF page 35 -->
 
-## Recommendations for the Next Research Stage
+## 5 Comparison with the Base Paper
 
-The first priority is data independence, not a more elaborate circuit. Group identical signal hashes before any future split or remove duplicates under a documented rule. Seek participant and session identifiers from the dataset maintainers. Preserve an external evaluation set if one becomes available, and define the intended task as recording classification or event detection before selecting metrics.
+The base paper is Dash et al [1]. The table separates published measurements from locally saved measurements and identifies their protocols. The wearable RF value of 90.74% and the paper's multilayer LSTM values do not use the same evaluation unit as this project's pooled recording predictions.
 
-The second priority is intervention validity. The quick MixUp comparison should be marked inconclusive in presentations. A future implementation should log actual mixed batches or generation counts and demonstrate that the intended intervention is active. Waveform augmentation should be compared against a class exposure matched control so its effect is not confused with oversampling.
+The local RF accuracy is 80.37%, a descriptive difference of minus 10.37 percentage points from the published RF hold out value. This subtraction is arithmetic, not an estimate of improvement or degradation under matched conditions. The populations, frame counts, splitting, tuning and aggregation differ. Likewise, the current fine tuned MLP score cannot establish superiority over the paper's ten fold LSTM result.
 
-For quantum design, compare a limited number of prespecified encodings, circuit depths and entangling topologies under equal search budgets. Include linear and MLP heads on exactly the same representation. Report the no CNOT control even when it performs better. Any circuit improvement should be assessed on a validation plan fixed before the final evaluation.
+The reference paper also evaluates other datasets. Its resting state or multichannel seizure results must not be used as wearable baselines. The present comparison is restricted to the wearable context and retains the original authors' terminology for their protocols.
 
-For statistical analysis, select a primary metric such as recording balanced accuracy and specify meaningful effect sizes before testing. Use paired comparisons and a resampling unit that reflects the actual independent participant or content group. If equivalence is the objective, choose a justified margin prospectively and plan the sample size accordingly.
 
-For practical claims, measure complete preprocessing and inference cost, not only selected training fit seconds. Hardware execution would require shot budgets, noise assumptions, repeated evaluations and matched classical resource reporting. These are future recommendations only. No experiments in this list were executed while preparing the report.
+| Study and model | Accuracy % | Evaluation description |
+| --- | --- | --- |
+| Base paper RF | 90.74 | Wearable frame based hold out |
+| Base paper multilayer LSTM | 87.04 | Wearable hold out |
+| Base paper multilayer LSTM | 74.44 | Wearable ten fold CV mean |
+| Current GWST RF E1 | 80.37 | Recording grouped CV, 3 seeds |
+| Current Transformer MLP E5 | 83.70 | Frozen head, recording metrics |
+| Current Transformer VQC E7 | 81.11 | Frozen head, recording metrics |
+| Current fine tuned T MLP | 84.44 | End to end, recording metrics |
+| Current fine tuned T VQC | 82.96 | End to end, recording metrics |
 
-The existing project already contains enough evidence for an honest academic discussion. The report should be submitted as a draft analysis of the saved protocol, with the duplicate finding and unsupported quantum advantage claims addressed explicitly.
+
+![Figure 25. Published and local accuracy values grouped by source. Different protocols are explicitly separated; bars do not form a matched performance ranking.](../../report_work/revision_figures/base_comparison.png)
+
+Figure 25. Published and local accuracy values grouped by source. Different protocols are explicitly separated; bars do not form a matched performance ranking.
 
 
 <!-- PDF page 36 -->
 
-## Conclusion
+## 5.1 Protocol Differences and Contribution
+
+The common methodological basis is clear: wearable EEG, WOSG motivated preprocessing, five second windows and L1 plus entropy summaries derived from GWST. The extension is temporal token modelling with independent Transformer and Bi LSTM encoders, followed by matched classical and simulated quantum heads. The ablations, recording aggregation and saved paired comparisons provide additional analysis.
+
+The paper reports 540 five second wearable frames and 45 minutes, while the archived 90 approximately 20 second files provide 360 non overlapping windows and about 30 minutes. The supplied artifacts do not resolve this difference. Overlap or a different source subset is possible but unverified. The local use of 60 healthy and 30 positive files also differs from a statement in the paper about selecting 30 files per class.
+
+Recording grouping is explicit in the current protocol. It is not sufficient for content independence because duplicated waveforms cross partitions; the reference description does not permit a verified recording grouping claim either. These are distinct limitations, and the present duplicate finding is not proof that the published study had the same problem.
+
+The contribution should therefore be stated as an extension and critical benchmark, not an exact replication or accuracy improvement. The quantum branch establishes feasible differentiable integration, while its strongest practical comparator remains classical. Further work should first fix content grouping and obtain participant identifiers, then compare limited architecture changes under the same validation plan.
+
+
+| Aspect | Base paper | Current saved study |
+| --- | --- | --- |
+| Representation | GWST L1 and entropy | Same summaries plus tokens |
+| Temporal model | Multilayer LSTM variants | Transformer and Bi LSTM |
+| Quantum head | Absent | 6 qubit VQC and no CNOT |
+| Primary unit | Published frame protocols | Recording probability aggregation |
+| Wearable windows | 540 reported | 360 archived |
+| Robustness | Published activity studies | Activity holdout and synthetic noise |
+| Fair head control | Different classifier families | Same 6 dimensional embeddings |
+
+
+<!-- PDF page 37 -->
+
+## 6 Conclusion
 
 This project combines a wearable EEG time frequency pipeline with classical temporal representation learning and simulated six qubit classification. Its strongest methodological feature is the attempt to compare heads on identical low dimensional embeddings while retaining classical baselines and an entanglement ablation. Its saved results support useful discrimination but do not show a general quantum advantage.
 
@@ -740,10 +691,12 @@ The most consequential audit result is that three identical healthy signal conte
 
 The scientific defence is a clear statement of what was learned: a VQC can be integrated and optimised in this pipeline, but this circuit does not improve the strongest matched classical baseline under the recorded conditions. That conclusion is informative when accompanied by ablations, uncertainty, resource accounting and candid limitations. Further claims should follow stronger data and controlled evidence rather than enthusiasm for the quantum component.
 
+The contribution relative to the base paper is an expanded architectural and evaluation study. The published accuracy values are contextual references under different protocols, and no superiority over that paper is claimed. Future validation should prioritise independent content and participants before greater circuit complexity.
 
-<!-- PDF page 37 -->
 
-## References for Quantum Interpretation
+<!-- PDF page 38 -->
+
+## References
 
 [1] S. Dash, D. K. Dash, R. K. Tripathy and R. B. Pachori. Time-frequency domain machine learning for detection of epilepsy using wearable EEG sensor signals recorded during physical activities. Biomedical Signal Processing and Control 100, 107041, 2025.
 https://doi.org/10.1016/j.bspc.2024.107041
@@ -763,13 +716,6 @@ https://doi.org/10.1038/s41467-022-32550-3
 [6] M. Schuld, R. Sweke and J. J. Meyer. Effect of data encoding on the expressive power of variational quantum-machine-learning models. Physical Review A 103, 032430, 2021.
 https://doi.org/10.1103/PhysRevA.103.032430
 
-Web references were checked on 17 November 2026 using primary paper records or publisher pages. Interpretations in this report distinguish theoretical results, simulations and measurements from the local project. No paper is cited as evidence that this particular dataset establishes quantum advantage.
-
-
-<!-- PDF page 38 -->
-
-## References for Encoding and EEG Context
-
 [7] A. Perez-Salinas, A. Cervera-Lierta, E. Gil-Fuster and J. I. Latorre. Data re-uploading for a universal quantum classifier. Quantum 4, 226, 2020.
 https://doi.org/10.22331/q-2020-02-06-226
 
@@ -782,46 +728,72 @@ Local supplied PDF: EEG_Seizure_Classification_Phase_Space_IMFs_2015.pdf
 [10] R. Sharma, R. B. Pachori and U. R. Acharya. Application of entropy measures on intrinsic mode functions for the automated identification of focal electroencephalogram signals. Entropy 17, 669-691, 2015.
 https://doi.org/10.3390/e17020669
 
+
+<!-- PDF page 39 -->
+
+## References Continued
+
 [11] A. Bhattacharyya, R. B. Pachori, A. Upadhyay and U. R. Acharya. Tunable-Q wavelet transform based multiscale entropy measure for automated classification of epileptic EEG signals. Applied Sciences 7, 385, 2017.
-Local supplied PDF: Epileptic_EEG_Classification_Tunable_Q_Wavelet_Multiscale_Entropy_2017.pdf
+https://doi.org/10.3390/app7040385
 
 [12] A. Bhattacharyya and R. B. Pachori. A multivariate approach for patient-specific EEG seizure detection using empirical wavelet transform. IEEE Transactions on Biomedical Engineering 64, 2003-2015, 2017.
 Local supplied PDF: Patient_Specific_EEG_Seizure_Detection_Multivariate_EWT_2017.pdf
 
-The supplied second order difference, sleep corpus and air writing papers were inspected for scope but were not used to support the reported wearable epilepsy scores. The duplicate local copy of reference [1] was counted once. Local PDF sources are retained in the project folder for verification. No historical result from another dataset is presented as a new project measurement.
+[13] S. Zia and A. Nawaz Khan. Activities of daily livings using a portable EEG headset. IEEE DataPort dataset, 2021.
+https://doi.org/10.21227/mtwx-p951
 
+[14] P. Gajbhiye, N. Mingchinda, W. Chen, S. C. Mukhopadhyay, T. Wilaiprasitporn and R. K. Tripathy. Wavelet domain optimized Savitzky-Golay filter for the removal of motion artifacts from EEG recordings. IEEE Transactions on Instrumentation and Measurement 70, 4002111, 2021.
+https://doi.org/10.1109/TIM.2020.3041099
 
-<!-- PDF page 39 -->
+[15] R. G. Stockwell, L. Mansinha and R. P. Lowe. Localization of the complex spectrum: the S transform. IEEE Transactions on Signal Processing 44, 998-1001, 1996.
+https://doi.org/10.1109/78.492555
 
-## Project Evidence Register
+[16] A. Savitzky and M. J. E. Golay. Smoothing and differentiation of data by simplified least squares procedures. Analytical Chemistry 36, 1627-1639, 1964.
+https://doi.org/10.1021/ac60214a047
 
-The following paths resolve the project citations used throughout the report. Paths are relative to the workspace root. Long directory names are separated below for readability; they identify the original saved artifacts and not newly generated experiments.
+[17] L. Breiman. Random forests. Machine Learning 45, 5-32, 2001.
+https://doi.org/10.1023/A:1010933404324
 
-[P1] outputs/experiment_20261116_143634. Primary files: config/config.json, config/dataset_manifest.csv, config/fold_assignments.csv, config/model_parameter_counts.json, metrics/recording_metrics.csv, metrics/paired_model_comparisons.csv, metrics/recording_metrics_paired_activities_only.csv, metrics/activity_holdout_summary.csv, metrics/noise_robustness_metrics.csv and metrics/training_summary.csv. The reports subdirectory provides the saved methodology, audit and final narrative.
+[18] C. Cortes and V. Vapnik. Support-vector networks. Machine Learning 20, 273-297, 1995.
+https://doi.org/10.1007/BF00994018
 
-[P2] outputs/experiment_20261116_202913. Secondary waveform augmentation evidence: config/config.json, metrics/recording_metrics.csv, metrics/augmentation_generation_audit.csv and metrics/augmentation_ablation_summary.csv. Baseline and AUG models are compared only within this archive. The final_experiment_report.md file is absent.
+[19] A. Kraskov, H. Stogbauer and P. Grassberger. Estimating mutual information. Physical Review E 69, 066138, 2004.
+https://doi.org/10.1103/PhysRevE.69.066138
 
-[P3] outputs_gwst_vqc_ablation. Comparison runs are without_augmentation/experiment_20261117_100749 and with_mixup_augmentation/experiment_20261117_101255. Their metrics and configuration files support the inactive intervention finding. The directory level augmentation report records the base script used.
-
-[P4] outputs/experiment_20261116_095358. Earlier full profile results used only for sensitivity across archived configurations. Smoke and quick development runs were inventoried but do not supply headline performance estimates.
-
-[P5] report_work/audit.json and report_work/audit.py. Read only calculations document manifest hash groups, their split roles, saved parameter counts, fit timing summaries and metric file equality. No models are fitted in this audit.
-
-[P6] hybrid_quantum_eeg_epilepsy.py, hybrid_quantum_eeg_epilepsy_enhanced.py, hybrid_quantum_eeg_epilepsy_augmented.py and run_gwst_quantum_augmentation_ablation.py. The source inspection establishes current visible training paths and circuit structure, with saved configurations preferred over stale prose descriptions. Repository source: https://github.com/Dev-Goyal0808/miniproject at revision 75b5971.
+[20] A. Vaswani et al. Attention is all you need. Advances in Neural Information Processing Systems 30, 2017.
+https://arxiv.org/abs/1706.03762
 
 
 <!-- PDF page 40 -->
 
-## Submission Notes and Claim Boundaries
+## References Continued
 
-This report is a 40 page academic draft based on the available results. Before submission, add the institution's required cover information, student names, registration numbers and supervisor details using verified information. A signed declaration, approval certificate or institutional endorsement should only be added through the actual approval process.
+[21] S. Hochreiter and J. Schmidhuber. Long short-term memory. Neural Computation 9, 1735-1780, 1997.
+https://doi.org/10.1162/neco.1997.9.8.1735
 
-The conclusion can be defended without claiming quantum superiority. State the research question, identify the best matched classical baseline, show the quantum gap and explain what the ablations establish. Keep the duplicate content limitation visible. If asked whether retraining has corrected it, the answer is no: this report preserves the existing results and does not manufacture a corrected score.
+[22] M. Schuster and K. K. Paliwal. Bidirectional recurrent neural networks. IEEE Transactions on Signal Processing 45, 2673-2681, 1997.
+https://doi.org/10.1109/78.650093
 
-For an accompanying presentation, use one primary results table, one head comparison chart, the no CNOT ablation and the within archive waveform augmentation comparison. Include the 55 versus 49 versus seven parameter accounting. Avoid combining the best quantum score from one folder with a weaker classical score from another.
+[23] J. L. Ba, J. R. Kiros and G. E. Hinton. Layer normalization. arXiv:1607.06450, 2016.
+https://arxiv.org/abs/1607.06450
 
-Use cautious, specific language. Supported statements include simulated VQC integration, useful recording discrimination under the archived protocol, a negative point estimate against the strongest frozen control and a descriptive augmentation improvement in one branch. Unsupported statements include quantum advantage, fewer parameters than the matched MLP, hardware noise as the measured cause of lower accuracy, clinically validated seizure detection and patient independent performance.
+[24] I. Loshchilov and F. Hutter. Decoupled weight decay regularization. International Conference on Learning Representations, 2019.
+https://arxiv.org/abs/1711.05101
 
-The editable companion Markdown contains the same page sections and numerical tables, so college formatting can be applied without copying text from a PDF. Reformatting may change pagination; the supplied PDF is the fixed 40 page version. The audit and builder scripts remain in report_work for traceability.
+[25] D. P. Kingma and J. Ba. Adam: A method for stochastic optimization. International Conference on Learning Representations, 2015.
+https://arxiv.org/abs/1412.6980
 
-No training, fine tuning, model inference on new data or test threshold search was performed during preparation. All figures and tables represent saved measurements or explicitly identified arithmetic summaries. The final position is proportionate to those measurements: a transparent controlled study with valuable negative findings, meaningful methodological limitations and a clear path for stronger future evidence.
+[26] N. Srivastava, G. Hinton, A. Krizhevsky, I. Sutskever and R. Salakhutdinov. Dropout: A simple way to prevent neural networks from overfitting. Journal of Machine Learning Research 15, 1929-1958, 2014.
+https://jmlr.org/papers/v15/srivastava14a.html
+
+[27] F. Pedregosa et al. Scikit-learn: Machine learning in Python. Journal of Machine Learning Research 12, 2825-2830, 2011.
+https://jmlr.org/papers/v12/pedregosa11a.html
+
+[28] A. Paszke et al. PyTorch: An imperative style, high-performance deep learning library. Advances in Neural Information Processing Systems 32, 2019.
+https://arxiv.org/abs/1912.01703
+
+[29] V. Bergholm et al. PennyLane: Automatic differentiation of hybrid quantum-classical computations. arXiv:1811.04968, 2018, revised 2022.
+https://arxiv.org/abs/1811.04968
+
+[30] H. Zhang, M. Cisse, Y. N. Dauphin and D. Lopez-Paz. mixup: Beyond empirical risk minimization. International Conference on Learning Representations, 2018.
+https://arxiv.org/abs/1710.09412

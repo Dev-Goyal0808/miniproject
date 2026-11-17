@@ -1,242 +1,242 @@
 [
   {
     "page": 1,
-    "bottom": 355.0,
-    "words": 220,
-    "title": "Hybrid Quantum Classical EEG Classification"
-  },
-  {
-    "page": 2,
-    "bottom": 268.3,
-    "words": 317,
+    "bottom": 317.9,
+    "words": 298,
     "title": "Abstract"
   },
   {
+    "page": 2,
+    "bottom": 329.9,
+    "words": 314,
+    "title": "1 Introduction"
+  },
+  {
     "page": 3,
-    "bottom": 248.4,
-    "words": 199,
-    "title": "Contents and Reading Guide"
+    "bottom": 289.9,
+    "words": 353,
+    "title": "1.1 Research Objectives and Contribution"
   },
   {
     "page": 4,
-    "bottom": 316.6,
-    "words": 315,
-    "title": "Research Problem and Study Objectives"
+    "bottom": 364.9,
+    "words": 301,
+    "title": "2 Literature Survey of Wearable EEG"
   },
   {
     "page": 5,
-    "bottom": 193.9,
-    "words": 403,
-    "title": "Wearable EEG and the Classical Research Context"
+    "bottom": 324.9,
+    "words": 298,
+    "title": "2.3 Wavelet and Patient Specific EEG Studies"
   },
   {
     "page": 6,
-    "bottom": 348.8,
-    "words": 294,
-    "title": "What Quantum Literature Can Actually Defend"
+    "bottom": 324.9,
+    "words": 297,
+    "title": "2.4 Quantum Classifiers and Encoding"
   },
   {
     "page": 7,
-    "bottom": 197.7,
-    "words": 287,
-    "title": "Evidence Selection and Experiment Provenance"
+    "bottom": 279.9,
+    "words": 312,
+    "title": "2.5 Quantum Benchmarking and Generalisation"
   },
   {
     "page": 8,
-    "bottom": 157.9,
-    "words": 270,
-    "title": "Dataset Inventory and Activity Imbalance"
+    "bottom": 174.9,
+    "words": 210,
+    "title": "2.6 Literature Synthesis and Research Gap"
   },
   {
     "page": 9,
-    "bottom": 189.8,
-    "words": 284,
-    "title": "Duplicate Signals and Independence of the Splits"
+    "bottom": 118.9,
+    "words": 156,
+    "title": "3 Methodology and Processing Architecture"
   },
   {
     "page": 10,
-    "bottom": 332.7,
-    "words": 293,
-    "title": "Wavelet Domain Artefact Filtering"
+    "bottom": 127.9,
+    "words": 311,
+    "title": "3.1 Dataset Description and Class Coverage"
   },
   {
     "page": 11,
-    "bottom": 290.5,
-    "words": 349,
-    "title": "Gaussian Window Stockwell Representation"
+    "bottom": 289.1,
+    "words": 139,
+    "title": "3.2 Preprocessing and Motion Artefact Suppression"
   },
   {
     "page": 12,
-    "bottom": 195.6,
-    "words": 332,
-    "title": "Handcrafted Features and Classical Baselines"
+    "bottom": 151.9,
+    "words": 144,
+    "title": "3.3 Gaussian Window Stockwell Transform"
   },
   {
     "page": 13,
-    "bottom": 205.9,
-    "words": 268,
-    "title": "Temporal Encoders and the Shared Bottleneck"
+    "bottom": 354.9,
+    "words": 228,
+    "title": "3.4 Handcrafted Features and Baseline Models"
   },
   {
     "page": 14,
-    "bottom": 91.4,
-    "words": 335,
-    "title": "Six Qubit Variational Quantum Classifier"
+    "bottom": 235.9,
+    "words": 193,
+    "title": "3.5 Transformer Encoder Architecture"
   },
   {
     "page": 15,
-    "bottom": 348.8,
-    "words": 279,
-    "title": "Training and Validation Protocol"
+    "bottom": 220.9,
+    "words": 210,
+    "title": "3.6 Bidirectional LSTM Encoder Architecture"
   },
   {
     "page": 16,
-    "bottom": 107.5,
-    "words": 325,
-    "title": "Performance Measures and the Decision Threshold"
+    "bottom": 193.9,
+    "words": 265,
+    "title": "3.7 Variational Quantum Circuit Architecture"
   },
   {
     "page": 17,
-    "bottom": 139.4,
-    "words": 316,
-    "title": "Uncertainty and Paired Statistical Comparisons"
+    "bottom": 294.9,
+    "words": 262,
+    "title": "3.8 Classical Heads Fine Tuning and Augmentation"
   },
   {
     "page": 18,
-    "bottom": 120.5,
-    "words": 186,
-    "title": "Primary Recording Level Results"
+    "bottom": 374.9,
+    "words": 279,
+    "title": "3.9 Evaluation Protocol and Data Integrity"
   },
   {
     "page": 19,
-    "bottom": 260.3,
-    "words": 206,
-    "title": "Transformer Heads and the Quantum Accuracy Gap"
+    "bottom": 138.9,
+    "words": 185,
+    "title": "4 Results and Discussion"
   },
   {
     "page": 20,
-    "bottom": 254.2,
-    "words": 236,
-    "title": "Bi LSTM Heads and Class Specific Errors"
+    "bottom": 162.8,
+    "words": 97,
+    "title": "4.1 Handcrafted Model Results"
   },
   {
     "page": 21,
-    "bottom": 256.2,
-    "words": 257,
-    "title": "Does Entanglement Help in the Saved Experiment"
+    "bottom": 177.8,
+    "words": 88,
+    "title": "4.2 Transformer Model Results"
   },
   {
     "page": 22,
-    "bottom": 214.1,
-    "words": 247,
-    "title": "End to End Fine Tuning"
+    "bottom": 189.8,
+    "words": 95,
+    "title": "4.3 Bi LSTM Model Results"
   },
   {
     "page": 23,
-    "bottom": 246.0,
-    "words": 252,
-    "title": "Sensitivity Across Archived Configurations"
+    "bottom": 277.9,
+    "words": 256,
+    "title": "4.4 Entanglement Ablation"
   },
   {
     "page": 24,
-    "bottom": 246.0,
-    "words": 254,
-    "title": "Activities Shared by Both Classes"
+    "bottom": 162.8,
+    "words": 96,
+    "title": "4.5 Fine Tuned Model Results"
   },
   {
     "page": 25,
-    "bottom": 168.1,
-    "words": 235,
-    "title": "Transfer to an Unseen Activity"
+    "bottom": 91.9,
+    "words": 89,
+    "title": "4.6 Saved Global Model Comparison"
   },
   {
     "page": 26,
-    "bottom": 111.5,
-    "words": 334,
-    "title": "Synthetic Corruption Robustness"
+    "bottom": 87.3,
+    "words": 94,
+    "title": "4.7 ROC Curves and Ranking Performance"
   },
   {
     "page": 27,
-    "bottom": 205.9,
-    "words": 244,
-    "title": "Why the Quick MixUp Comparison Is Inconclusive"
+    "bottom": 233.9,
+    "words": 134,
+    "title": "4.8 Recording Confusion Matrices"
   },
   {
     "page": 28,
-    "bottom": 205.9,
-    "words": 267,
-    "title": "Waveform Augmentation in the Later Archive"
+    "bottom": 218.9,
+    "words": 116,
+    "title": "4.9 Window Confusion Matrices"
   },
   {
     "page": 29,
-    "bottom": 253.9,
-    "words": 272,
-    "title": "Resource Cost and Parameter Efficiency"
+    "bottom": 148.9,
+    "words": 125,
+    "title": "4.10 Encoder Training Curves"
   },
   {
     "page": 30,
-    "bottom": 348.8,
-    "words": 275,
-    "title": "Plausible Reasons for Lower Quantum Accuracy"
+    "bottom": 231.8,
+    "words": 121,
+    "title": "4.11 Results by Physical Activity"
   },
   {
     "page": 31,
-    "bottom": 188.4,
-    "words": 196,
-    "title": "How to Use the VQC Papers in the Defence"
+    "bottom": 232.0,
+    "words": 120,
+    "title": "4.12 Transfer to an Unseen Activity"
   },
   {
     "page": 32,
-    "bottom": 316.6,
-    "words": 292,
-    "title": "A Defensible Discussion for the Report"
+    "bottom": 133.6,
+    "words": 131,
+    "title": "4.13 Noise Robustness Results"
   },
   {
     "page": 33,
-    "bottom": 296.6,
-    "words": 318,
-    "title": "Viva Questions and Suggested Answers"
+    "bottom": 148.9,
+    "words": 134,
+    "title": "4.14 Waveform Augmentation and MixUp Audit"
   },
   {
     "page": 34,
-    "bottom": 322.7,
+    "bottom": 389.9,
     "words": 291,
-    "title": "Threats to Validity and Clinical Interpretation"
+    "title": "4.15 Interpretation of the Quantum Results"
   },
   {
     "page": 35,
-    "bottom": 306.6,
-    "words": 299,
-    "title": "Recommendations for the Next Research Stage"
+    "bottom": 116.6,
+    "words": 146,
+    "title": "5 Comparison with the Base Paper"
   },
   {
     "page": 36,
-    "bottom": 300.5,
-    "words": 306,
-    "title": "Conclusion"
+    "bottom": 216.9,
+    "words": 230,
+    "title": "5.1 Protocol Differences and Contribution"
   },
   {
     "page": 37,
-    "bottom": 328.8,
-    "words": 193,
-    "title": "References for Quantum Interpretation"
+    "bottom": 274.9,
+    "words": 350,
+    "title": "6 Conclusion"
   },
   {
     "page": 38,
-    "bottom": 280.5,
-    "words": 242,
-    "title": "References for Encoding and EEG Context"
+    "bottom": 189.9,
+    "words": 267,
+    "title": "References"
   },
   {
     "page": 39,
-    "bottom": 216.1,
-    "words": 206,
-    "title": "Project Evidence Register"
+    "bottom": 204.9,
+    "words": 237,
+    "title": "References Continued"
   },
   {
     "page": 40,
-    "bottom": 258.3,
-    "words": 321,
-    "title": "Submission Notes and Claim Boundaries"
+    "bottom": 219.9,
+    "words": 200,
+    "title": "References Continued"
   }
 ]

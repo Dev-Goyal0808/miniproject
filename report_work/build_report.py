@@ -440,6 +440,8 @@ pages[13]['text']+='\n\nThe measured feature is q_i(z) = expectation of Z_i in U
 pages[15]['text']+='\n\nUsing true positive TP, true negative TN, false positive FP and false negative FN counts: accuracy = (TP+TN)/(TP+TN+FP+FN); sensitivity = TP/(TP+FN); specificity = TN/(TN+FP); balanced accuracy = (sensitivity+specificity)/2. Recording probabilities are the mean of four window probabilities. Each seed is scored on its held out recordings before the reported seed average is taken.'
 pages[16]['text']+='\n\nFor scale, the saved individual balanced accuracy intervals are 71.95% to 85.65% for Transformer VQC and 73.89% to 88.17% for Transformer MLP. Their overlap is not a comparison test. The paired difference interval, minus 6.82 to plus 1.80 percentage points, is the relevant saved contrast.'
 pages[25]['text']+='\n\nAt 5 dB, averaging the four corruption types at recording level gives Transformer VQC balanced accuracy of 66.88%, down 11.74 points from clean. Transformer MLP falls to 68.33%, down 13.06 points. Bi LSTM VQC reaches 66.18%, down 9.38 points. A smaller drop from a weaker clean starting point is not evidence of better absolute robustness. All three remain substantially below their clean performance.'
+from revise_report import revise
+pages=revise(pages,ROOT,M,L,refs1+refs2)
 assert len(pages)==40,len(pages)
 
 # Plain editable source, including all data tables and chart values.
@@ -449,15 +451,18 @@ for i,p in enumerate(pages,1):
  if p['table']:
   head,rows=p['table'];md += ['\n| '+' | '.join(head)+' |\n| '+' | '.join(['---']*len(head))+' |\n'+'\n'.join('| '+' | '.join(row)+' |' for row in rows)]
  if p['chart'] and p['chart'][0]=='bars':md += ['\nFigure values: '+', '.join(f'{a}: {b:.2f}' for a,b in zip(p['chart'][1],p['chart'][2]))]
+ for fp,mh,caption in p.get('figures',[]):
+  import os
+  md.append('\n!['+caption+']('+os.path.relpath(fp,OUT).replace('\\','/')+')\n\n'+caption)
 (OUT/'EEG_Quantum_Report_Editable.md').write_text('\n\n'.join(md),encoding='utf-8')
 
 FONT=Path('C:/Windows/Fonts')
 for name,f in [('Body','calibri.ttf'),('Bold','calibrib.ttf'),('Italic','calibrii.ttf')]:
  pdfmetrics.registerFont(TTFont(name,str(FONT/f)))
 W,H=A4; margin=51; avail=W-2*margin
-body=ParagraphStyle('Body',fontName='Body',fontSize=11.3,leading=16.1,spaceAfter=10,textColor=colors.HexColor('#17212B'))
+body=ParagraphStyle('Body',fontName='Body',fontSize=11.0,leading=15.0,spaceAfter=10,textColor=colors.HexColor('#17212B'))
 small=ParagraphStyle('Small',parent=body,fontSize=9.0,leading=12.0,spaceAfter=4)
-heading=ParagraphStyle('Heading',fontName='Bold',fontSize=22,leading=26,textColor=colors.black,spaceAfter=18)
+heading=ParagraphStyle('Heading',fontName='Bold',fontSize=19,leading=23,textColor=colors.black,spaceAfter=18)
 def para(s,style=body):
  s=html.escape(s)
  s=re.sub(r'(https://[^\s]+)',r'<link href="\1" color="#254C70">\1</link>',s)
@@ -501,7 +506,7 @@ for i,p in enumerate(pages,1):
  c.setFont('Body',8.5);c.drawString(margin,29,'Research report draft | Saved results analysis | 17 November 2026');c.drawRightString(W-margin,29,str(i))
  y=H-62
  title=para(p['title'],heading);_,h=title.wrap(avail,1000);title.drawOn(c,margin,y-h);y-=h+17
- if i==1:y-=16
+ if i==1:y-=2
  for block in p['text'].split('\n\n'):
   flow=para(block);_,h=flow.wrap(avail,2000)
   flow.drawOn(c,margin,y-h);y-=h+10
@@ -509,6 +514,14 @@ for i,p in enumerate(pages,1):
   t=table_obj(p['table']);_,h=t.wrap(avail,2000);y-=7;t.drawOn(c,margin,y-h);y-=h+8
  if p['chart']:
   y-=14;y-=chart(c,p['chart'],margin,y)
+ for fp,maxheight,caption in p.get('figures',[]):
+  from PIL import Image as PILImage
+  iw,ih=PILImage.open(fp).size
+  cap=para(caption,small);_,hh=cap.wrap(avail,1000)
+  limit=min(maxheight,y-55-hh-20)
+  scale=min(avail/iw,limit/ih);dw,dh=iw*scale,ih*scale;y-=5
+  c.drawImage(fp,margin+(avail-dw)/2,y-dh,width=dw,height=dh,mask='auto');y-=dh+5
+  cap.drawOn(c,margin,y-hh);y-=hh+7
  checks.append({'page':i,'bottom':round(y,1),'words':len(p['text'].split()),'title':p['title']})
  if y<48:raise RuntimeError(f'Page {i} overflow bottom {y}')
  c.showPage()
