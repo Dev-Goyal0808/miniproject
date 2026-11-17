@@ -1,0 +1,35 @@
+{
+  "configuration": {
+    "wavelet": "db4",
+    "level": 7,
+    "mode": "symmetric",
+    "optimize": true,
+    "window_candidates": [
+      9,
+      21
+    ],
+    "polyorder_candidates": [
+      2
+    ],
+    "fixed_window": 21,
+    "fixed_polyorder": 2,
+    "objective": "lowfreq_residual_plus_inband_decorrelation",
+    "lambda_inband": 1.0,
+    "lowfreq_cut_hz": 0.5,
+    "inband_hz": [
+      0.5,
+      50.0
+    ]
+  },
+  "summary": {
+    "median_lowfreq_power_ratio": 9.800012215502605,
+    "chosen_parameter_counts": {
+      "w9_p2": 89,
+      "w21_p2": 1
+    }
+  },
+  "warnings": [
+    "WOSG wavelet, level, SG parameters and optimisation criterion are NOT specified in the base paper; values here are assumptions.",
+    "The per-recording (window, order) criterion is an unsupervised proxy of this project, not the published optimisation."
+  ]
+}

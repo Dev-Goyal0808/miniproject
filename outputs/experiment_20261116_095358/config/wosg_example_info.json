@@ -1,0 +1,79 @@
+{
+  "wosg": {
+    "wavelet": "db4",
+    "level": 7,
+    "mode": "symmetric",
+    "optimize": true,
+    "window_candidates": [
+      5,
+      9,
+      13,
+      17,
+      21,
+      31,
+      41,
+      51
+    ],
+    "polyorder_candidates": [
+      1,
+      2,
+      3
+    ],
+    "fixed_window": 21,
+    "fixed_polyorder": 2,
+    "objective": "lowfreq_residual_plus_inband_decorrelation",
+    "lambda_inband": 1.0,
+    "lowfreq_cut_hz": 0.5,
+    "inband_hz": [
+      0.5,
+      50.0
+    ]
+  },
+  "chosen_parameters_example_recordings": {
+    "E_00_desk_work_1": {
+      "wavelet": "db4",
+      "level": 7,
+      "mode": "symmetric",
+      "approx_len": 86,
+      "approx_sampling_hz": 4.0,
+      "approx_band_hz": [
+        0.0,
+        2.0
+      ],
+      "optimized": true,
+      "window": 5,
+      "polyorder": 3,
+      "cost": 0.01791193359304711
+    },
+    "E_00_desk_work_2": {
+      "wavelet": "db4",
+      "level": 7,
+      "mode": "symmetric",
+      "approx_len": 86,
+      "approx_sampling_hz": 4.0,
+      "approx_band_hz": [
+        0.0,
+        2.0
+      ],
+      "optimized": true,
+      "window": 5,
+      "polyorder": 2,
+      "cost": 0.014064941717253358
+    },
+    "E_00_desk_work_3": {
+      "wavelet": "db4",
+      "level": 7,
+      "mode": "symmetric",
+      "approx_len": 86,
+      "approx_sampling_hz": 4.0,
+      "approx_band_hz": [
+        0.0,
+        2.0
+      ],
+      "optimized": true,
+      "window": 5,
+      "polyorder": 3,
+      "cost": 0.05422887280321597
+    }
+  }
+}

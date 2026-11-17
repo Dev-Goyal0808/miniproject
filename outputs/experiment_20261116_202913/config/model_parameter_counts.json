@@ -1,0 +1,39 @@
+{
+  "n_freq_F": 225,
+  "transformer": {
+    "total_trainable_encoder_incl_projection_and_embedding": 25734,
+    "token_projection": 7232,
+    "core_incl_attention_pooling": 18240,
+    "embedding_layer": 262
+  },
+  "bilstm": {
+    "total_trainable_encoder_incl_projection_and_embedding": 14982,
+    "token_projection": 7232,
+    "core_incl_attention_pooling": 7488,
+    "embedding_layer": 262
+  },
+  "heads": {
+    "linear(6,1)": 7,
+    "mlp(6-6-1)": 49,
+    "vqc_6q_2layers_ring": {
+      "total": 55,
+      "circuit_weights": 36,
+      "output_linear(6,1)": 7
+    },
+    "vqc_no_cnot": {
+      "total": 55,
+      "circuit_weights": 36,
+      "output_linear(6,1)": 7
+    }
+  },
+  "quantum_circuit": {
+    "n_qubits": 6,
+    "layers": 3,
+    "encoding": "RY(pi*z_i)",
+    "variational": "RY(theta) RZ(phi) per qubit per layer",
+    "entanglement": "CNOT ring 0->1->2->3->4->5->0 after the rotations of each layer",
+    "measurement": "<Z_i> for i=0..5 -> Linear(6,1)",
+    "simulator": "default.qubit",
+    "diff_method": "backprop"
+  }
+}

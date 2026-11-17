@@ -1,0 +1,67 @@
+# Python virtual environment
+.venv/
+venv/
+env/
+ENV/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*$py.class
+*.pyo
+*.pyd
+.Python
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+*.egg
+.eggs/
+
+# Jupyter Notebook
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+
+# PyCharm / IDE
+.idea/
+.vscode/
+*.suo
+*.user
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Logs & databases
+*.log
+*.sqlite3
+*.db
+
+# Environment variables
+.env
+.env.local
+.env.*
+
+# Model weights / large binary files
+*.h5
+*.pkl
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.npy
+*.npz
+
+# Large data/dataset files
+Data/
+processed/
+
+# Zip archives
+*.zip
+
+# Temporary files
+*.tmp
+*.temp
+~$*

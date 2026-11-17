@@ -1,0 +1,18 @@
+{
+  "gwst_vs_direct_definition_max_abs_error": 1.5803626013929105e-15,
+  "gwst_peak_frequency_of_10Hz_sine": 10.002232142857142,
+  "wosg_lowfreq_power_reduction_factor": 273.0542492786233,
+  "wosg_10Hz_amplitude_ratio": 0.9959135954595296,
+  "entropy_uniform_bits": 3.321928094887362,
+  "entropy_constant_bits": -0.0,
+  "segmentation_10241_samples": {
+    "windows": 4,
+    "leftover": 1
+  },
+  "token_shape": [
+    2,
+    64,
+    225
+  ],
+  "all_passed": true
+}

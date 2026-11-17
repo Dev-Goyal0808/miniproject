@@ -1,0 +1,29 @@
+{
+  "python": "3.10.0 (tags/v3.10.0:b494f59, Oct  4 2021, 19:00:18) [MSC v.1929 64 bit (AMD64)]",
+  "platform": "Windows-10-10.0.26300-SP0",
+  "machine": "AMD64",
+  "cpu_count": 20,
+  "packages": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "pandas": "2.3.3",
+    "sklearn": "1.7.2",
+    "matplotlib": "3.10.9",
+    "pywt": "1.8.0",
+    "torch": "2.14.1+cu132",
+    "pennylane": "0.42.3",
+    "graphviz": "0.21",
+    "joblib": "1.6.0"
+  },
+  "torch_version": "2.14.1+cu132",
+  "pennylane_version": "0.42.3",
+  "pennylane_available": true,
+  "pennylane_error": "",
+  "cuda_available": true,
+  "gpu_name": "NVIDIA GeForce RTX 3050 6GB Laptop GPU",
+  "device_used_for_classical_networks": "cuda",
+  "graphviz_python": true,
+  "graphviz_dot_binary": false,
+  "torch_num_threads": 2,
+  "note": "VQC simulation always runs on CPU (default.qubit statevector); classical networks use the device above."
+}

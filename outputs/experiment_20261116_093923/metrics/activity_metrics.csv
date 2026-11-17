@@ -1,0 +1,571 @@
+model,level,unit_type,unit,accuracy_mean,balanced_accuracy_mean,precision_mean,sensitivity_mean,specificity_mean,f1_mean,macro_f1_mean,roc_auc_mean,pr_auc_mean,mcc_mean,accuracy_std,balanced_accuracy_std,precision_std,sensitivity_std,specificity_std,f1_std,macro_f1_std,roc_auc_std,pr_auc_std,mcc_std,n_seeds,n_recordings,n_healthy_units,n_epilepsy_units,model_name,mode
+E1,recording,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,GWST-450 + Random Forest,frozen/classical
+E2,recording,activity,cooking,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,GWST-450 + SVM,frozen/classical
+E3,recording,activity,cooking,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,activity,cooking,0.0,,0.0,,0.0,0.0,0.0,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + linear,frozen
+E5,recording,activity,cooking,0.0,,0.0,,0.0,0.0,0.0,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,activity,cooking,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,activity,cooking,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,activity,cooking,0.0,,0.0,,0.0,0.0,0.0,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,activity,cooking,0.0,,0.0,,0.0,0.0,0.0,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,activity,cooking,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,activity,desk work,0.75,0.75,1.0,0.5,1.0,0.6666666666666666,0.7333333333333334,0.5,0.75,0.5773502691896258,,,,,,,,,,,1,4,2,2,GWST-450 + Random Forest,frozen/classical
+E2,recording,activity,desk work,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,4,2,2,GWST-450 + SVM,frozen/classical
+E3,recording,activity,desk work,0.25,0.25,0.3333333333333333,0.5,0.0,0.4,0.2,0.0,0.41666666666666663,-0.5773502691896258,,,,,,,,,,,1,4,2,2,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,activity,desk work,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.5,0.5833333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,Transformer + 6-D embedding + linear,frozen
+E5,recording,activity,desk work,0.5,0.5,0.5,1.0,0.0,0.6666666666666666,0.3333333333333333,0.5,0.5833333333333333,,,,,,,,,,,,1,4,2,2,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,activity,desk work,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.5,0.5833333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,activity,desk work,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.75,0.8333333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,activity,desk work,0.75,0.75,1.0,0.5,1.0,0.6666666666666666,0.7333333333333334,0.5,0.75,0.5773502691896258,,,,,,,,,,,1,4,2,2,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,activity,desk work,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.5,0.5833333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,activity,desk work,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.5,0.5833333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,activity,desk work,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.5,0.5833333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,activity,desk work,0.25,0.25,0.3333333333333333,0.5,0.0,0.4,0.2,0.0,0.41666666666666663,-0.5773502691896258,,,,,,,,,,,1,4,2,2,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,activity,desk work,0.5,0.5,0.5,1.0,0.0,0.6666666666666666,0.3333333333333333,0.5,0.5833333333333333,,,,,,,,,,,,1,4,2,2,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,activity,desk work,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.5,0.5833333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,activity,desk work,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.5,0.5833333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,activity,desk work,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.5,0.75,0.5773502691896258,,,,,,,,,,,1,4,2,2,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,activity,desk work,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.5,0.5833333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,activity,desk work,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.5,0.5833333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,activity,desk work,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.5,0.5833333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,1.0,1.0,,,,,,,,,,,,1,4,3,1,GWST-450 + Random Forest,frozen/classical
+E2,recording,activity,idle sitting,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,4,3,1,GWST-450 + SVM,frozen/classical
+E3,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,1.0,1.0,,,,,,,,,,,,1,4,3,1,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,0.33333333333333337,0.3333333333333333,,,,,,,,,,,,1,4,3,1,Transformer + 6-D embedding + linear,frozen
+E5,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,0.0,0.25,,,,,,,,,,,,1,4,3,1,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,0.6666666666666667,0.5,,,,,,,,,,,,1,4,3,1,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,activity,idle sitting,0.25,0.16666666666666666,0.0,0.0,0.3333333333333333,0.0,0.2,0.33333333333333337,0.3333333333333333,-0.5773502691896258,,,,,,,,,,,1,4,3,1,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,0.33333333333333337,0.3333333333333333,,,,,,,,,,,,1,4,3,1,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,0.6666666666666667,0.5,,,,,,,,,,,,1,4,3,1,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,0.0,0.25,,,,,,,,,,,,1,4,3,1,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,0.0,0.25,,,,,,,,,,,,1,4,3,1,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,activity,idle sitting,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,4,3,1,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,0.0,0.25,,,,,,,,,,,,1,4,3,1,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,0.0,0.25,,,,,,,,,,,,1,4,3,1,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,0.0,0.25,,,,,,,,,,,,1,4,3,1,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,activity,idle sitting,0.5,0.3333333333333333,0.0,0.0,0.6666666666666666,0.0,0.3333333333333333,0.33333333333333337,0.3333333333333333,-0.3333333333333333,,,,,,,,,,,1,4,3,1,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,0.0,0.25,,,,,,,,,,,,1,4,3,1,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,0.0,0.25,,,,,,,,,,,,1,4,3,1,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,activity,idle sitting,0.75,0.5,,0.0,1.0,0.0,0.42857142857142855,1.0,1.0,,,,,,,,,,,,1,4,3,1,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,GWST-450 + Random Forest,frozen/classical
+E2,recording,activity,jogging,0.75,0.75,1.0,0.5,1.0,0.6666666666666666,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,GWST-450 + SVM,frozen/classical
+E3,recording,activity,jogging,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.75,0.0,,,,,,,,,,,1,4,2,2,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,Transformer + 6-D embedding + linear,frozen
+E5,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,activity,jogging,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,1.0,1.0,,,,,,,,,,,,1,4,2,2,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.75,0.8333333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.75,0.8333333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.75,0.8333333333333333,0.5773502691896258,,,,,,,,,,,1,4,2,2,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,activity,jogging,0.75,0.75,1.0,0.5,1.0,0.6666666666666666,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,2,2,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,activity,jumping,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,GWST-450 + Random Forest,frozen/classical
+E2,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,GWST-450 + SVM,frozen/classical
+E3,recording,activity,jumping,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,activity,jumping,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + linear,frozen
+E5,recording,activity,jumping,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,activity,jumping,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,activity,laying,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,-1.0,,,,,,,,,,,1,2,1,1,GWST-450 + Random Forest,frozen/classical
+E2,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,1.0,1.0,,,,,,,,,,,,1,2,1,1,GWST-450 + SVM,frozen/classical
+E3,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.5,0.5,,,,,,,,,,,,1,2,1,1,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,1.0,1.0,,,,,,,,,,,,1,2,1,1,Transformer + 6-D embedding + linear,frozen
+E5,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,1.0,1.0,,,,,,,,,,,,1,2,1,1,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,1.0,1.0,,,,,,,,,,,,1,2,1,1,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,activity,laying,0.5,0.5,0.5,1.0,0.0,0.6666666666666666,0.3333333333333333,0.0,0.5,,,,,,,,,,,,1,2,1,1,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,1.0,1.0,,,,,,,,,,,,1,2,1,1,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.0,0.5,,,,,,,,,,,,1,2,1,1,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.0,0.5,,,,,,,,,,,,1,2,1,1,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,1.0,1.0,,,,,,,,,,,,1,2,1,1,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.0,0.5,,,,,,,,,,,,1,2,1,1,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,activity,laying,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,-1.0,,,,,,,,,,,1,2,1,1,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.0,0.5,,,,,,,,,,,,1,2,1,1,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.0,0.5,,,,,,,,,,,,1,2,1,1,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,activity,laying,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.5,-1.0,,,,,,,,,,,1,2,1,1,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.0,0.5,,,,,,,,,,,,1,2,1,1,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.0,0.5,,,,,,,,,,,,1,2,1,1,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.0,0.5,,,,,,,,,,,,1,2,1,1,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,GWST-450 + Random Forest,frozen/classical
+E2,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,GWST-450 + SVM,frozen/classical
+E3,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + linear,frozen
+E5,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,activity,running,0.0,,0.0,,0.0,0.0,0.0,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,activity,running,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,GWST-450 + Random Forest,frozen/classical
+E2,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,GWST-450 + SVM,frozen/classical
+E3,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + linear,frozen
+E5,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,activity,stairs,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,2,4,GWST-450 + Random Forest,frozen/classical
+E2,recording,activity,stairs,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,2,4,GWST-450 + SVM,frozen/classical
+E3,recording,activity,stairs,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,2,4,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,activity,stairs,0.8333333333333334,0.75,0.8,1.0,0.5,0.8888888888888888,0.7777777777777777,1.0,1.0,0.6324555320336759,,,,,,,,,,,1,6,2,4,Transformer + 6-D embedding + linear,frozen
+E5,recording,activity,stairs,0.8333333333333334,0.75,0.8,1.0,0.5,0.8888888888888888,0.7777777777777777,1.0,1.0,0.6324555320336759,,,,,,,,,,,1,6,2,4,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,activity,stairs,0.8333333333333334,0.75,0.8,1.0,0.5,0.8888888888888888,0.7777777777777777,1.0,1.0,0.6324555320336759,,,,,,,,,,,1,6,2,4,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,activity,stairs,0.8333333333333334,0.75,0.8,1.0,0.5,0.8888888888888888,0.7777777777777777,1.0,1.0,0.6324555320336759,,,,,,,,,,,1,6,2,4,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,activity,stairs,0.6666666666666666,0.625,0.75,0.75,0.5,0.75,0.625,0.875,0.95,0.25,,,,,,,,,,,1,6,2,4,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,activity,stairs,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,2,4,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,activity,stairs,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,2,4,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,activity,stairs,0.8333333333333334,0.875,1.0,0.75,1.0,0.8571428571428571,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,2,4,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,activity,stairs,0.8333333333333334,0.75,0.8,1.0,0.5,0.8888888888888888,0.7777777777777777,1.0,1.0,0.6324555320336759,,,,,,,,,,,1,6,2,4,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,activity,stairs,0.6666666666666666,0.625,0.75,0.75,0.5,0.75,0.625,1.0,1.0,0.25,,,,,,,,,,,1,6,2,4,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,activity,stairs,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,2,4,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,activity,stairs,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,2,4,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,activity,stairs,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,2,4,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,activity,stairs,0.8333333333333334,0.75,0.8,1.0,0.5,0.8888888888888888,0.7777777777777777,1.0,1.0,0.6324555320336759,,,,,,,,,,,1,6,2,4,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,activity,stairs,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,2,4,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,activity,stairs,0.8333333333333334,0.875,1.0,0.75,1.0,0.8571428571428571,0.8285714285714285,0.75,0.9166666666666666,0.7071067811865476,,,,,,,,,,,1,6,2,4,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,GWST-450 + Random Forest,frozen/classical
+E2,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,GWST-450 + SVM,frozen/classical
+E3,recording,activity,standing,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + linear,frozen
+E5,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,activity,standing,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,2,0,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,GWST-450 + Random Forest,frozen/classical
+E2,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,GWST-450 + SVM,frozen/classical
+E3,recording,activity,walking,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,4,2,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,Transformer + 6-D embedding + linear,frozen
+E5,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,activity,walking,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,0.75,0.5833333333333333,0.7071067811865476,,,,,,,,,,,1,6,4,2,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,4,2,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,activity,walking,0.8333333333333334,0.75,1.0,0.5,1.0,0.6666666666666666,0.7777777777777777,1.0,1.0,0.6324555320336759,,,,,,,,,,,1,6,4,2,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,group,stationary,0.6666666666666666,0.5625,0.5,0.25,0.875,0.3333333333333333,0.5555555555555556,0.6875,0.7048611111111112,0.15811388300841897,,,,,,,,,,,1,12,8,4,GWST-450 + Random Forest,frozen/classical
+E2,recording,group,stationary,0.9166666666666666,0.875,1.0,0.75,1.0,0.8571428571428571,0.8991596638655461,0.96875,0.95,0.816496580927726,,,,,,,,,,,1,12,8,4,GWST-450 + SVM,frozen/classical
+E3,recording,group,stationary,0.5833333333333334,0.5,0.3333333333333333,0.25,0.75,0.2857142857142857,0.4957983193277311,0.640625,0.5,0.0,,,,,,,,,,,1,12,8,4,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,group,stationary,0.75,0.6875,0.6666666666666666,0.5,0.875,0.5714285714285714,0.6974789915966386,0.6875,0.5238095238095238,0.408248290463863,,,,,,,,,,,1,12,8,4,Transformer + 6-D embedding + linear,frozen
+E5,recording,group,stationary,0.6666666666666666,0.625,0.5,0.5,0.75,0.5,0.625,0.625,0.5075757575757576,0.25,,,,,,,,,,,1,12,8,4,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,group,stationary,0.75,0.6875,0.6666666666666666,0.5,0.875,0.5714285714285714,0.6974789915966386,0.75,0.5595238095238095,0.408248290463863,,,,,,,,,,,1,12,8,4,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,group,stationary,0.5833333333333334,0.625,0.42857142857142855,0.75,0.5,0.5454545454545454,0.5804195804195804,0.6875,0.6,0.23904572186687872,,,,,,,,,,,1,12,8,4,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,group,stationary,0.75,0.625,1.0,0.25,1.0,0.4,0.6210526315789473,0.65625,0.6,0.42640143271122083,,,,,,,,,,,1,12,8,4,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,group,stationary,0.75,0.6875,0.6666666666666666,0.5,0.875,0.5714285714285714,0.6974789915966386,0.65625,0.5166666666666666,0.408248290463863,,,,,,,,,,,1,12,8,4,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,group,stationary,0.75,0.6875,0.6666666666666666,0.5,0.875,0.5714285714285714,0.6974789915966386,0.5625,0.475,0.408248290463863,,,,,,,,,,,1,12,8,4,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,group,stationary,0.75,0.6875,0.6666666666666666,0.5,0.875,0.5714285714285714,0.6974789915966386,0.625,0.4988095238095238,0.408248290463863,,,,,,,,,,,1,12,8,4,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,group,stationary,0.6666666666666666,0.625,0.5,0.5,0.75,0.5,0.625,0.59375,0.4492424242424242,0.25,,,,,,,,,,,1,12,8,4,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,group,stationary,0.5833333333333334,0.5625,0.4,0.5,0.625,0.4444444444444444,0.5555555555555556,0.5625,0.475,0.11952286093343936,,,,,,,,,,,1,12,8,4,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,group,stationary,0.75,0.6875,0.6666666666666666,0.5,0.875,0.5714285714285714,0.6974789915966386,0.59375,0.48971861471861466,0.408248290463863,,,,,,,,,,,1,12,8,4,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,group,stationary,0.75,0.6875,0.6666666666666666,0.5,0.875,0.5714285714285714,0.6974789915966386,0.53125,0.46875,0.408248290463863,,,,,,,,,,,1,12,8,4,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,group,stationary,0.5833333333333334,0.5625,0.4,0.5,0.625,0.4444444444444444,0.5555555555555556,0.59375,0.5571428571428572,0.11952286093343936,,,,,,,,,,,1,12,8,4,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,group,stationary,0.75,0.6875,0.6666666666666666,0.5,0.875,0.5714285714285714,0.6974789915966386,0.59375,0.48541666666666666,0.408248290463863,,,,,,,,,,,1,12,8,4,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,group,stationary,0.75,0.6875,0.6666666666666666,0.5,0.875,0.5714285714285714,0.6974789915966386,0.59375,0.48541666666666666,0.408248290463863,,,,,,,,,,,1,12,8,4,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,group,stationary,0.75,0.6875,0.6666666666666666,0.5,0.875,0.5714285714285714,0.6974789915966386,0.6875,0.5700757575757576,0.408248290463863,,,,,,,,,,,1,12,8,4,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,group,light_ambulatory,1.0,1.0,1.0,1.0,1.0,1.0,1.0,0.9999999999999999,1.0,1.0,,,,,,,,,,,1,12,6,6,GWST-450 + Random Forest,frozen/classical
+E2,recording,group,light_ambulatory,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,12,6,6,GWST-450 + SVM,frozen/classical
+E3,recording,group,light_ambulatory,0.9166666666666666,0.9166666666666667,0.8571428571428571,1.0,0.8333333333333334,0.9230769230769231,0.916083916083916,1.0,1.0,0.8451542547285166,,,,,,,,,,,1,12,6,6,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,group,light_ambulatory,0.9166666666666666,0.9166666666666667,0.8571428571428571,1.0,0.8333333333333334,0.9230769230769231,0.916083916083916,1.0,1.0,0.8451542547285166,,,,,,,,,,,1,12,6,6,Transformer + 6-D embedding + linear,frozen
+E5,recording,group,light_ambulatory,0.9166666666666666,0.9166666666666667,0.8571428571428571,1.0,0.8333333333333334,0.9230769230769231,0.916083916083916,1.0,1.0,0.8451542547285166,,,,,,,,,,,1,12,6,6,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,group,light_ambulatory,0.9166666666666666,0.9166666666666667,0.8571428571428571,1.0,0.8333333333333334,0.9230769230769231,0.916083916083916,1.0,1.0,0.8451542547285166,,,,,,,,,,,1,12,6,6,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,group,light_ambulatory,0.8333333333333334,0.8333333333333333,0.75,1.0,0.6666666666666666,0.8571428571428571,0.8285714285714285,0.888888888888889,0.8734126984126983,0.7071067811865476,,,,,,,,,,,1,12,6,6,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,group,light_ambulatory,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.9722222222222223,0.976190476190476,0.6666666666666666,,,,,,,,,,,1,12,6,6,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,group,light_ambulatory,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,12,6,6,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,group,light_ambulatory,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,12,6,6,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,group,light_ambulatory,0.9166666666666666,0.9166666666666667,1.0,0.8333333333333334,1.0,0.9090909090909091,0.916083916083916,1.0,1.0,0.8451542547285166,,,,,,,,,,,1,12,6,6,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,group,light_ambulatory,0.9166666666666666,0.9166666666666667,0.8571428571428571,1.0,0.8333333333333334,0.9230769230769231,0.916083916083916,1.0,1.0,0.8451542547285166,,,,,,,,,,,1,12,6,6,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,group,light_ambulatory,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334,0.8333333333333334,1.0,1.0,0.6666666666666666,,,,,,,,,,,1,12,6,6,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,group,light_ambulatory,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,12,6,6,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,group,light_ambulatory,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,12,6,6,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,group,light_ambulatory,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,12,6,6,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,group,light_ambulatory,0.9166666666666666,0.9166666666666667,0.8571428571428571,1.0,0.8333333333333334,0.9230769230769231,0.916083916083916,1.0,1.0,0.8451542547285166,,,,,,,,,,,1,12,6,6,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,group,light_ambulatory,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,12,6,6,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,group,light_ambulatory,0.8333333333333334,0.8333333333333333,1.0,0.6666666666666666,1.0,0.8,0.8285714285714285,0.9166666666666667,0.9444444444444444,0.7071067811865476,,,,,,,,,,,1,12,6,6,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,4,2,GWST-450 + Random Forest,frozen/classical
+E2,recording,group,intense_ambulatory,0.8333333333333334,0.75,1.0,0.5,1.0,0.6666666666666666,0.7777777777777777,1.0,1.0,0.6324555320336759,,,,,,,,,,,1,6,4,2,GWST-450 + SVM,frozen/classical
+E3,recording,group,intense_ambulatory,0.6666666666666666,0.625,0.5,0.5,0.75,0.5,0.625,0.5,0.6666666666666666,0.25,,,,,,,,,,,1,6,4,2,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,4,2,Transformer + 6-D embedding + linear,frozen
+E5,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,4,2,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,4,2,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,group,intense_ambulatory,0.5,0.625,0.4,1.0,0.25,0.5714285714285714,0.4857142857142857,1.0,1.0,0.31622776601683794,,,,,,,,,,,1,6,4,2,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,4,2,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,4,2,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,4,2,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,4,2,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,group,intense_ambulatory,0.5,0.375,0.0,0.0,0.75,0.0,0.3333333333333333,0.75,0.75,-0.31622776601683794,,,,,,,,,,,1,6,4,2,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,0.875,0.8333333333333333,0.7071067811865476,,,,,,,,,,,1,6,4,2,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,4,2,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,4,2,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,0.875,0.8333333333333333,0.7071067811865476,,,,,,,,,,,1,6,4,2,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,4,2,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,0.875,0.8333333333333333,0.7071067811865476,,,,,,,,,,,1,6,4,2,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,group,intense_ambulatory,0.8333333333333334,0.75,1.0,0.5,1.0,0.6666666666666666,0.7777777777777777,1.0,1.0,0.6324555320336759,,,,,,,,,,,1,6,4,2,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,recording,paired_activities_all,all eligible activities,0.8333333333333334,0.8194444444444444,0.8181818181818182,0.75,0.8888888888888888,0.782608695652174,0.8237367802585194,0.8888888888888888,0.9154456654456654,0.6494998689336408,,,,,,,,,,,1,30,18,12,GWST-450 + Random Forest,frozen/classical
+E2,recording,paired_activities_all,all eligible activities,0.9333333333333333,0.9166666666666667,1.0,0.8333333333333334,1.0,0.9090909090909091,0.9282296650717703,0.9907407407407407,0.9866452991452993,0.8660254037844386,,,,,,,,,,,1,30,18,12,GWST-450 + SVM,frozen/classical
+E3,recording,paired_activities_all,all eligible activities,0.7333333333333333,0.7222222222222222,0.6666666666666666,0.6666666666666666,0.7777777777777778,0.6666666666666666,0.7222222222222222,0.8194444444444444,0.8323158323158324,0.4444444444444444,,,,,,,,,,,1,30,18,12,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,recording,paired_activities_all,all eligible activities,0.8333333333333334,0.8333333333333334,0.7692307692307693,0.8333333333333334,0.8333333333333334,0.8,0.8285714285714285,0.9074074074074074,0.8785848682907508,0.6590820436573076,,,,,,,,,,,1,30,18,12,Transformer + 6-D embedding + linear,frozen
+E5,recording,paired_activities_all,all eligible activities,0.8,0.8055555555555556,0.7142857142857143,0.8333333333333334,0.7777777777777778,0.7692307692307693,0.7963800904977376,0.8981481481481481,0.8702155483405484,0.600099198148979,,,,,,,,,,,1,30,18,12,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,recording,paired_activities_all,all eligible activities,0.8333333333333334,0.8333333333333334,0.7692307692307693,0.8333333333333334,0.8333333333333334,0.8,0.8285714285714285,0.912037037037037,0.8733181782814138,0.6590820436573076,,,,,,,,,,,1,30,18,12,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,recording,paired_activities_all,all eligible activities,0.6666666666666666,0.7083333333333333,0.55,0.9166666666666666,0.5,0.6875,0.6651785714285714,0.7824074074074074,0.6928825803825804,0.4330127018922193,,,,,,,,,,,1,30,18,12,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,recording,paired_activities_all,all eligible activities,0.8,0.7777777777777777,0.8,0.6666666666666666,0.8888888888888888,0.7272727272727273,0.784688995215311,0.8796296296296297,0.881283068783069,0.5773502691896257,,,,,,,,,,,1,30,18,12,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,recording,paired_activities_all,all eligible activities,0.8666666666666667,0.8611111111111112,0.8333333333333334,0.8333333333333334,0.8888888888888888,0.8333333333333334,0.8611111111111112,0.9027777777777778,0.8725965007215007,0.7222222222222222,,,,,,,,,,,1,30,18,12,Bi-LSTM + 6-D embedding + linear,frozen
+E9,recording,paired_activities_all,all eligible activities,0.8666666666666667,0.8611111111111112,0.8333333333333334,0.8333333333333334,0.8888888888888888,0.8333333333333334,0.8611111111111112,0.8842592592592593,0.8554485962380701,0.7222222222222222,,,,,,,,,,,1,30,18,12,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,recording,paired_activities_all,all eligible activities,0.8333333333333334,0.8194444444444444,0.8181818181818182,0.75,0.8888888888888888,0.782608695652174,0.8237367802585194,0.8981481481481481,0.8730293127351952,0.6494998689336408,,,,,,,,,,,1,30,18,12,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,recording,paired_activities_all,all eligible activities,0.7333333333333333,0.7222222222222222,0.6666666666666666,0.6666666666666666,0.7777777777777778,0.6666666666666666,0.7222222222222222,0.800925925925926,0.7723438799525757,0.4444444444444444,,,,,,,,,,,1,30,18,12,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,recording,paired_activities_all,all eligible activities,0.7333333333333333,0.7361111111111112,0.6428571428571429,0.75,0.7222222222222222,0.6923076923076923,0.7285067873303167,0.8518518518518519,0.7463216121110858,0.4637130167514838,,,,,,,,,,,1,30,18,12,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,recording,paired_activities_all,all eligible activities,0.8666666666666667,0.8611111111111112,0.8333333333333334,0.8333333333333334,0.8888888888888888,0.8333333333333334,0.8611111111111112,0.9027777777777778,0.885219668675551,0.7222222222222222,,,,,,,,,,,1,30,18,12,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,recording,paired_activities_all,all eligible activities,0.8666666666666667,0.8611111111111112,0.8333333333333334,0.8333333333333334,0.8888888888888888,0.8333333333333334,0.8611111111111112,0.8935185185185186,0.8903409090909092,0.7222222222222222,,,,,,,,,,,1,30,18,12,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,recording,paired_activities_all,all eligible activities,0.8,0.8055555555555556,0.7142857142857143,0.8333333333333334,0.7777777777777778,0.7692307692307693,0.7963800904977376,0.875,0.8464353048911873,0.600099198148979,,,,,,,,,,,1,30,18,12,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,recording,paired_activities_all,all eligible activities,0.8333333333333334,0.8333333333333334,0.7692307692307693,0.8333333333333334,0.8333333333333334,0.8,0.8285714285714285,0.9074074074074074,0.892361111111111,0.6590820436573076,,,,,,,,,,,1,30,18,12,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,recording,paired_activities_all,all eligible activities,0.8666666666666667,0.8611111111111112,0.8333333333333334,0.8333333333333334,0.8888888888888888,0.8333333333333334,0.8611111111111112,0.8842592592592593,0.8492003367003368,0.7222222222222222,,,,,,,,,,,1,30,18,12,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,recording,paired_activities_all,all eligible activities,0.8,0.7638888888888888,0.875,0.5833333333333334,0.9444444444444444,0.7,0.7749999999999999,0.861111111111111,0.8405706501101239,0.5846845821518305,,,,,,,,,,,1,30,18,12,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,activity,cooking,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,GWST-450 + Random Forest,frozen/classical
+E2,window,activity,cooking,0.625,,0.0,,0.625,0.0,0.38461538461538464,,,,,,,,,,,,,,1,2,8,0,GWST-450 + SVM,frozen/classical
+E3,window,activity,cooking,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,8,0,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,activity,cooking,0.25,,0.0,,0.25,0.0,0.2,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + linear,frozen
+E5,window,activity,cooking,0.375,,0.0,,0.375,0.0,0.2727272727272727,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,activity,cooking,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,activity,cooking,0.375,,0.0,,0.375,0.0,0.2727272727272727,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,activity,cooking,0.375,,0.0,,0.375,0.0,0.2727272727272727,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,activity,cooking,0.375,,0.0,,0.375,0.0,0.2727272727272727,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,activity,cooking,0.625,,0.0,,0.625,0.0,0.38461538461538464,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,activity,cooking,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,activity,desk work,0.5625,0.5625,0.5714285714285714,0.5,0.625,0.5333333333333333,0.5607843137254902,0.5390625,0.5700396825396825,0.1259881576697424,,,,,,,,,,,1,4,8,8,GWST-450 + Random Forest,frozen/classical
+E2,window,activity,desk work,0.625,0.625,0.6,0.75,0.5,0.6666666666666666,0.6190476190476191,0.671875,0.6580357142857143,0.2581988897471611,,,,,,,,,,,1,4,8,8,GWST-450 + SVM,frozen/classical
+E3,window,activity,desk work,0.4375,0.4375,0.4444444444444444,0.5,0.375,0.47058823529411764,0.43529411764705883,0.4453125,0.5,-0.1259881576697424,,,,,,,,,,,1,4,8,8,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,activity,desk work,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.515625,0.5096230158730158,0.0,,,,,,,,,,,1,4,8,8,Transformer + 6-D embedding + linear,frozen
+E5,window,activity,desk work,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.484375,0.4958603896103896,0.0,,,,,,,,,,,1,4,8,8,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,activity,desk work,0.375,0.375,0.375,0.375,0.375,0.375,0.375,0.46875,0.48826728826728827,-0.25,,,,,,,,,,,1,4,8,8,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,activity,desk work,0.625,0.625,0.6,0.75,0.5,0.6666666666666666,0.6190476190476191,0.8125,0.7784090909090908,0.2581988897471611,,,,,,,,,,,1,4,8,8,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,activity,desk work,0.5625,0.5625,0.5714285714285714,0.5,0.625,0.5333333333333333,0.5607843137254902,0.53125,0.6866258741258742,0.1259881576697424,,,,,,,,,,,1,4,8,8,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,activity,desk work,0.4375,0.4375,0.46153846153846156,0.75,0.125,0.5714285714285714,0.37662337662337664,0.421875,0.4984848484848485,-0.16012815380508713,,,,,,,,,,,1,4,8,8,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,activity,desk work,0.4375,0.4375,0.46153846153846156,0.75,0.125,0.5714285714285714,0.37662337662337664,0.421875,0.4984848484848485,-0.16012815380508713,,,,,,,,,,,1,4,8,8,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,activity,desk work,0.4375,0.4375,0.46153846153846156,0.75,0.125,0.5714285714285714,0.37662337662337664,0.46875,0.5722222222222222,-0.16012815380508713,,,,,,,,,,,1,4,8,8,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,activity,desk work,0.3125,0.3125,0.36363636363636365,0.5,0.125,0.42105263157894735,0.2874493927125506,0.125,0.3620650183150183,-0.40451991747794525,,,,,,,,,,,1,4,8,8,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,activity,desk work,0.5,0.5,0.5,0.75,0.25,0.6,0.4666666666666667,0.46875,0.6005681818181818,0.0,,,,,,,,,,,1,4,8,8,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,activity,desk work,0.4375,0.4375,0.4444444444444444,0.5,0.375,0.47058823529411764,0.43529411764705883,0.484375,0.5505681818181818,-0.1259881576697424,,,,,,,,,,,1,4,8,8,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,activity,desk work,0.4375,0.4375,0.4444444444444444,0.5,0.375,0.47058823529411764,0.43529411764705883,0.5,0.5553758741258741,-0.1259881576697424,,,,,,,,,,,1,4,8,8,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,activity,desk work,0.5,0.5,0.5,0.75,0.25,0.6,0.4666666666666667,0.5625,0.7074592074592074,0.0,,,,,,,,,,,1,4,8,8,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,activity,desk work,0.4375,0.4375,0.45454545454545453,0.625,0.25,0.5263157894736842,0.41700404858299595,0.46875,0.5444978632478632,-0.13483997249264842,,,,,,,,,,,1,4,8,8,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,activity,desk work,0.5,0.5,0.5,0.75,0.25,0.6,0.4666666666666667,0.40625,0.4936771561771562,0.0,,,,,,,,,,,1,4,8,8,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,activity,desk work,0.625,0.625,0.625,0.625,0.625,0.625,0.625,0.578125,0.5724702380952381,0.25,,,,,,,,,,,1,4,8,8,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,activity,idle sitting,0.875,0.75,1.0,0.5,1.0,0.6666666666666666,0.7948717948717949,0.7916666666666666,0.75,0.6546536707079772,,,,,,,,,,,1,4,12,4,GWST-450 + Random Forest,frozen/classical
+E2,window,activity,idle sitting,0.875,0.8333333333333333,0.75,0.75,0.9166666666666666,0.75,0.8333333333333333,0.7708333333333334,0.8166666666666667,0.6666666666666666,,,,,,,,,,,1,4,12,4,GWST-450 + SVM,frozen/classical
+E3,window,activity,idle sitting,0.8125,0.7083333333333333,0.6666666666666666,0.5,0.9166666666666666,0.5714285714285714,0.7257142857142858,0.6770833333333333,0.6306818181818181,0.4622501635210242,,,,,,,,,,,1,4,12,4,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,activity,idle sitting,0.75,0.5833333333333333,0.5,0.25,0.9166666666666666,0.3333333333333333,0.5897435897435898,0.33333333333333337,0.4125,0.2182178902359924,,,,,,,,,,,1,4,12,4,Transformer + 6-D embedding + linear,frozen
+E5,window,activity,idle sitting,0.8125,0.625,1.0,0.25,1.0,0.4,0.6444444444444444,0.29166666666666663,0.4041666666666667,0.4472135954999579,,,,,,,,,,,1,4,12,4,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,activity,idle sitting,0.6875,0.5416666666666667,0.3333333333333333,0.25,0.8333333333333334,0.2857142857142857,0.5428571428571429,0.33333333333333337,0.4125,0.09245003270420485,,,,,,,,,,,1,4,12,4,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,activity,idle sitting,0.375,0.33333333333333337,0.125,0.25,0.4166666666666667,0.16666666666666666,0.3333333333333333,0.375,0.42045454545454547,-0.2886751345948129,,,,,,,,,,,1,4,12,4,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,activity,idle sitting,0.8125,0.625,1.0,0.25,1.0,0.4,0.6444444444444444,0.4375,0.4348776223776224,0.4472135954999579,,,,,,,,,,,1,4,12,4,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,activity,idle sitting,0.8125,0.625,1.0,0.25,1.0,0.4,0.6444444444444444,0.375,0.4201923076923077,0.4472135954999579,,,,,,,,,,,1,4,12,4,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,activity,idle sitting,0.8125,0.625,1.0,0.25,1.0,0.4,0.6444444444444444,0.375,0.4201923076923077,0.4472135954999579,,,,,,,,,,,1,4,12,4,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,activity,idle sitting,0.8125,0.625,1.0,0.25,1.0,0.4,0.6444444444444444,0.35416666666666663,0.41607142857142854,0.4472135954999579,,,,,,,,,,,1,4,12,4,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,activity,idle sitting,0.6875,0.5416666666666667,0.3333333333333333,0.25,0.8333333333333334,0.2857142857142857,0.5428571428571429,0.5625,0.4708333333333333,0.09245003270420485,,,,,,,,,,,1,4,12,4,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,activity,idle sitting,0.6875,0.5416666666666667,0.3333333333333333,0.25,0.8333333333333334,0.2857142857142857,0.5428571428571429,0.375,0.4201923076923077,0.09245003270420485,,,,,,,,,,,1,4,12,4,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,activity,idle sitting,0.75,0.5833333333333333,0.5,0.25,0.9166666666666666,0.3333333333333333,0.5897435897435898,0.29166666666666663,0.4041666666666667,0.2182178902359924,,,,,,,,,,,1,4,12,4,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,activity,idle sitting,0.8125,0.625,1.0,0.25,1.0,0.4,0.6444444444444444,0.3125,0.40795454545454546,0.4472135954999579,,,,,,,,,,,1,4,12,4,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,activity,idle sitting,0.4375,0.375,0.14285714285714285,0.25,0.5,0.18181818181818182,0.37662337662337664,0.375,0.4201923076923077,-0.21821789023599236,,,,,,,,,,,1,4,12,4,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,activity,idle sitting,0.8125,0.625,1.0,0.25,1.0,0.4,0.6444444444444444,0.33333333333333337,0.411525974025974,0.4472135954999579,,,,,,,,,,,1,4,12,4,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,activity,idle sitting,0.8125,0.625,1.0,0.25,1.0,0.4,0.6444444444444444,0.33333333333333337,0.411525974025974,0.4472135954999579,,,,,,,,,,,1,4,12,4,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,activity,idle sitting,0.625,0.5,0.25,0.25,0.75,0.25,0.5,0.5416666666666666,0.4665334665334665,0.0,,,,,,,,,,,1,4,12,4,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,activity,jogging,0.8125,0.8125,0.7777777777777778,0.875,0.75,0.8235294117647058,0.8117647058823529,0.796875,0.7063492063492064,0.629940788348712,,,,,,,,,,,1,4,8,8,GWST-450 + Random Forest,frozen/classical
+E2,window,activity,jogging,0.8125,0.8125,0.8571428571428571,0.75,0.875,0.8,0.8117647058823529,0.890625,0.8644345238095238,0.629940788348712,,,,,,,,,,,1,4,8,8,GWST-450 + SVM,frozen/classical
+E3,window,activity,jogging,0.625,0.625,0.6666666666666666,0.5,0.75,0.5714285714285714,0.6190476190476191,0.5703125,0.5819444444444444,0.2581988897471611,,,,,,,,,,,1,4,8,8,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.984375,0.9861111111111112,0.5773502691896258,,,,,,,,,,,1,4,8,8,Transformer + 6-D embedding + linear,frozen
+E5,window,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,8,8,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,1.0,1.0,0.5773502691896258,,,,,,,,,,,1,4,8,8,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.84375,0.8334686147186148,0.5773502691896258,,,,,,,,,,,1,4,8,8,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,activity,jogging,0.875,0.875,0.875,0.875,0.875,0.875,0.875,0.96875,0.975,0.75,,,,,,,,,,,1,4,8,8,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.8125,0.7256313131313131,0.5773502691896258,,,,,,,,,,,1,4,8,8,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.8125,0.7805555555555554,0.5773502691896258,,,,,,,,,,,1,4,8,8,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.96875,0.9704861111111112,0.5773502691896258,,,,,,,,,,,1,4,8,8,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,activity,jogging,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.734375,0.8327651515151515,,,,,,,,,,,,1,4,8,8,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,activity,jogging,0.75,0.75,0.7,0.875,0.625,0.7777777777777778,0.746031746031746,0.6875,0.6023674242424242,0.5163977794943222,,,,,,,,,,,1,4,8,8,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,activity,jogging,0.9375,0.9375,0.8888888888888888,1.0,0.875,0.9411764705882353,0.9372549019607843,0.96875,0.9704861111111112,0.8819171036881969,,,,,,,,,,,1,4,8,8,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,activity,jogging,0.9375,0.9375,0.8888888888888888,1.0,0.875,0.9411764705882353,0.9372549019607843,0.984375,0.9861111111111112,0.8819171036881969,,,,,,,,,,,1,4,8,8,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,activity,jogging,0.75,0.75,0.6666666666666666,1.0,0.5,0.8,0.7333333333333334,0.8125,0.8125,0.5773502691896258,,,,,,,,,,,1,4,8,8,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,activity,jogging,0.875,0.875,0.8,1.0,0.75,0.8888888888888888,0.873015873015873,0.890625,0.8951388888888889,0.7745966692414834,,,,,,,,,,,1,4,8,8,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,activity,jogging,0.8125,0.8125,0.7777777777777778,0.875,0.75,0.8235294117647058,0.8117647058823529,0.734375,0.6336670274170274,0.629940788348712,,,,,,,,,,,1,4,8,8,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,activity,jogging,0.75,0.75,0.8333333333333334,0.625,0.875,0.7142857142857143,0.746031746031746,0.875,0.8553436147186148,0.5163977794943222,,,,,,,,,,,1,4,8,8,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,activity,jumping,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,GWST-450 + Random Forest,frozen/classical
+E2,window,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,GWST-450 + SVM,frozen/classical
+E3,window,activity,jumping,0.375,,0.0,,0.375,0.0,0.2727272727272727,,,,,,,,,,,,,,1,2,8,0,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,activity,jumping,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + linear,frozen
+E5,window,activity,jumping,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,activity,jumping,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,activity,jumping,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,activity,jumping,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,activity,jumping,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,activity,jumping,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,activity,jumping,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,activity,jumping,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,activity,laying,0.375,0.375,0.0,0.0,0.75,0.0,0.2727272727272727,0.1875,0.45,-0.3779644730092272,,,,,,,,,,,1,2,4,4,GWST-450 + Random Forest,frozen/classical
+E2,window,activity,laying,0.5,0.5,0.5,0.5,0.5,0.5,0.5,0.625,0.775,0.0,,,,,,,,,,,1,2,4,4,GWST-450 + SVM,frozen/classical
+E3,window,activity,laying,0.625,0.625,1.0,0.25,1.0,0.4,0.5636363636363637,0.25,0.625,0.3779644730092272,,,,,,,,,,,1,2,4,4,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.5,0.65,,,,,,,,,,,,1,2,4,4,Transformer + 6-D embedding + linear,frozen
+E5,window,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.5,0.65,,,,,,,,,,,,1,2,4,4,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,activity,laying,0.625,0.625,1.0,0.25,1.0,0.4,0.5636363636363637,0.5,0.65,0.3779644730092272,,,,,,,,,,,1,2,4,4,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,activity,laying,0.375,0.375,0.42857142857142855,0.75,0.0,0.5454545454545454,0.2727272727272727,0.3125,0.5821428571428572,-0.3779644730092272,,,,,,,,,,,1,2,4,4,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.25,0.5654761904761905,,,,,,,,,,,,1,2,4,4,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,activity,laying,0.625,0.625,1.0,0.25,1.0,0.4,0.5636363636363637,0.375,0.6,0.3779644730092272,,,,,,,,,,,1,2,4,4,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,activity,laying,0.625,0.625,1.0,0.25,1.0,0.4,0.5636363636363637,0.375,0.6,0.3779644730092272,,,,,,,,,,,1,2,4,4,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,activity,laying,0.625,0.625,1.0,0.25,1.0,0.4,0.5636363636363637,0.375,0.6,0.3779644730092272,,,,,,,,,,,1,2,4,4,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,activity,laying,0.5,0.5,0.5,0.25,0.75,0.3333333333333333,0.4666666666666667,0.4375,0.625,0.0,,,,,,,,,,,1,2,4,4,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,activity,laying,0.625,0.625,1.0,0.25,1.0,0.4,0.5636363636363637,0.375,0.6,0.3779644730092272,,,,,,,,,,,1,2,4,4,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,activity,laying,0.625,0.625,1.0,0.25,1.0,0.4,0.5636363636363637,0.5,0.65,0.3779644730092272,,,,,,,,,,,1,2,4,4,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,activity,laying,0.625,0.625,1.0,0.25,1.0,0.4,0.5636363636363637,0.5,0.65,0.3779644730092272,,,,,,,,,,,1,2,4,4,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,activity,laying,0.375,0.375,0.42857142857142855,0.75,0.0,0.5454545454545454,0.2727272727272727,0.375,0.6071428571428572,-0.3779644730092272,,,,,,,,,,,1,2,4,4,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,activity,laying,0.625,0.625,1.0,0.25,1.0,0.4,0.5636363636363637,0.375,0.6,0.3779644730092272,,,,,,,,,,,1,2,4,4,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.4375,0.625,,,,,,,,,,,,1,2,4,4,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,activity,laying,0.5,0.5,,0.0,1.0,0.0,0.3333333333333333,0.375,0.6,,,,,,,,,,,,1,2,4,4,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,activity,running,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,GWST-450 + Random Forest,frozen/classical
+E2,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,GWST-450 + SVM,frozen/classical
+E3,window,activity,running,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + linear,frozen
+E5,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,activity,running,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,activity,running,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,activity,running,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,activity,running,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,activity,running,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,activity,sitting,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,GWST-450 + Random Forest,frozen/classical
+E2,window,activity,sitting,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,GWST-450 + SVM,frozen/classical
+E3,window,activity,sitting,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,8,0,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + linear,frozen
+E5,window,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,activity,sitting,0.5,,0.0,,0.5,0.0,0.3333333333333333,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,activity,sitting,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,activity,sitting,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,activity,sitting,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,activity,sitting,0.625,,0.0,,0.625,0.0,0.38461538461538464,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,activity,sitting,0.75,,0.0,,0.75,0.0,0.42857142857142855,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,activity,sitting,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,activity,sitting,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,activity,sitting,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,activity,stairs,0.875,0.90625,1.0,0.8125,1.0,0.896551724137931,0.8693284936479129,0.94921875,0.9736253196930946,0.7687061147858074,,,,,,,,,,,1,6,8,16,GWST-450 + Random Forest,frozen/classical
+E2,window,activity,stairs,0.8333333333333334,0.8125,0.875,0.875,0.75,0.875,0.8125,0.90625,0.9608630952380952,0.625,,,,,,,,,,,1,6,8,16,GWST-450 + SVM,frozen/classical
+E3,window,activity,stairs,0.875,0.875,0.9333333333333333,0.875,0.875,0.9032258064516129,0.8633776091081593,0.9453125,0.9623144399460188,0.7302967433402215,,,,,,,,,,,1,6,8,16,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,activity,stairs,0.8333333333333334,0.8125,0.875,0.875,0.75,0.875,0.8125,0.9375,0.9729166666666667,0.625,,,,,,,,,,,1,6,8,16,Transformer + 6-D embedding + linear,frozen
+E5,window,activity,stairs,0.8333333333333334,0.8125,0.875,0.875,0.75,0.875,0.8125,0.9296875,0.968452380952381,0.625,,,,,,,,,,,1,6,8,16,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,activity,stairs,0.8333333333333334,0.8125,0.875,0.875,0.75,0.875,0.8125,0.8984375,0.9563580060290586,0.625,,,,,,,,,,,1,6,8,16,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,activity,stairs,0.8333333333333334,0.8125,0.875,0.875,0.75,0.875,0.8125,0.8203125,0.9137662296409899,0.625,,,,,,,,,,,1,6,8,16,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,activity,stairs,0.8333333333333334,0.8125,0.875,0.875,0.75,0.875,0.8125,0.7265625,0.8127336307483366,0.625,,,,,,,,,,,1,6,8,16,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,activity,stairs,0.7916666666666666,0.75,0.8235294117647058,0.875,0.625,0.8484848484848485,0.7575757575757576,0.9296875,0.968452380952381,0.5185629788417315,,,,,,,,,,,1,6,8,16,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,activity,stairs,0.7916666666666666,0.75,0.8235294117647058,0.875,0.625,0.8484848484848485,0.7575757575757576,0.9375,0.9729166666666667,0.5185629788417315,,,,,,,,,,,1,6,8,16,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,activity,stairs,0.875,0.875,0.9333333333333333,0.875,0.875,0.9032258064516129,0.8633776091081593,0.8203125,0.8569222821260865,0.7302967433402215,,,,,,,,,,,1,6,8,16,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,activity,stairs,0.7083333333333334,0.71875,0.8461538461538461,0.6875,0.75,0.7586206896551724,0.6950998185117967,0.7578125,0.8989566719829878,0.4139186771923578,,,,,,,,,,,1,6,8,16,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,activity,stairs,0.875,0.90625,1.0,0.8125,1.0,0.896551724137931,0.8693284936479129,0.9375,0.9715161064425771,0.7687061147858074,,,,,,,,,,,1,6,8,16,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,activity,stairs,0.875,0.875,0.9333333333333333,0.875,0.875,0.9032258064516129,0.8633776091081593,0.9296875,0.9701754385964912,0.7302967433402215,,,,,,,,,,,1,6,8,16,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,activity,stairs,0.875,0.875,0.9333333333333333,0.875,0.875,0.9032258064516129,0.8633776091081593,0.90625,0.9556951272411799,0.7302967433402215,,,,,,,,,,,1,6,8,16,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,activity,stairs,0.875,0.8125,0.8421052631578947,1.0,0.625,0.9142857142857143,0.8417582417582418,0.9765625,0.9891493055555556,0.7254762501100117,,,,,,,,,,,1,6,8,16,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,activity,stairs,0.7916666666666666,0.75,0.8235294117647058,0.875,0.625,0.8484848484848485,0.7575757575757576,0.921875,0.9636446886446887,0.5185629788417315,,,,,,,,,,,1,6,8,16,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,activity,stairs,0.875,0.875,0.9333333333333333,0.875,0.875,0.9032258064516129,0.8633776091081593,0.9140625,0.9609034605745133,0.7302967433402215,,,,,,,,,,,1,6,8,16,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,activity,stairs,0.7083333333333334,0.71875,0.8461538461538461,0.6875,0.75,0.7586206896551724,0.6950998185117967,0.7265625,0.8801381062271659,0.4139186771923578,,,,,,,,,,,1,6,8,16,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,activity,standing,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,GWST-450 + Random Forest,frozen/classical
+E2,window,activity,standing,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,GWST-450 + SVM,frozen/classical
+E3,window,activity,standing,0.625,,0.0,,0.625,0.0,0.38461538461538464,,,,,,,,,,,,,,1,2,8,0,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + linear,frozen
+E5,window,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,activity,standing,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,activity,standing,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,activity,standing,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,activity,standing,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,activity,standing,0.625,,0.0,,0.625,0.0,0.38461538461538464,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,activity,standing,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,activity,standing,1.0,,,,1.0,,,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,activity,standing,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,activity,standing,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,activity,standing,0.875,,0.0,,0.875,0.0,0.4666666666666667,,,,,,,,,,,,,,1,2,8,0,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,activity,walking,0.875,0.84375,0.8571428571428571,0.75,0.9375,0.8,0.8545454545454545,0.96875,0.9318181818181819,0.7130240959073808,,,,,,,,,,,1,6,16,8,GWST-450 + Random Forest,frozen/classical
+E2,window,activity,walking,0.7083333333333334,0.75,0.5384615384615384,0.875,0.625,0.6666666666666666,0.7037037037037037,0.8203125,0.7330357142857142,0.47304991679126607,,,,,,,,,,,1,6,16,8,GWST-450 + SVM,frozen/classical
+E3,window,activity,walking,0.7916666666666666,0.84375,0.6153846153846154,1.0,0.6875,0.7619047619047619,0.7883597883597884,0.9453125,0.8787087912087912,0.6504436355879909,,,,,,,,,,,1,6,16,8,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,16,8,Transformer + 6-D embedding + linear,frozen
+E5,window,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,16,8,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,16,8,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,activity,walking,0.7083333333333334,0.71875,0.5454545454545454,0.75,0.6875,0.631578947368421,0.6950998185117967,0.7265625,0.5377173786181139,0.4139186771923578,,,,,,,,,,,1,6,16,8,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,activity,walking,0.9166666666666666,0.90625,0.875,0.875,0.9375,0.875,0.90625,0.9921875,0.9861111111111112,0.8125,,,,,,,,,,,1,6,16,8,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,16,8,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,activity,walking,0.9583333333333334,0.96875,0.8888888888888888,1.0,0.9375,0.9411764705882353,0.9544592030360531,1.0,1.0,0.9128709291752769,,,,,,,,,,,1,6,16,8,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,16,8,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,activity,walking,0.8333333333333334,0.78125,0.8333333333333334,0.625,0.9375,0.7142857142857143,0.7983193277310925,0.859375,0.8271561771561771,0.6123724356957945,,,,,,,,,,,1,6,16,8,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,activity,walking,0.9583333333333334,0.9375,1.0,0.875,1.0,0.9333333333333333,0.9515151515151515,0.9921875,0.9861111111111112,0.9074852129730302,,,,,,,,,,,1,6,16,8,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,16,8,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,16,8,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,activity,walking,0.75,0.78125,0.5833333333333334,0.875,0.6875,0.7,0.7428571428571429,0.828125,0.6892857142857143,0.5303300858899107,,,,,,,,,,,1,6,16,8,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,16,8,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,activity,walking,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,1.0,,,,,,,,,,,1,6,16,8,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,activity,walking,0.8333333333333334,0.78125,0.8333333333333334,0.625,0.9375,0.7142857142857143,0.7983193277310925,0.8671875,0.8529761904761904,0.6123724356957945,,,,,,,,,,,1,6,16,8,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,group,stationary,0.6666666666666666,0.59375,0.5,0.375,0.8125,0.42857142857142855,0.5966386554621849,0.6015625,0.4851796207264957,0.2041241452319315,,,,,,,,,,,1,12,32,16,GWST-450 + Random Forest,frozen/classical
+E2,window,group,stationary,0.7083333333333334,0.703125,0.55,0.6875,0.71875,0.6111111111111112,0.6888888888888889,0.751953125,0.6418822379484688,0.38844929803367795,,,,,,,,,,,1,12,32,16,GWST-450 + SVM,frozen/classical
+E3,window,group,stationary,0.6041666666666666,0.5625,0.4117647058823529,0.4375,0.6875,0.42424242424242425,0.5613275613275613,0.5634765625,0.4579059829059829,0.1232082207267395,,,,,,,,,,,1,12,32,16,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,group,stationary,0.6666666666666666,0.578125,0.5,0.3125,0.84375,0.38461538461538464,0.5780219780219781,0.58203125,0.44649490043097284,0.18136906252750293,,,,,,,,,,,1,12,32,16,Transformer + 6-D embedding + linear,frozen
+E5,window,group,stationary,0.6875,0.59375,0.5555555555555556,0.3125,0.875,0.4,0.5943661971830986,0.578125,0.44193516272381894,0.22645540682891915,,,,,,,,,,,1,12,32,16,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,group,stationary,0.625,0.546875,0.4166666666666667,0.3125,0.78125,0.35714285714285715,0.546218487394958,0.587890625,0.42479380346559636,0.10206207261596575,,,,,,,,,,,1,12,32,16,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,group,stationary,0.4791666666666667,0.515625,0.3448275862068966,0.625,0.40625,0.4444444444444444,0.4771241830065359,0.623046875,0.5439471974562309,0.0301237616564389,,,,,,,,,,,1,12,32,16,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,group,stationary,0.7083333333333334,0.609375,0.625,0.3125,0.90625,0.4166666666666667,0.6111111111111112,0.615234375,0.5583411942594569,0.2766992952647332,,,,,,,,,,,1,12,32,16,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,group,stationary,0.6666666666666666,0.625,0.5,0.5,0.75,0.5,0.625,0.595703125,0.46421730768276515,0.25,,,,,,,,,,,1,12,32,16,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,group,stationary,0.6458333333333334,0.609375,0.47058823529411764,0.5,0.71875,0.48484848484848486,0.6075036075036075,0.591796875,0.4622017766011709,0.2156143862717941,,,,,,,,,,,1,12,32,16,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,group,stationary,0.6666666666666666,0.625,0.5,0.5,0.75,0.5,0.625,0.6015625,0.5014122632185724,0.25,,,,,,,,,,,1,12,32,16,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,group,stationary,0.5208333333333334,0.484375,0.3157894736842105,0.375,0.59375,0.34285714285714286,0.482903981264637,0.51953125,0.36501793385895376,-0.0301237616564389,,,,,,,,,,,1,12,32,16,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,group,stationary,0.6666666666666666,0.625,0.5,0.5,0.75,0.5,0.625,0.595703125,0.5124915405694042,0.25,,,,,,,,,,,1,12,32,16,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,group,stationary,0.6666666666666666,0.59375,0.5,0.375,0.8125,0.42857142857142855,0.5966386554621849,0.58984375,0.4803747523839566,0.2041241452319315,,,,,,,,,,,1,12,32,16,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,group,stationary,0.6875,0.609375,0.5454545454545454,0.375,0.84375,0.4444444444444444,0.6135265700483092,0.587890625,0.4793313902145169,0.24534987303147357,,,,,,,,,,,1,12,32,16,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,group,stationary,0.5,0.53125,0.35714285714285715,0.625,0.4375,0.45454545454545453,0.49650349650349646,0.603515625,0.5586131543489304,0.05976143046671968,,,,,,,,,,,1,12,32,16,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,group,stationary,0.6666666666666666,0.609375,0.5,0.4375,0.78125,0.4666666666666667,0.6121212121212121,0.5859375,0.477249252730609,0.22687130324325755,,,,,,,,,,,1,12,32,16,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,group,stationary,0.6875,0.625,0.5384615384615384,0.4375,0.8125,0.4827586206896552,0.629439011837365,0.578125,0.4492917807703797,0.26519741765271837,,,,,,,,,,,1,12,32,16,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,group,stationary,0.6458333333333334,0.578125,0.46153846153846156,0.375,0.78125,0.41379310344827586,0.5800308800823469,0.607421875,0.46777652697227606,0.16574838603294897,,,,,,,,,,,1,12,32,16,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,group,light_ambulatory,0.875,0.875,0.95,0.7916666666666666,0.9583333333333334,0.8636363636363636,0.8741258741258742,0.9470486111111112,0.950636200716846,0.7606388292556648,,,,,,,,,,,1,12,24,24,GWST-450 + Random Forest,frozen/classical
+E2,window,group,light_ambulatory,0.7708333333333334,0.7708333333333333,0.7241379310344828,0.875,0.6666666666666666,0.7924528301886793,0.7683194383501536,0.875,0.8906054527957501,0.5538186196949965,,,,,,,,,,,1,12,24,24,GWST-450 + SVM,frozen/classical
+E3,window,group,light_ambulatory,0.8333333333333334,0.8333333333333333,0.7857142857142857,0.9166666666666666,0.75,0.8461538461538461,0.8321678321678322,0.9305555555555556,0.9164929805914461,0.6761234037828132,,,,,,,,,,,1,12,24,24,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,group,light_ambulatory,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9791666666666667,0.9829640468227424,0.8333333333333334,,,,,,,,,,,1,12,24,24,Transformer + 6-D embedding + linear,frozen
+E5,window,group,light_ambulatory,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9756944444444444,0.9790859804446761,0.8333333333333334,,,,,,,,,,,1,12,24,24,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,group,light_ambulatory,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9166666666666666,0.9479166666666666,0.9636541534996912,0.8333333333333334,,,,,,,,,,,1,12,24,24,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,group,light_ambulatory,0.7708333333333334,0.7708333333333334,0.7407407407407407,0.8333333333333334,0.7083333333333334,0.7843137254901961,0.7699346405228757,0.8038194444444444,0.8172359983855111,0.5459486832355505,,,,,,,,,,,1,12,24,24,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,group,light_ambulatory,0.875,0.875,0.875,0.875,0.875,0.875,0.875,0.888888888888889,0.8512980918821766,0.75,,,,,,,,,,,1,12,24,24,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,group,light_ambulatory,0.8958333333333334,0.8958333333333333,0.88,0.9166666666666666,0.875,0.8979591836734694,0.8957881024750325,0.9600694444444444,0.969435652702243,0.7923547734168841,,,,,,,,,,,1,12,24,24,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,group,light_ambulatory,0.875,0.875,0.8461538461538461,0.9166666666666666,0.8333333333333334,0.88,0.8747826086956522,0.9583333333333333,0.9689180116073524,0.7526178090063816,,,,,,,,,,,1,12,24,24,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,group,light_ambulatory,0.9375,0.9375,0.9565217391304348,0.9166666666666666,0.9583333333333334,0.9361702127659575,0.9374728614850196,0.9270833333333334,0.9144311758147037,0.8757605390397141,,,,,,,,,,,1,12,24,24,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,group,light_ambulatory,0.7708333333333334,0.7708333333333333,0.8421052631578947,0.6666666666666666,0.875,0.7441860465116279,0.7683194383501536,0.826388888888889,0.870665695576732,0.5538186196949965,,,,,,,,,,,1,12,24,24,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,group,light_ambulatory,0.9166666666666666,0.9166666666666667,1.0,0.8333333333333334,1.0,0.9090909090909091,0.916083916083916,0.9427083333333334,0.9582003835712836,0.8451542547285166,,,,,,,,,,,1,12,24,24,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,group,light_ambulatory,0.9375,0.9375,0.9565217391304348,0.9166666666666666,0.9583333333333334,0.9361702127659575,0.9374728614850196,0.9670138888888888,0.975106019433465,0.8757605390397141,,,,,,,,,,,1,12,24,24,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,group,light_ambulatory,0.9375,0.9375,0.9565217391304348,0.9166666666666666,0.9583333333333334,0.9361702127659575,0.9374728614850196,0.9635416666666665,0.9661374040498298,0.8757605390397141,,,,,,,,,,,1,12,24,24,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,group,light_ambulatory,0.8125,0.8125,0.7419354838709677,0.9583333333333334,0.6666666666666666,0.8363636363636363,0.8084257206208425,0.9114583333333333,0.8923114544936834,0.6534102628035482,,,,,,,,,,,1,12,24,24,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,group,light_ambulatory,0.8958333333333334,0.8958333333333333,0.88,0.9166666666666666,0.875,0.8979591836734694,0.8957881024750325,0.9548611111111112,0.9637476419665916,0.7923547734168841,,,,,,,,,,,1,12,24,24,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,group,light_ambulatory,0.9375,0.9375,0.9565217391304348,0.9166666666666666,0.9583333333333334,0.9361702127659575,0.9374728614850196,0.9479166666666666,0.9597420689955014,0.8757605390397141,,,,,,,,,,,1,12,24,24,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,group,light_ambulatory,0.7708333333333334,0.7708333333333333,0.8421052631578947,0.6666666666666666,0.875,0.7441860465116279,0.7683194383501536,0.8020833333333334,0.8566737049940916,0.5538186196949965,,,,,,,,,,,1,12,24,24,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,group,intense_ambulatory,0.8333333333333334,0.84375,0.7,0.875,0.8125,0.7777777777777778,0.8222222222222222,0.83984375,0.6400735294117648,0.6573757351339165,,,,,,,,,,,1,6,16,8,GWST-450 + Random Forest,frozen/classical
+E2,window,group,intense_ambulatory,0.875,0.84375,0.8571428571428571,0.75,0.9375,0.8,0.8545454545454545,0.9453125,0.8644345238095238,0.7130240959073808,,,,,,,,,,,1,6,16,8,GWST-450 + SVM,frozen/classical
+E3,window,group,intense_ambulatory,0.6666666666666666,0.625,0.5,0.5,0.75,0.5,0.625,0.609375,0.48617216117216117,0.25,,,,,,,,,,,1,6,16,8,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,0.9921875,0.9861111111111112,0.7071067811865476,,,,,,,,,,,1,6,16,8,Transformer + 6-D embedding + linear,frozen
+E5,window,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,16,8,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,1.0,1.0,0.7071067811865476,,,,,,,,,,,1,6,16,8,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,group,intense_ambulatory,0.6666666666666666,0.75,0.5,1.0,0.5,0.6666666666666666,0.6666666666666666,0.7890625,0.6581807081807083,0.5,,,,,,,,,,,1,6,16,8,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,group,intense_ambulatory,0.875,0.875,0.7777777777777778,0.875,0.875,0.8235294117647058,0.8633776091081593,0.9375,0.8553436147186148,0.7302967433402215,,,,,,,,,,,1,6,16,8,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,0.90625,0.7256313131313131,0.7071067811865476,,,,,,,,,,,1,6,16,8,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,0.90625,0.7805555555555554,0.7071067811865476,,,,,,,,,,,1,6,16,8,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,group,intense_ambulatory,0.8333333333333334,0.875,0.6666666666666666,1.0,0.75,0.8,0.8285714285714285,0.984375,0.9704861111111112,0.7071067811865476,,,,,,,,,,,1,6,16,8,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,group,intense_ambulatory,0.5,0.375,0.0,0.0,0.75,0.0,0.3333333333333333,0.609375,0.6267019450800915,-0.31622776601683794,,,,,,,,,,,1,6,16,8,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,group,intense_ambulatory,0.8333333333333334,0.84375,0.7,0.875,0.8125,0.7777777777777778,0.8222222222222222,0.84375,0.6023674242424242,0.6573757351339165,,,,,,,,,,,1,6,16,8,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,group,intense_ambulatory,0.9583333333333334,0.96875,0.8888888888888888,1.0,0.9375,0.9411764705882353,0.9544592030360531,0.984375,0.9704861111111112,0.9128709291752769,,,,,,,,,,,1,6,16,8,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,group,intense_ambulatory,0.9583333333333334,0.96875,0.8888888888888888,1.0,0.9375,0.9411764705882353,0.9544592030360531,0.9921875,0.9861111111111112,0.9128709291752769,,,,,,,,,,,1,6,16,8,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,group,intense_ambulatory,0.7916666666666666,0.84375,0.6153846153846154,1.0,0.6875,0.7619047619047619,0.7883597883597884,0.8984375,0.8060897435897436,0.6504436355879909,,,,,,,,,,,1,6,16,8,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,group,intense_ambulatory,0.9166666666666666,0.9375,0.8,1.0,0.875,0.8888888888888888,0.9111111111111111,0.9453125,0.8951388888888889,0.8366600265340756,,,,,,,,,,,1,6,16,8,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,group,intense_ambulatory,0.875,0.875,0.7777777777777778,0.875,0.875,0.8235294117647058,0.8633776091081593,0.8671875,0.6336670274170274,0.7302967433402215,,,,,,,,,,,1,6,16,8,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,group,intense_ambulatory,0.8333333333333334,0.78125,0.8333333333333334,0.625,0.9375,0.7142857142857143,0.7983193277310925,0.9375,0.8553436147186148,0.6123724356957945,,,,,,,,,,,1,6,16,8,[fine-tuned] Bi-LSTM + VQC,end-to-end
+E1,window,paired_activities_all,all eligible activities,0.7833333333333333,0.7638888888888888,0.7619047619047619,0.6666666666666666,0.8611111111111112,0.7111111111111111,0.768888888888889,0.7991898148148149,0.7359995814765108,0.542083290513823,,,,,,,,,,,1,30,72,48,GWST-450 + Random Forest,frozen/classical
+E2,window,paired_activities_all,all eligible activities,0.7666666666666667,0.7708333333333333,0.6785714285714286,0.7916666666666666,0.75,0.7307692307692307,0.7624434389140271,0.8385416666666666,0.7639199817523504,0.5319061074502314,,,,,,,,,,,1,30,72,48,GWST-450 + SVM,frozen/classical
+E3,window,paired_activities_all,all eligible activities,0.7083333333333334,0.7048611111111112,0.6226415094339622,0.6875,0.7222222222222222,0.6534653465346535,0.7008333926917871,0.7473958333333334,0.671555168834106,0.4042044126078892,,,,,,,,,,,1,30,72,48,GWST-450 + MI selection + Random Forest,frozen/classical
+E4,window,paired_activities_all,all eligible activities,0.8,0.7881944444444444,0.7608695652173914,0.7291666666666666,0.8472222222222222,0.7446808510638298,0.790148644709997,0.8587962962962963,0.8305698658644183,0.5807747031143115,,,,,,,,,,,1,30,72,48,Transformer + 6-D embedding + linear,frozen
+E5,window,paired_activities_all,all eligible activities,0.8083333333333333,0.7951388888888888,0.7777777777777778,0.7291666666666666,0.8611111111111112,0.7526881720430108,0.7981127935044986,0.8590856481481481,0.8278402719324991,0.5973191135873606,,,,,,,,,,,1,30,72,48,Transformer + 6-D embedding + MLP(6-6-1),frozen
+E6,window,paired_activities_all,all eligible activities,0.7833333333333333,0.7743055555555556,0.7291666666666666,0.7291666666666666,0.8194444444444444,0.7291666666666666,0.7743055555555556,0.8370949074074074,0.7746996656029848,0.5486111111111112,,,,,,,,,,,1,30,72,48,Transformer + 6-D embedding + RBF-SVM,frozen
+E7,window,paired_activities_all,all eligible activities,0.6333333333333333,0.6597222222222222,0.5277777777777778,0.7916666666666666,0.5277777777777778,0.6333333333333333,0.6333333333333333,0.704861111111111,0.6363325071182491,0.3194444444444444,,,,,,,,,,,1,30,72,48,Transformer + 6-D embedding + 6-qubit VQC,frozen
+E12T,window,paired_activities_all,all eligible activities,0.8083333333333333,0.7881944444444444,0.8048780487804879,0.6875,0.8888888888888888,0.7415730337078652,0.7946275764565816,0.8130787037037037,0.7730877800064334,0.5953837719971884,,,,,,,,,,,1,30,72,48,Transformer + 6-D embedding + VQC without CNOT,frozen
+E8,window,paired_activities_all,all eligible activities,0.7916666666666666,0.7916666666666666,0.7169811320754716,0.7916666666666666,0.7916666666666666,0.7524752475247525,0.7863095662084194,0.8605324074074074,0.7931302475058151,0.5754774687976727,,,,,,,,,,,1,30,72,48,Bi-LSTM + 6-D embedding + linear,frozen
+E9,window,paired_activities_all,all eligible activities,0.775,0.7777777777777777,0.6909090909090909,0.7916666666666666,0.7638888888888888,0.7378640776699029,0.77039189284955,0.8587962962962963,0.793733237675819,0.5462309935991351,,,,,,,,,,,1,30,72,48,Bi-LSTM + 6-D embedding + MLP(6-6-1),frozen
+E10,window,paired_activities_all,all eligible activities,0.8083333333333333,0.8055555555555556,0.7450980392156863,0.7916666666666666,0.8194444444444444,0.7676767676767676,0.8022781001504405,0.8504050925925926,0.8148251076046167,0.6056161019445783,,,,,,,,,,,1,30,72,48,Bi-LSTM + 6-D embedding + RBF-SVM,frozen
+E11,window,paired_activities_all,all eligible activities,0.6166666666666667,0.5902777777777778,0.5238095238095238,0.4583333333333333,0.7222222222222222,0.4888888888888889,0.5911111111111111,0.6834490740740742,0.6511329146561287,0.18544954675472894,,,,,,,,,,,1,30,72,48,Bi-LSTM + 6-D embedding + 6-qubit VQC,frozen
+E12B,window,paired_activities_all,all eligible activities,0.8,0.7881944444444444,0.7608695652173914,0.7291666666666666,0.8472222222222222,0.7446808510638298,0.790148644709997,0.8260995370370371,0.6936744301458591,0.5807747031143115,,,,,,,,,,,1,30,72,48,Bi-LSTM + 6-D embedding + VQC without CNOT,frozen
+FT-T-lin,window,paired_activities_all,all eligible activities,0.8333333333333334,0.8194444444444444,0.8181818181818182,0.75,0.8888888888888888,0.782608695652174,0.8237367802585194,0.8709490740740741,0.8393358309807956,0.6494998689336408,,,,,,,,,,,1,30,72,48,[fine-tuned] Transformer + linear,end-to-end
+FT-T-mlp,window,paired_activities_all,all eligible activities,0.8416666666666667,0.8263888888888888,0.8372093023255814,0.75,0.9027777777777778,0.7912087912087912,0.8318460063426506,0.8747106481481481,0.8545842634449012,0.6669183054732979,,,,,,,,,,,1,30,72,48,[fine-tuned] Transformer + MLP,end-to-end
+FT-T-vqc,window,paired_activities_all,all eligible activities,0.6833333333333333,0.7118055555555556,0.5694444444444444,0.8541666666666666,0.5694444444444444,0.6833333333333333,0.6833333333333333,0.8171296296296297,0.7630356844831578,0.4236111111111111,,,,,,,,,,,1,30,72,48,[fine-tuned] Transformer + VQC,end-to-end
+FT-B-lin,window,paired_activities_all,all eligible activities,0.8083333333333333,0.8020833333333334,0.7551020408163265,0.7708333333333334,0.8333333333333334,0.7628865979381443,0.8010237185494917,0.861400462962963,0.8128132957676775,0.6021662532957329,,,,,,,,,,,1,30,72,48,[fine-tuned] Bi-LSTM + linear,end-to-end
+FT-B-mlp,window,paired_activities_all,all eligible activities,0.825,0.8125,0.8,0.75,0.875,0.7741935483870968,0.8156682027649769,0.8524305555555555,0.8093304320706844,0.6324555320336759,,,,,,,,,,,1,30,72,48,[fine-tuned] Bi-LSTM + MLP,end-to-end
+FT-B-vqc,window,paired_activities_all,all eligible activities,0.7333333333333333,0.7048611111111112,0.7105263157894737,0.5625,0.8472222222222222,0.627906976744186,0.7100573844759892,0.7531828703703703,0.7162013758256883,0.4314968821023087,,,,,,,,,,,1,30,72,48,[fine-tuned] Bi-LSTM + VQC,end-to-end

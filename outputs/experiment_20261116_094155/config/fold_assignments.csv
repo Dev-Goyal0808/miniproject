@@ -1,0 +1,451 @@
+seed,fold,role,rec_id,label,class_name,activity,n_windows
+0,0,train,E_00_desk_work_2,1,Epileptic Patients,desk work,4
+0,0,train,E_00_idle_sitting_1,1,Epileptic Patients,idle sitting,4
+0,0,train,E_00_idle_sitting_2,1,Epileptic Patients,idle sitting,4
+0,0,train,E_00_laying_1,1,Epileptic Patients,laying,4
+0,0,train,E_00_laying_3,1,Epileptic Patients,laying,4
+0,0,train,E_00_sitting_1,1,Epileptic Patients,sitting,4
+0,0,train,E_00_sitting_2,1,Epileptic Patients,sitting,4
+0,0,train,E_00_sitting_3,1,Epileptic Patients,sitting,4
+0,0,train,E_01_stairs_3,1,Epileptic Patients,stairs,4
+0,0,train,E_01_stairs_5,1,Epileptic Patients,stairs,4
+0,0,train,E_01_stairs_6,1,Epileptic Patients,stairs,4
+0,0,train,E_01_walking_2,1,Epileptic Patients,walking,4
+0,0,train,E_01_walking_3,1,Epileptic Patients,walking,4
+0,0,train,E_01_walking_4,1,Epileptic Patients,walking,4
+0,0,train,E_02_Jogging_1,1,Epileptic Patients,jogging,4
+0,0,train,E_02_Jogging_3,1,Epileptic Patients,jogging,4
+0,0,train,E_02_running_1,1,Epileptic Patients,running,4
+0,0,train,E_02_running_3,1,Epileptic Patients,running,4
+0,0,train,H_00_desk_work_2,0,Healthy Individuals,desk work,4
+0,0,train,H_00_desk_work_4,0,Healthy Individuals,desk work,4
+0,0,train,H_00_desk_work_5,0,Healthy Individuals,desk work,4
+0,0,train,H_00_desk_work_6,0,Healthy Individuals,desk work,4
+0,0,train,H_00_idle_sitting2,0,Healthy Individuals,idle sitting,4
+0,0,train,H_00_idle_sitting3,0,Healthy Individuals,idle sitting,4
+0,0,train,H_00_laying2,0,Healthy Individuals,laying,4
+0,0,train,H_00_sitting1,0,Healthy Individuals,sitting,4
+0,0,train,H_00_sitting2,0,Healthy Individuals,sitting,4
+0,0,train,H_00_sitting7,0,Healthy Individuals,sitting,4
+0,0,train,H_00_sitting8,0,Healthy Individuals,sitting,4
+0,0,train,H_00_sitting9,0,Healthy Individuals,sitting,4
+0,0,train,H_00_standing2,0,Healthy Individuals,standing,4
+0,0,train,H_00_watching_tv_1,0,Healthy Individuals,watching tv,4
+0,0,train,H_00_watching_tv_2,0,Healthy Individuals,watching tv,4
+0,0,train,H_01_cooking_1,0,Healthy Individuals,cooking,4
+0,0,train,H_01_cooking_3,0,Healthy Individuals,cooking,4
+0,0,train,H_01_stairs_7,0,Healthy Individuals,stairs,4
+0,0,train,H_01_stairs2,0,Healthy Individuals,stairs,4
+0,0,train,H_01_stairs4,0,Healthy Individuals,stairs,4
+0,0,train,H_01_walking_10,0,Healthy Individuals,walking,4
+0,0,train,H_01_walking_9,0,Healthy Individuals,walking,4
+0,0,train,H_01_walking1,0,Healthy Individuals,walking,4
+0,0,train,H_01_walking2,0,Healthy Individuals,walking,4
+0,0,train,H_01_walking4,0,Healthy Individuals,walking,4
+0,0,train,H_01_walking5,0,Healthy Individuals,walking,4
+0,0,train,H_02_jogging_4,0,Healthy Individuals,jogging,4
+0,0,train,H_02_jogging1,0,Healthy Individuals,jogging,4
+0,0,train,H_02_jogging2,0,Healthy Individuals,jogging,4
+0,0,train,H_02_jogging3,0,Healthy Individuals,jogging,4
+0,0,train,H_02_jumping_4,0,Healthy Individuals,jumping,4
+0,0,train,H_02_jumping1,0,Healthy Individuals,jumping,4
+0,0,train,H_02_jumping2,0,Healthy Individuals,jumping,4
+0,0,train,H_02_running_4,0,Healthy Individuals,running,4
+0,0,train,H_02_running_5,0,Healthy Individuals,running,4
+0,0,train,H_02_running,0,Healthy Individuals,running,4
+0,0,validation,E_00_desk_work_3,1,Epileptic Patients,desk work,4
+0,0,validation,E_00_laying_2,1,Epileptic Patients,laying,4
+0,0,validation,E_01_stairs_2,1,Epileptic Patients,stairs,4
+0,0,validation,E_01_walking_1,1,Epileptic Patients,walking,4
+0,0,validation,E_01_walking_6,1,Epileptic Patients,walking,4
+0,0,validation,E_02_running_2,1,Epileptic Patients,running,4
+0,0,validation,H_00_desk_work_3,0,Healthy Individuals,desk work,4
+0,0,validation,H_00_desk_work,0,Healthy Individuals,desk work,4
+0,0,validation,H_00_laying1,0,Healthy Individuals,laying,4
+0,0,validation,H_00_sitting5,0,Healthy Individuals,sitting,4
+0,0,validation,H_00_watching_tv_3,0,Healthy Individuals,watching tv,4
+0,0,validation,H_01_stairs_6,0,Healthy Individuals,stairs,4
+0,0,validation,H_01_stairs1,0,Healthy Individuals,stairs,4
+0,0,validation,H_01_walking_7,0,Healthy Individuals,walking,4
+0,0,validation,H_01_walking6,0,Healthy Individuals,walking,4
+0,0,validation,H_02_jogging_6,0,Healthy Individuals,jogging,4
+0,0,validation,H_02_jumping_5,0,Healthy Individuals,jumping,4
+0,0,validation,H_02_running_2,0,Healthy Individuals,running,4
+0,0,test,E_00_desk_work_1,1,Epileptic Patients,desk work,4
+0,0,test,E_00_idle_sitting_3,1,Epileptic Patients,idle sitting,4
+0,0,test,E_01_stairs_1,1,Epileptic Patients,stairs,4
+0,0,test,E_01_stairs_4,1,Epileptic Patients,stairs,4
+0,0,test,E_01_walking_5,1,Epileptic Patients,walking,4
+0,0,test,E_02_Jogging_2,1,Epileptic Patients,jogging,4
+0,0,test,H_00_desk_work_1,0,Healthy Individuals,desk work,4
+0,0,test,H_00_idle_sitting1,0,Healthy Individuals,idle sitting,4
+0,0,test,H_00_idle_sitting4,0,Healthy Individuals,idle sitting,4
+0,0,test,H_00_sitting6,0,Healthy Individuals,sitting,4
+0,0,test,H_00_standing1,0,Healthy Individuals,standing,4
+0,0,test,H_01_cooking_2,0,Healthy Individuals,cooking,4
+0,0,test,H_01_stairs3,0,Healthy Individuals,stairs,4
+0,0,test,H_01_walking_8,0,Healthy Individuals,walking,4
+0,0,test,H_01_walking3,0,Healthy Individuals,walking,4
+0,0,test,H_02_jogging_5,0,Healthy Individuals,jogging,4
+0,0,test,H_02_jumping_3,0,Healthy Individuals,jumping,4
+0,0,test,H_02_running_3,0,Healthy Individuals,running,4
+0,1,train,E_00_desk_work_1,1,Epileptic Patients,desk work,4
+0,1,train,E_00_idle_sitting_1,1,Epileptic Patients,idle sitting,4
+0,1,train,E_00_idle_sitting_2,1,Epileptic Patients,idle sitting,4
+0,1,train,E_00_idle_sitting_3,1,Epileptic Patients,idle sitting,4
+0,1,train,E_00_laying_2,1,Epileptic Patients,laying,4
+0,1,train,E_00_laying_3,1,Epileptic Patients,laying,4
+0,1,train,E_00_sitting_2,1,Epileptic Patients,sitting,4
+0,1,train,E_00_sitting_3,1,Epileptic Patients,sitting,4
+0,1,train,E_01_stairs_3,1,Epileptic Patients,stairs,4
+0,1,train,E_01_stairs_6,1,Epileptic Patients,stairs,4
+0,1,train,E_01_walking_1,1,Epileptic Patients,walking,4
+0,1,train,E_01_walking_2,1,Epileptic Patients,walking,4
+0,1,train,E_01_walking_3,1,Epileptic Patients,walking,4
+0,1,train,E_01_walking_5,1,Epileptic Patients,walking,4
+0,1,train,E_02_Jogging_1,1,Epileptic Patients,jogging,4
+0,1,train,E_02_running_1,1,Epileptic Patients,running,4
+0,1,train,E_02_running_2,1,Epileptic Patients,running,4
+0,1,train,E_02_running_3,1,Epileptic Patients,running,4
+0,1,train,H_00_desk_work_1,0,Healthy Individuals,desk work,4
+0,1,train,H_00_desk_work_4,0,Healthy Individuals,desk work,4
+0,1,train,H_00_desk_work_5,0,Healthy Individuals,desk work,4
+0,1,train,H_00_desk_work_6,0,Healthy Individuals,desk work,4
+0,1,train,H_00_idle_sitting1,0,Healthy Individuals,idle sitting,4
+0,1,train,H_00_idle_sitting3,0,Healthy Individuals,idle sitting,4
+0,1,train,H_00_idle_sitting4,0,Healthy Individuals,idle sitting,4
+0,1,train,H_00_laying2,0,Healthy Individuals,laying,4
+0,1,train,H_00_sitting2,0,Healthy Individuals,sitting,4
+0,1,train,H_00_sitting6,0,Healthy Individuals,sitting,4
+0,1,train,H_00_sitting8,0,Healthy Individuals,sitting,4
+0,1,train,H_00_sitting9,0,Healthy Individuals,sitting,4
+0,1,train,H_00_standing1,0,Healthy Individuals,standing,4
+0,1,train,H_00_watching_tv_2,0,Healthy Individuals,watching tv,4
+0,1,train,H_00_watching_tv_3,0,Healthy Individuals,watching tv,4
+0,1,train,H_01_cooking_1,0,Healthy Individuals,cooking,4
+0,1,train,H_01_cooking_2,0,Healthy Individuals,cooking,4
+0,1,train,H_01_stairs_7,0,Healthy Individuals,stairs,4
+0,1,train,H_01_stairs2,0,Healthy Individuals,stairs,4
+0,1,train,H_01_stairs3,0,Healthy Individuals,stairs,4
+0,1,train,H_01_walking_10,0,Healthy Individuals,walking,4
+0,1,train,H_01_walking_8,0,Healthy Individuals,walking,4
+0,1,train,H_01_walking1,0,Healthy Individuals,walking,4
+0,1,train,H_01_walking2,0,Healthy Individuals,walking,4
+0,1,train,H_01_walking5,0,Healthy Individuals,walking,4
+0,1,train,H_01_walking6,0,Healthy Individuals,walking,4
+0,1,train,H_02_jogging_4,0,Healthy Individuals,jogging,4
+0,1,train,H_02_jogging_5,0,Healthy Individuals,jogging,4
+0,1,train,H_02_jogging2,0,Healthy Individuals,jogging,4
+0,1,train,H_02_jogging3,0,Healthy Individuals,jogging,4
+0,1,train,H_02_jumping_3,0,Healthy Individuals,jumping,4
+0,1,train,H_02_jumping_4,0,Healthy Individuals,jumping,4
+0,1,train,H_02_jumping1,0,Healthy Individuals,jumping,4
+0,1,train,H_02_running_3,0,Healthy Individuals,running,4
+0,1,train,H_02_running_5,0,Healthy Individuals,running,4
+0,1,train,H_02_running,0,Healthy Individuals,running,4
+0,1,validation,E_00_desk_work_3,1,Epileptic Patients,desk work,4
+0,1,validation,E_00_sitting_1,1,Epileptic Patients,sitting,4
+0,1,validation,E_01_stairs_1,1,Epileptic Patients,stairs,4
+0,1,validation,E_01_stairs_4,1,Epileptic Patients,stairs,4
+0,1,validation,E_01_walking_4,1,Epileptic Patients,walking,4
+0,1,validation,E_02_Jogging_2,1,Epileptic Patients,jogging,4
+0,1,validation,H_00_desk_work_3,0,Healthy Individuals,desk work,4
+0,1,validation,H_00_desk_work,0,Healthy Individuals,desk work,4
+0,1,validation,H_00_sitting1,0,Healthy Individuals,sitting,4
+0,1,validation,H_00_sitting5,0,Healthy Individuals,sitting,4
+0,1,validation,H_00_watching_tv_1,0,Healthy Individuals,watching tv,4
+0,1,validation,H_01_stairs_6,0,Healthy Individuals,stairs,4
+0,1,validation,H_01_stairs1,0,Healthy Individuals,stairs,4
+0,1,validation,H_01_walking_9,0,Healthy Individuals,walking,4
+0,1,validation,H_01_walking3,0,Healthy Individuals,walking,4
+0,1,validation,H_02_jogging_6,0,Healthy Individuals,jogging,4
+0,1,validation,H_02_jumping2,0,Healthy Individuals,jumping,4
+0,1,validation,H_02_running_2,0,Healthy Individuals,running,4
+0,1,test,E_00_desk_work_2,1,Epileptic Patients,desk work,4
+0,1,test,E_00_laying_1,1,Epileptic Patients,laying,4
+0,1,test,E_01_stairs_2,1,Epileptic Patients,stairs,4
+0,1,test,E_01_stairs_5,1,Epileptic Patients,stairs,4
+0,1,test,E_01_walking_6,1,Epileptic Patients,walking,4
+0,1,test,E_02_Jogging_3,1,Epileptic Patients,jogging,4
+0,1,test,H_00_desk_work_2,0,Healthy Individuals,desk work,4
+0,1,test,H_00_idle_sitting2,0,Healthy Individuals,idle sitting,4
+0,1,test,H_00_laying1,0,Healthy Individuals,laying,4
+0,1,test,H_00_sitting7,0,Healthy Individuals,sitting,4
+0,1,test,H_00_standing2,0,Healthy Individuals,standing,4
+0,1,test,H_01_cooking_3,0,Healthy Individuals,cooking,4
+0,1,test,H_01_stairs4,0,Healthy Individuals,stairs,4
+0,1,test,H_01_walking_7,0,Healthy Individuals,walking,4
+0,1,test,H_01_walking4,0,Healthy Individuals,walking,4
+0,1,test,H_02_jogging1,0,Healthy Individuals,jogging,4
+0,1,test,H_02_jumping_5,0,Healthy Individuals,jumping,4
+0,1,test,H_02_running_4,0,Healthy Individuals,running,4
+0,2,train,E_00_desk_work_1,1,Epileptic Patients,desk work,4
+0,2,train,E_00_idle_sitting_1,1,Epileptic Patients,idle sitting,4
+0,2,train,E_00_idle_sitting_2,1,Epileptic Patients,idle sitting,4
+0,2,train,E_00_idle_sitting_3,1,Epileptic Patients,idle sitting,4
+0,2,train,E_00_laying_3,1,Epileptic Patients,laying,4
+0,2,train,E_00_sitting_1,1,Epileptic Patients,sitting,4
+0,2,train,E_00_sitting_3,1,Epileptic Patients,sitting,4
+0,2,train,E_01_stairs_2,1,Epileptic Patients,stairs,4
+0,2,train,E_01_stairs_3,1,Epileptic Patients,stairs,4
+0,2,train,E_01_stairs_4,1,Epileptic Patients,stairs,4
+0,2,train,E_01_walking_1,1,Epileptic Patients,walking,4
+0,2,train,E_01_walking_2,1,Epileptic Patients,walking,4
+0,2,train,E_01_walking_5,1,Epileptic Patients,walking,4
+0,2,train,E_01_walking_6,1,Epileptic Patients,walking,4
+0,2,train,E_02_Jogging_1,1,Epileptic Patients,jogging,4
+0,2,train,E_02_Jogging_2,1,Epileptic Patients,jogging,4
+0,2,train,E_02_running_2,1,Epileptic Patients,running,4
+0,2,train,E_02_running_3,1,Epileptic Patients,running,4
+0,2,train,H_00_desk_work_1,0,Healthy Individuals,desk work,4
+0,2,train,H_00_desk_work_4,0,Healthy Individuals,desk work,4
+0,2,train,H_00_desk_work_5,0,Healthy Individuals,desk work,4
+0,2,train,H_00_desk_work,0,Healthy Individuals,desk work,4
+0,2,train,H_00_idle_sitting1,0,Healthy Individuals,idle sitting,4
+0,2,train,H_00_idle_sitting3,0,Healthy Individuals,idle sitting,4
+0,2,train,H_00_idle_sitting4,0,Healthy Individuals,idle sitting,4
+0,2,train,H_00_sitting1,0,Healthy Individuals,sitting,4
+0,2,train,H_00_sitting2,0,Healthy Individuals,sitting,4
+0,2,train,H_00_sitting6,0,Healthy Individuals,sitting,4
+0,2,train,H_00_sitting7,0,Healthy Individuals,sitting,4
+0,2,train,H_00_sitting9,0,Healthy Individuals,sitting,4
+0,2,train,H_00_standing1,0,Healthy Individuals,standing,4
+0,2,train,H_00_watching_tv_2,0,Healthy Individuals,watching tv,4
+0,2,train,H_00_watching_tv_3,0,Healthy Individuals,watching tv,4
+0,2,train,H_01_cooking_1,0,Healthy Individuals,cooking,4
+0,2,train,H_01_cooking_3,0,Healthy Individuals,cooking,4
+0,2,train,H_01_stairs_7,0,Healthy Individuals,stairs,4
+0,2,train,H_01_stairs2,0,Healthy Individuals,stairs,4
+0,2,train,H_01_stairs3,0,Healthy Individuals,stairs,4
+0,2,train,H_01_stairs4,0,Healthy Individuals,stairs,4
+0,2,train,H_01_walking_8,0,Healthy Individuals,walking,4
+0,2,train,H_01_walking1,0,Healthy Individuals,walking,4
+0,2,train,H_01_walking2,0,Healthy Individuals,walking,4
+0,2,train,H_01_walking3,0,Healthy Individuals,walking,4
+0,2,train,H_01_walking6,0,Healthy Individuals,walking,4
+0,2,train,H_02_jogging_4,0,Healthy Individuals,jogging,4
+0,2,train,H_02_jogging_5,0,Healthy Individuals,jogging,4
+0,2,train,H_02_jogging1,0,Healthy Individuals,jogging,4
+0,2,train,H_02_jogging3,0,Healthy Individuals,jogging,4
+0,2,train,H_02_jumping_3,0,Healthy Individuals,jumping,4
+0,2,train,H_02_jumping_5,0,Healthy Individuals,jumping,4
+0,2,train,H_02_jumping1,0,Healthy Individuals,jumping,4
+0,2,train,H_02_running_2,0,Healthy Individuals,running,4
+0,2,train,H_02_running_4,0,Healthy Individuals,running,4
+0,2,train,H_02_running,0,Healthy Individuals,running,4
+0,2,validation,E_00_desk_work_2,1,Epileptic Patients,desk work,4
+0,2,validation,E_00_laying_1,1,Epileptic Patients,laying,4
+0,2,validation,E_01_stairs_1,1,Epileptic Patients,stairs,4
+0,2,validation,E_01_stairs_5,1,Epileptic Patients,stairs,4
+0,2,validation,E_01_walking_3,1,Epileptic Patients,walking,4
+0,2,validation,E_02_Jogging_3,1,Epileptic Patients,jogging,4
+0,2,validation,H_00_desk_work_2,0,Healthy Individuals,desk work,4
+0,2,validation,H_00_idle_sitting2,0,Healthy Individuals,idle sitting,4
+0,2,validation,H_00_laying1,0,Healthy Individuals,laying,4
+0,2,validation,H_00_sitting5,0,Healthy Individuals,sitting,4
+0,2,validation,H_00_standing2,0,Healthy Individuals,standing,4
+0,2,validation,H_01_cooking_2,0,Healthy Individuals,cooking,4
+0,2,validation,H_01_stairs1,0,Healthy Individuals,stairs,4
+0,2,validation,H_01_walking_7,0,Healthy Individuals,walking,4
+0,2,validation,H_01_walking4,0,Healthy Individuals,walking,4
+0,2,validation,H_02_jogging_6,0,Healthy Individuals,jogging,4
+0,2,validation,H_02_jumping_4,0,Healthy Individuals,jumping,4
+0,2,validation,H_02_running_3,0,Healthy Individuals,running,4
+0,2,test,E_00_desk_work_3,1,Epileptic Patients,desk work,4
+0,2,test,E_00_laying_2,1,Epileptic Patients,laying,4
+0,2,test,E_00_sitting_2,1,Epileptic Patients,sitting,4
+0,2,test,E_01_stairs_6,1,Epileptic Patients,stairs,4
+0,2,test,E_01_walking_4,1,Epileptic Patients,walking,4
+0,2,test,E_02_running_1,1,Epileptic Patients,running,4
+0,2,test,H_00_desk_work_3,0,Healthy Individuals,desk work,4
+0,2,test,H_00_desk_work_6,0,Healthy Individuals,desk work,4
+0,2,test,H_00_laying2,0,Healthy Individuals,laying,4
+0,2,test,H_00_sitting8,0,Healthy Individuals,sitting,4
+0,2,test,H_00_watching_tv_1,0,Healthy Individuals,watching tv,4
+0,2,test,H_01_stairs_6,0,Healthy Individuals,stairs,4
+0,2,test,H_01_walking_10,0,Healthy Individuals,walking,4
+0,2,test,H_01_walking_9,0,Healthy Individuals,walking,4
+0,2,test,H_01_walking5,0,Healthy Individuals,walking,4
+0,2,test,H_02_jogging2,0,Healthy Individuals,jogging,4
+0,2,test,H_02_jumping2,0,Healthy Individuals,jumping,4
+0,2,test,H_02_running_5,0,Healthy Individuals,running,4
+0,3,train,E_00_desk_work_1,1,Epileptic Patients,desk work,4
+0,3,train,E_00_desk_work_2,1,Epileptic Patients,desk work,4
+0,3,train,E_00_idle_sitting_2,1,Epileptic Patients,idle sitting,4
+0,3,train,E_00_idle_sitting_3,1,Epileptic Patients,idle sitting,4
+0,3,train,E_00_laying_2,1,Epileptic Patients,laying,4
+0,3,train,E_00_laying_3,1,Epileptic Patients,laying,4
+0,3,train,E_00_sitting_2,1,Epileptic Patients,sitting,4
+0,3,train,E_01_stairs_2,1,Epileptic Patients,stairs,4
+0,3,train,E_01_stairs_3,1,Epileptic Patients,stairs,4
+0,3,train,E_01_stairs_4,1,Epileptic Patients,stairs,4
+0,3,train,E_01_stairs_6,1,Epileptic Patients,stairs,4
+0,3,train,E_01_walking_2,1,Epileptic Patients,walking,4
+0,3,train,E_01_walking_5,1,Epileptic Patients,walking,4
+0,3,train,E_01_walking_6,1,Epileptic Patients,walking,4
+0,3,train,E_02_Jogging_1,1,Epileptic Patients,jogging,4
+0,3,train,E_02_Jogging_3,1,Epileptic Patients,jogging,4
+0,3,train,E_02_running_1,1,Epileptic Patients,running,4
+0,3,train,E_02_running_3,1,Epileptic Patients,running,4
+0,3,train,H_00_desk_work_2,0,Healthy Individuals,desk work,4
+0,3,train,H_00_desk_work_3,0,Healthy Individuals,desk work,4
+0,3,train,H_00_desk_work_5,0,Healthy Individuals,desk work,4
+0,3,train,H_00_desk_work_6,0,Healthy Individuals,desk work,4
+0,3,train,H_00_idle_sitting1,0,Healthy Individuals,idle sitting,4
+0,3,train,H_00_idle_sitting3,0,Healthy Individuals,idle sitting,4
+0,3,train,H_00_idle_sitting4,0,Healthy Individuals,idle sitting,4
+0,3,train,H_00_laying1,0,Healthy Individuals,laying,4
+0,3,train,H_00_sitting2,0,Healthy Individuals,sitting,4
+0,3,train,H_00_sitting5,0,Healthy Individuals,sitting,4
+0,3,train,H_00_sitting6,0,Healthy Individuals,sitting,4
+0,3,train,H_00_sitting8,0,Healthy Individuals,sitting,4
+0,3,train,H_00_standing1,0,Healthy Individuals,standing,4
+0,3,train,H_00_watching_tv_1,0,Healthy Individuals,watching tv,4
+0,3,train,H_00_watching_tv_3,0,Healthy Individuals,watching tv,4
+0,3,train,H_01_cooking_2,0,Healthy Individuals,cooking,4
+0,3,train,H_01_cooking_3,0,Healthy Individuals,cooking,4
+0,3,train,H_01_stairs_6,0,Healthy Individuals,stairs,4
+0,3,train,H_01_stairs3,0,Healthy Individuals,stairs,4
+0,3,train,H_01_stairs4,0,Healthy Individuals,stairs,4
+0,3,train,H_01_walking_10,0,Healthy Individuals,walking,4
+0,3,train,H_01_walking_8,0,Healthy Individuals,walking,4
+0,3,train,H_01_walking_9,0,Healthy Individuals,walking,4
+0,3,train,H_01_walking2,0,Healthy Individuals,walking,4
+0,3,train,H_01_walking3,0,Healthy Individuals,walking,4
+0,3,train,H_01_walking4,0,Healthy Individuals,walking,4
+0,3,train,H_02_jogging_4,0,Healthy Individuals,jogging,4
+0,3,train,H_02_jogging_5,0,Healthy Individuals,jogging,4
+0,3,train,H_02_jogging1,0,Healthy Individuals,jogging,4
+0,3,train,H_02_jogging2,0,Healthy Individuals,jogging,4
+0,3,train,H_02_jumping_5,0,Healthy Individuals,jumping,4
+0,3,train,H_02_jumping1,0,Healthy Individuals,jumping,4
+0,3,train,H_02_jumping2,0,Healthy Individuals,jumping,4
+0,3,train,H_02_running_4,0,Healthy Individuals,running,4
+0,3,train,H_02_running_5,0,Healthy Individuals,running,4
+0,3,train,H_02_running,0,Healthy Individuals,running,4
+0,3,validation,E_00_desk_work_3,1,Epileptic Patients,desk work,4
+0,3,validation,E_00_laying_1,1,Epileptic Patients,laying,4
+0,3,validation,E_01_stairs_1,1,Epileptic Patients,stairs,4
+0,3,validation,E_01_stairs_5,1,Epileptic Patients,stairs,4
+0,3,validation,E_01_walking_4,1,Epileptic Patients,walking,4
+0,3,validation,E_02_Jogging_2,1,Epileptic Patients,jogging,4
+0,3,validation,H_00_desk_work_1,0,Healthy Individuals,desk work,4
+0,3,validation,H_00_idle_sitting2,0,Healthy Individuals,idle sitting,4
+0,3,validation,H_00_laying2,0,Healthy Individuals,laying,4
+0,3,validation,H_00_sitting7,0,Healthy Individuals,sitting,4
+0,3,validation,H_00_standing2,0,Healthy Individuals,standing,4
+0,3,validation,H_01_cooking_1,0,Healthy Individuals,cooking,4
+0,3,validation,H_01_stairs2,0,Healthy Individuals,stairs,4
+0,3,validation,H_01_walking_7,0,Healthy Individuals,walking,4
+0,3,validation,H_01_walking5,0,Healthy Individuals,walking,4
+0,3,validation,H_02_jogging3,0,Healthy Individuals,jogging,4
+0,3,validation,H_02_jumping_3,0,Healthy Individuals,jumping,4
+0,3,validation,H_02_running_3,0,Healthy Individuals,running,4
+0,3,test,E_00_idle_sitting_1,1,Epileptic Patients,idle sitting,4
+0,3,test,E_00_sitting_1,1,Epileptic Patients,sitting,4
+0,3,test,E_00_sitting_3,1,Epileptic Patients,sitting,4
+0,3,test,E_01_walking_1,1,Epileptic Patients,walking,4
+0,3,test,E_01_walking_3,1,Epileptic Patients,walking,4
+0,3,test,E_02_running_2,1,Epileptic Patients,running,4
+0,3,test,H_00_desk_work_4,0,Healthy Individuals,desk work,4
+0,3,test,H_00_desk_work,0,Healthy Individuals,desk work,4
+0,3,test,H_00_sitting1,0,Healthy Individuals,sitting,4
+0,3,test,H_00_sitting9,0,Healthy Individuals,sitting,4
+0,3,test,H_00_watching_tv_2,0,Healthy Individuals,watching tv,4
+0,3,test,H_01_stairs_7,0,Healthy Individuals,stairs,4
+0,3,test,H_01_stairs1,0,Healthy Individuals,stairs,4
+0,3,test,H_01_walking1,0,Healthy Individuals,walking,4
+0,3,test,H_01_walking6,0,Healthy Individuals,walking,4
+0,3,test,H_02_jogging_6,0,Healthy Individuals,jogging,4
+0,3,test,H_02_jumping_4,0,Healthy Individuals,jumping,4
+0,3,test,H_02_running_2,0,Healthy Individuals,running,4
+0,4,train,E_00_desk_work_1,1,Epileptic Patients,desk work,4
+0,4,train,E_00_desk_work_3,1,Epileptic Patients,desk work,4
+0,4,train,E_00_idle_sitting_1,1,Epileptic Patients,idle sitting,4
+0,4,train,E_00_idle_sitting_3,1,Epileptic Patients,idle sitting,4
+0,4,train,E_00_laying_2,1,Epileptic Patients,laying,4
+0,4,train,E_00_sitting_1,1,Epileptic Patients,sitting,4
+0,4,train,E_00_sitting_3,1,Epileptic Patients,sitting,4
+0,4,train,E_01_stairs_1,1,Epileptic Patients,stairs,4
+0,4,train,E_01_stairs_2,1,Epileptic Patients,stairs,4
+0,4,train,E_01_stairs_4,1,Epileptic Patients,stairs,4
+0,4,train,E_01_stairs_6,1,Epileptic Patients,stairs,4
+0,4,train,E_01_walking_1,1,Epileptic Patients,walking,4
+0,4,train,E_01_walking_4,1,Epileptic Patients,walking,4
+0,4,train,E_01_walking_5,1,Epileptic Patients,walking,4
+0,4,train,E_01_walking_6,1,Epileptic Patients,walking,4
+0,4,train,E_02_Jogging_3,1,Epileptic Patients,jogging,4
+0,4,train,E_02_running_1,1,Epileptic Patients,running,4
+0,4,train,E_02_running_2,1,Epileptic Patients,running,4
+0,4,train,H_00_desk_work_2,0,Healthy Individuals,desk work,4
+0,4,train,H_00_desk_work_3,0,Healthy Individuals,desk work,4
+0,4,train,H_00_desk_work_4,0,Healthy Individuals,desk work,4
+0,4,train,H_00_desk_work_6,0,Healthy Individuals,desk work,4
+0,4,train,H_00_idle_sitting1,0,Healthy Individuals,idle sitting,4
+0,4,train,H_00_idle_sitting2,0,Healthy Individuals,idle sitting,4
+0,4,train,H_00_laying1,0,Healthy Individuals,laying,4
+0,4,train,H_00_laying2,0,Healthy Individuals,laying,4
+0,4,train,H_00_sitting1,0,Healthy Individuals,sitting,4
+0,4,train,H_00_sitting6,0,Healthy Individuals,sitting,4
+0,4,train,H_00_sitting8,0,Healthy Individuals,sitting,4
+0,4,train,H_00_sitting9,0,Healthy Individuals,sitting,4
+0,4,train,H_00_standing2,0,Healthy Individuals,standing,4
+0,4,train,H_00_watching_tv_1,0,Healthy Individuals,watching tv,4
+0,4,train,H_00_watching_tv_2,0,Healthy Individuals,watching tv,4
+0,4,train,H_01_cooking_3,0,Healthy Individuals,cooking,4
+0,4,train,H_01_stairs_6,0,Healthy Individuals,stairs,4
+0,4,train,H_01_stairs_7,0,Healthy Individuals,stairs,4
+0,4,train,H_01_stairs3,0,Healthy Individuals,stairs,4
+0,4,train,H_01_stairs4,0,Healthy Individuals,stairs,4
+0,4,train,H_01_walking_10,0,Healthy Individuals,walking,4
+0,4,train,H_01_walking_7,0,Healthy Individuals,walking,4
+0,4,train,H_01_walking_8,0,Healthy Individuals,walking,4
+0,4,train,H_01_walking1,0,Healthy Individuals,walking,4
+0,4,train,H_01_walking4,0,Healthy Individuals,walking,4
+0,4,train,H_01_walking5,0,Healthy Individuals,walking,4
+0,4,train,H_01_walking6,0,Healthy Individuals,walking,4
+0,4,train,H_02_jogging_6,0,Healthy Individuals,jogging,4
+0,4,train,H_02_jogging1,0,Healthy Individuals,jogging,4
+0,4,train,H_02_jogging2,0,Healthy Individuals,jogging,4
+0,4,train,H_02_jumping_4,0,Healthy Individuals,jumping,4
+0,4,train,H_02_jumping_5,0,Healthy Individuals,jumping,4
+0,4,train,H_02_jumping2,0,Healthy Individuals,jumping,4
+0,4,train,H_02_running_2,0,Healthy Individuals,running,4
+0,4,train,H_02_running_4,0,Healthy Individuals,running,4
+0,4,train,H_02_running_5,0,Healthy Individuals,running,4
+0,4,validation,E_00_desk_work_2,1,Epileptic Patients,desk work,4
+0,4,validation,E_00_laying_1,1,Epileptic Patients,laying,4
+0,4,validation,E_00_sitting_2,1,Epileptic Patients,sitting,4
+0,4,validation,E_01_stairs_5,1,Epileptic Patients,stairs,4
+0,4,validation,E_01_walking_3,1,Epileptic Patients,walking,4
+0,4,validation,E_02_Jogging_2,1,Epileptic Patients,jogging,4
+0,4,validation,H_00_desk_work_1,0,Healthy Individuals,desk work,4
+0,4,validation,H_00_desk_work,0,Healthy Individuals,desk work,4
+0,4,validation,H_00_idle_sitting4,0,Healthy Individuals,idle sitting,4
+0,4,validation,H_00_sitting7,0,Healthy Individuals,sitting,4
+0,4,validation,H_00_standing1,0,Healthy Individuals,standing,4
+0,4,validation,H_01_cooking_2,0,Healthy Individuals,cooking,4
+0,4,validation,H_01_stairs1,0,Healthy Individuals,stairs,4
+0,4,validation,H_01_walking_9,0,Healthy Individuals,walking,4
+0,4,validation,H_01_walking3,0,Healthy Individuals,walking,4
+0,4,validation,H_02_jogging_5,0,Healthy Individuals,jogging,4
+0,4,validation,H_02_jumping_3,0,Healthy Individuals,jumping,4
+0,4,validation,H_02_running_3,0,Healthy Individuals,running,4
+0,4,test,E_00_idle_sitting_2,1,Epileptic Patients,idle sitting,4
+0,4,test,E_00_laying_3,1,Epileptic Patients,laying,4
+0,4,test,E_01_stairs_3,1,Epileptic Patients,stairs,4
+0,4,test,E_01_walking_2,1,Epileptic Patients,walking,4
+0,4,test,E_02_Jogging_1,1,Epileptic Patients,jogging,4
+0,4,test,E_02_running_3,1,Epileptic Patients,running,4
+0,4,test,H_00_desk_work_5,0,Healthy Individuals,desk work,4
+0,4,test,H_00_idle_sitting3,0,Healthy Individuals,idle sitting,4
+0,4,test,H_00_sitting2,0,Healthy Individuals,sitting,4
+0,4,test,H_00_sitting5,0,Healthy Individuals,sitting,4
+0,4,test,H_00_watching_tv_3,0,Healthy Individuals,watching tv,4
+0,4,test,H_01_cooking_1,0,Healthy Individuals,cooking,4
+0,4,test,H_01_stairs2,0,Healthy Individuals,stairs,4
+0,4,test,H_01_walking2,0,Healthy Individuals,walking,4
+0,4,test,H_02_jogging_4,0,Healthy Individuals,jogging,4
+0,4,test,H_02_jogging3,0,Healthy Individuals,jogging,4
+0,4,test,H_02_jumping1,0,Healthy Individuals,jumping,4
+0,4,test,H_02_running,0,Healthy Individuals,running,4

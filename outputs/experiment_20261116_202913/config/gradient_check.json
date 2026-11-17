@@ -1,0 +1,21 @@
+{
+  "transformer": {
+    "quantum_weights_grad_norm": 0.050907399505376816,
+    "quantum_input_angle_grad_norm": 0.11025617271661758,
+    "embedding_linear_grad_norm": 0.68559730052948,
+    "encoder_token_projection_grad_norm": 0.7619309425354004,
+    "encoder_core_grad_norm": 0.6840238571166992,
+    "output_layer_grad_norm": 0.0580325648188591,
+    "all_nonzero": true
+  },
+  "bilstm": {
+    "quantum_weights_grad_norm": 0.06356620043516159,
+    "quantum_input_angle_grad_norm": 0.14559897780418396,
+    "embedding_linear_grad_norm": 0.932535707950592,
+    "encoder_token_projection_grad_norm": 1.9269275665283203,
+    "encoder_core_grad_norm": 0.702082097530365,
+    "output_layer_grad_norm": 0.147273987531662,
+    "all_nonzero": true
+  },
+  "passed": true
+}

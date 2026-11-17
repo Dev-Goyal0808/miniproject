@@ -1,0 +1,5 @@
+{
+  "train": {
+    "mixup_alpha": 0.0
+  }
+}

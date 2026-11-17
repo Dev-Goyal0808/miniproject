@@ -1,0 +1,273 @@
+{
+  "profile": "full",
+  "run": {
+    "seeds": [
+      0,
+      1,
+      2
+    ],
+    "n_folds": 5,
+    "max_folds": null,
+    "run_baselines": true,
+    "run_encoders": true,
+    "run_quantum": true,
+    "run_finetune": true,
+    "run_loao": true,
+    "run_noise": true,
+    "device": "auto",
+    "num_threads": 2
+  },
+  "data": {
+    "path": "ADLs using a Portable EEG Headset.zip",
+    "fs": 512,
+    "nominal_duration_s": 20.0,
+    "expected_samples": 10240,
+    "length_policy": "keep_filter_drop_incomplete",
+    "label_map": {
+      "healthy": 0,
+      "epilep": 1
+    },
+    "main_scope": "all",
+    "min_unique_values": 5
+  },
+  "activity": {
+    "canonical": [
+      "desk work",
+      "idle sitting",
+      "laying",
+      "sitting",
+      "standing",
+      "watching tv",
+      "cooking",
+      "stairs",
+      "walking",
+      "jogging",
+      "running",
+      "jumping"
+    ],
+    "aliases": {
+      "deskwork": "desk work",
+      "idlesitting": "idle sitting",
+      "lying": "laying",
+      "watchingtv": "watching tv",
+      "tv": "watching tv",
+      "television": "watching tv",
+      "stairsupanddown": "stairs",
+      "stair": "stairs",
+      "stairsup": "stairs",
+      "jog": "jogging",
+      "run": "running",
+      "walk": "walking",
+      "sit": "sitting",
+      "idle": "idle sitting",
+      "desk": "desk work",
+      "cook": "cooking",
+      "jump": "jumping"
+    },
+    "groups": {
+      "stationary": [
+        "desk work",
+        "idle sitting",
+        "sitting",
+        "laying"
+      ],
+      "light_ambulatory": [
+        "walking",
+        "stairs"
+      ],
+      "intense_ambulatory": [
+        "jogging",
+        "running"
+      ]
+    },
+    "extra_group_from_readme": {
+      "standing": "stationary",
+      "watching tv": "stationary",
+      "cooking": "light_ambulatory",
+      "jumping": "intense_ambulatory"
+    }
+  },
+  "wosg": {
+    "wavelet": "db4",
+    "level": 7,
+    "mode": "symmetric",
+    "optimize": true,
+    "window_candidates": [
+      5,
+      9,
+      13,
+      17,
+      21,
+      31,
+      41,
+      51
+    ],
+    "polyorder_candidates": [
+      1,
+      2,
+      3
+    ],
+    "fixed_window": 21,
+    "fixed_polyorder": 2,
+    "objective": "lowfreq_residual_plus_inband_decorrelation",
+    "lambda_inband": 1.0,
+    "lowfreq_cut_hz": 0.5,
+    "inband_hz": [
+      0.5,
+      50.0
+    ]
+  },
+  "window": {
+    "seconds": 5.0,
+    "overlap": 0.0
+  },
+  "gwst": {
+    "n_freq": 225,
+    "fmin": 0.5,
+    "fmax": 50.0,
+    "batch": 8
+  },
+  "features": {
+    "entropy_bins": 10
+  },
+  "tokens": {
+    "n_tokens": 64,
+    "pool": 40,
+    "token_dim": 32,
+    "embed_dim": 6,
+    "a0_stat": "median_of_window_freq_means"
+  },
+  "model": {
+    "transformer": {
+      "n_blocks": 2,
+      "n_heads": 4,
+      "ff_dim": 64,
+      "dropout": 0.1
+    },
+    "bilstm": {
+      "hidden": 16,
+      "dropout": 0.1
+    },
+    "mlp_hidden": 6,
+    "encoder_pretrain_head": "linear"
+  },
+  "quantum": {
+    "n_qubits": 6,
+    "n_layers": 2,
+    "device": "default.qubit",
+    "diff_method": "backprop",
+    "init_std": 0.5,
+    "entanglement": "ring"
+  },
+  "train": {
+    "batch_size": 16,
+    "optimizer": "AdamW",
+    "weight_decay": 0.0001,
+    "lr_encoder": 0.001,
+    "lr_head": 0.01,
+    "lr_quantum": 0.01,
+    "lr_finetune_encoder": 0.0001,
+    "encoder_lr_grid": null,
+    "head_lr_grid": null,
+    "max_epochs": 100,
+    "patience": 15,
+    "head_max_epochs": 100,
+    "head_patience": 15,
+    "ft_max_epochs": 100,
+    "ft_patience": 15,
+    "grad_clip": 1.0,
+    "use_class_weights": true,
+    "min_delta": 1e-05
+  },
+  "classical": {
+    "rf_grid": {
+      "n_estimators": [
+        10,
+        50,
+        200
+      ],
+      "min_samples_leaf": [
+        1,
+        3
+      ],
+      "max_depth": [
+        null,
+        6
+      ]
+    },
+    "svm_grid": {
+      "kernel": [
+        "linear",
+        "rbf"
+      ],
+      "C": [
+        1.0,
+        10.0,
+        100.0
+      ]
+    },
+    "rbf_head_grid": {
+      "C": [
+        0.1,
+        1.0,
+        10.0,
+        100.0
+      ],
+      "gamma": [
+        "scale",
+        0.1,
+        1.0,
+        10.0
+      ]
+    },
+    "mi_k_grid": [
+      10,
+      25,
+      50,
+      100,
+      225
+    ]
+  },
+  "cv": {
+    "inner_val_splits": 4
+  },
+  "eval": {
+    "n_bootstrap": 1000,
+    "ci": 0.95,
+    "bootstrap_seed": 2024
+  },
+  "loao": {
+    "seeds": null,
+    "models": "all"
+  },
+  "noise": {
+    "types": [
+      "gaussian",
+      "baseline_drift",
+      "emg_like",
+      "ocular_like"
+    ],
+    "snr_db": [
+      20,
+      10,
+      5
+    ],
+    "seed": 12345,
+    "seeds": null,
+    "snr_reference": "raw",
+    "emg_band_hz": [
+      20.0,
+      200.0
+    ],
+    "drift_freq_hz": [
+      0.05,
+      0.5
+    ],
+    "ocular_band_hz": [
+      0.5,
+      4.0
+    ],
+    "blink_rate_per_s": 0.3,
+    "blink_width_s": 0.25
+  }
+}

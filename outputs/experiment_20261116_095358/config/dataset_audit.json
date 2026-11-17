@@ -1,0 +1,134 @@
+{
+  "data_source": "ADLs using a Portable EEG Headset.zip",
+  "source_kind": "zip",
+  "documented": {
+    "sampling_rate_hz": 512,
+    "duration_s": 20.0,
+    "expected_samples": 10240,
+    "files": 90,
+    "healthy": 60,
+    "epilepsy": 30
+  },
+  "found": {
+    "csv_files": 90,
+    "healthy": 60,
+    "epilepsy": 30,
+    "excluded": 0,
+    "unknown_activity_names": []
+  },
+  "length_analysis": {
+    "length_counts": {
+      "10241": 90
+    },
+    "modal_length": 10241,
+    "excess_vs_expected": 1,
+    "all_recordings_same_length": true,
+    "n_files_header_present": 0,
+    "n_files_with_blank_lines_beyond_final_newline": 0,
+    "n_files_last_equals_previous_sample": 2,
+    "n_files_first_equals_second_sample": 46,
+    "n_files_trailing_delimiter": 1,
+    "files_trailing_delimiter": [
+      "Healthy Individuals/02_jumping1.csv"
+    ],
+    "interpretation": "Every recording has 10241 numeric rows (documented: 10240 = 20 s x 512 Hz). The excess is exactly 1 sample(s) in every file, with no header row, no extra column and no malformed row. This systematic pattern is consistent with INCLUSIVE ENDPOINT SAMPLING (t = 0 ... 20 s gives 20*512+1 samples) or a single extra sample logged at acquisition start/stop. It is NOT a formatting artefact (a trailing newline is counted separately and only 1 file(s) carry a trailing-comma formatting quirk). The raw files alone cannot prove which acquisition mechanism produced the sample; this is an inference, not a verified fact.",
+    "policy": "keep_filter_drop_incomplete",
+    "policy_explanation": "All samples are filtered; non-overlapping 5 s windowing yields floor(N/2560) complete windows; the trailing incomplete segment (N mod 2560 samples) is reported per recording and excluded."
+  },
+  "amplitude": {
+    "global_min": -15.01173,
+    "global_max": 9.005865,
+    "median_recording_std": 1.3368483402657378,
+    "note": "Values are quantised (see manifest n_unique) and many recordings touch the global min/max; saturation/clipping of the dry-electrode headset is likely (fraction per recording in manifest column saturation_fraction_global_extremes)."
+  },
+  "duplicates": {
+    "n_duplicate_recordings": 2,
+    "pairs": [
+      [
+        "H_00_idle_sitting2",
+        "H_00_idle_sitting1"
+      ],
+      [
+        "H_00_idle_sitting3",
+        "H_00_idle_sitting1"
+      ]
+    ]
+  },
+  "unusual_std_recordings": [],
+  "constant_recordings": [],
+  "exclusions": [],
+  "class_activity_counts": {
+    "cooking": {
+      "healthy": 3,
+      "epilepsy": 0
+    },
+    "desk work": {
+      "healthy": 7,
+      "epilepsy": 3
+    },
+    "idle sitting": {
+      "healthy": 4,
+      "epilepsy": 3
+    },
+    "jogging": {
+      "healthy": 6,
+      "epilepsy": 3
+    },
+    "jumping": {
+      "healthy": 5,
+      "epilepsy": 0
+    },
+    "laying": {
+      "healthy": 2,
+      "epilepsy": 3
+    },
+    "running": {
+      "healthy": 5,
+      "epilepsy": 3
+    },
+    "sitting": {
+      "healthy": 7,
+      "epilepsy": 3
+    },
+    "stairs": {
+      "healthy": 6,
+      "epilepsy": 6
+    },
+    "standing": {
+      "healthy": 2,
+      "epilepsy": 0
+    },
+    "walking": {
+      "healthy": 10,
+      "epilepsy": 6
+    },
+    "watching tv": {
+      "healthy": 3,
+      "epilepsy": 0
+    }
+  },
+  "eligible_activities_both_classes": [
+    "desk work",
+    "idle sitting",
+    "jogging",
+    "laying",
+    "running",
+    "sitting",
+    "stairs",
+    "walking"
+  ],
+  "single_class_activities_excluded_from_transfer": [
+    "cooking",
+    "jumping",
+    "standing",
+    "watching tv"
+  ],
+  "readme_text": "The data set is gathered using a portable EEG Headset with a single electrode placed at frontal position-1 (FP1). \r\nThe data files contain a single column of raw EEG data. \r\nSampling Rate: 512Hz\r\nDuration of Activities: 20 seconds\r\n\r\nNumber of Activity files: 90\r\nHealthy Individuals: 60\r\nEpileptic Patients: 30\r\n\r\ncodes of the files:\r\n00: stationary activity\r\nHealthy Individuals: desk work, idle sitting, laying, sitting, standing, watching tv\r\nEpileptic Patients: desk work, idle sitting, laying, sitting\r\n\r\n01: Light ambulatory activity\r\nHealthy Individuals: cooking, stairs up and down, walking \r\nEpileptic Patients: stairs up and down, walking \r\n\r\n02: Intense ambulatory activity\r\nHealthy Individuals: jogging, running, jumping\r\nEpileptic Patients: jogging, running\r\n",
+  "description_docx_text": "Data Set Title: Activities of Daily living s using a Portable EEG Headset Abstract: The data set is collected using Neurosky MindWave 2.0 Headset . It uses a single dry electrode placed at FP-1 position for the acquisition of EEG signals. The data is collected from Healthy Individuals and Epileptic Patients performing different Activities of Daily Living (ADLs) in an unconstraint environment. Instructions: The data files are stored in a comma separated value (.csv) format . 60 sample files performed by healthy individuals and 30 sample files performed by epileptic patients are present in two separate folders in the .zip file. The sampling frequency of the headset is 512Hz and each activity is performed for a duration of 20 seconds . Every data file contains raw EEG data in a single column.",
+  "participant_ids_available": false,
+  "participant_id_warning": "The archive provides NO participant identifiers. Numbers in file names are recording counters per activity and are NOT interpreted as subject IDs. Recording-level grouping prevents window leakage but multiple recordings may come from the same person, so participant-independent generalisation cannot be claimed.",
+  "readme_code_check": {
+    "mismatches": [],
+    "n_mismatches": 0
+  }
+}

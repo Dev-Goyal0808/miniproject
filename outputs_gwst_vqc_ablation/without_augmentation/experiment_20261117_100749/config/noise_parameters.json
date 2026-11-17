@@ -1,0 +1,18 @@
+{
+  "snr_reference": "raw",
+  "SNR_dB_values": [
+    20,
+    10,
+    5
+  ],
+  "noise_seed": 12345,
+  "definitions": {
+    "SNR": "10*log10(P_reference / P_noise); P_reference = variance of the raw recording",
+    "gaussian": "white Gaussian noise",
+    "baseline_drift": "sum of 4 sinusoids [0.05, 0.5] Hz + slow ramp",
+    "emg_like": "band-pass [20.0, 200.0] Hz noise with bursty envelope (SYNTHETIC, not real EMG)",
+    "ocular_like": "Poisson blink-like Gaussian pulses (width ~0.25 s, rate 0.30/s) + [0.5, 4.0] Hz eye-movement-like noise (SYNTHETIC)"
+  },
+  "example_recording": "H_01_walking_10",
+  "example_reference_power": 0.350465871276928
+}
