@@ -1,0 +1,242 @@
+[
+  {
+    "page": 1,
+    "bottom": 355.0,
+    "words": 220,
+    "title": "Hybrid Quantum Classical EEG Classification"
+  },
+  {
+    "page": 2,
+    "bottom": 268.3,
+    "words": 317,
+    "title": "Abstract"
+  },
+  {
+    "page": 3,
+    "bottom": 248.4,
+    "words": 199,
+    "title": "Contents and Reading Guide"
+  },
+  {
+    "page": 4,
+    "bottom": 316.6,
+    "words": 315,
+    "title": "Research Problem and Study Objectives"
+  },
+  {
+    "page": 5,
+    "bottom": 193.9,
+    "words": 403,
+    "title": "Wearable EEG and the Classical Research Context"
+  },
+  {
+    "page": 6,
+    "bottom": 348.8,
+    "words": 294,
+    "title": "What Quantum Literature Can Actually Defend"
+  },
+  {
+    "page": 7,
+    "bottom": 197.7,
+    "words": 287,
+    "title": "Evidence Selection and Experiment Provenance"
+  },
+  {
+    "page": 8,
+    "bottom": 157.9,
+    "words": 270,
+    "title": "Dataset Inventory and Activity Imbalance"
+  },
+  {
+    "page": 9,
+    "bottom": 189.8,
+    "words": 284,
+    "title": "Duplicate Signals and Independence of the Splits"
+  },
+  {
+    "page": 10,
+    "bottom": 332.7,
+    "words": 293,
+    "title": "Wavelet Domain Artefact Filtering"
+  },
+  {
+    "page": 11,
+    "bottom": 290.5,
+    "words": 349,
+    "title": "Gaussian Window Stockwell Representation"
+  },
+  {
+    "page": 12,
+    "bottom": 195.6,
+    "words": 332,
+    "title": "Handcrafted Features and Classical Baselines"
+  },
+  {
+    "page": 13,
+    "bottom": 205.9,
+    "words": 268,
+    "title": "Temporal Encoders and the Shared Bottleneck"
+  },
+  {
+    "page": 14,
+    "bottom": 91.4,
+    "words": 335,
+    "title": "Six Qubit Variational Quantum Classifier"
+  },
+  {
+    "page": 15,
+    "bottom": 348.8,
+    "words": 279,
+    "title": "Training and Validation Protocol"
+  },
+  {
+    "page": 16,
+    "bottom": 107.5,
+    "words": 325,
+    "title": "Performance Measures and the Decision Threshold"
+  },
+  {
+    "page": 17,
+    "bottom": 139.4,
+    "words": 316,
+    "title": "Uncertainty and Paired Statistical Comparisons"
+  },
+  {
+    "page": 18,
+    "bottom": 120.5,
+    "words": 186,
+    "title": "Primary Recording Level Results"
+  },
+  {
+    "page": 19,
+    "bottom": 260.3,
+    "words": 206,
+    "title": "Transformer Heads and the Quantum Accuracy Gap"
+  },
+  {
+    "page": 20,
+    "bottom": 254.2,
+    "words": 236,
+    "title": "Bi LSTM Heads and Class Specific Errors"
+  },
+  {
+    "page": 21,
+    "bottom": 256.2,
+    "words": 257,
+    "title": "Does Entanglement Help in the Saved Experiment"
+  },
+  {
+    "page": 22,
+    "bottom": 214.1,
+    "words": 247,
+    "title": "End to End Fine Tuning"
+  },
+  {
+    "page": 23,
+    "bottom": 246.0,
+    "words": 252,
+    "title": "Sensitivity Across Archived Configurations"
+  },
+  {
+    "page": 24,
+    "bottom": 246.0,
+    "words": 254,
+    "title": "Activities Shared by Both Classes"
+  },
+  {
+    "page": 25,
+    "bottom": 168.1,
+    "words": 235,
+    "title": "Transfer to an Unseen Activity"
+  },
+  {
+    "page": 26,
+    "bottom": 111.5,
+    "words": 334,
+    "title": "Synthetic Corruption Robustness"
+  },
+  {
+    "page": 27,
+    "bottom": 205.9,
+    "words": 244,
+    "title": "Why the Quick MixUp Comparison Is Inconclusive"
+  },
+  {
+    "page": 28,
+    "bottom": 205.9,
+    "words": 267,
+    "title": "Waveform Augmentation in the Later Archive"
+  },
+  {
+    "page": 29,
+    "bottom": 253.9,
+    "words": 272,
+    "title": "Resource Cost and Parameter Efficiency"
+  },
+  {
+    "page": 30,
+    "bottom": 348.8,
+    "words": 275,
+    "title": "Plausible Reasons for Lower Quantum Accuracy"
+  },
+  {
+    "page": 31,
+    "bottom": 188.4,
+    "words": 196,
+    "title": "How to Use the VQC Papers in the Defence"
+  },
+  {
+    "page": 32,
+    "bottom": 316.6,
+    "words": 292,
+    "title": "A Defensible Discussion for the Report"
+  },
+  {
+    "page": 33,
+    "bottom": 296.6,
+    "words": 318,
+    "title": "Viva Questions and Suggested Answers"
+  },
+  {
+    "page": 34,
+    "bottom": 322.7,
+    "words": 291,
+    "title": "Threats to Validity and Clinical Interpretation"
+  },
+  {
+    "page": 35,
+    "bottom": 306.6,
+    "words": 299,
+    "title": "Recommendations for the Next Research Stage"
+  },
+  {
+    "page": 36,
+    "bottom": 300.5,
+    "words": 306,
+    "title": "Conclusion"
+  },
+  {
+    "page": 37,
+    "bottom": 328.8,
+    "words": 193,
+    "title": "References for Quantum Interpretation"
+  },
+  {
+    "page": 38,
+    "bottom": 280.5,
+    "words": 242,
+    "title": "References for Encoding and EEG Context"
+  },
+  {
+    "page": 39,
+    "bottom": 216.1,
+    "words": 206,
+    "title": "Project Evidence Register"
+  },
+  {
+    "page": 40,
+    "bottom": 258.3,
+    "words": 321,
+    "title": "Submission Notes and Claim Boundaries"
+  }
+]
